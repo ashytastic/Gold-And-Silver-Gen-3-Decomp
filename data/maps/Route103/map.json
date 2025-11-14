@@ -3,7 +3,7 @@
   "name": "Route103",
   "layout": "LAYOUT_ROUTE103",
   "music": "MUS_ROUTE101",
-  "region_map_section": "MAPSEC_ROUTE_103",
+  "region_map_section": "MAPSEC_NONE",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",
@@ -167,7 +167,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ProfBirch_EventScript_RatePokedexOrRegister",
-      "flag": "FLAG_HIDE_ROUTE_103_BIRCH"
+      "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
@@ -193,7 +193,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_GUARD_SPEC",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_103_GUARD_SPEC"
+      "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
@@ -284,7 +284,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_PP_UP",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_103_PP_UP"
+      "flag": "FLAG_GARBAGEFLAG"
     }
   ],
   "warp_events": [

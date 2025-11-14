@@ -2670,3 +2670,109 @@
 	callnative ScriptChangeFollowerNPCBattlePartner
 	.2byte \battlePartner
 	.endm
+
+@HnS macros ========================================================================================================================
+
+	@HnS applymovement but doesnt remove follower. 
+	.macro applymovement2 localId:req, movements:req, map
+		.ifb \map
+			.byte 0xe8
+			.2byte \localId
+			.4byte \movements
+		.else
+			@ Really only useful if the object has followed from one map to another (e.g. Wally during the catching event).
+			.byte 0x50
+			.2byte \localId
+			.4byte \movements
+			map \map
+		.endif
+	.endm
+
+@ re-calculates mon party
+    .macro calculatemonstats
+    .byte 0xe6
+    .endm
+
+@ deletesparty
+    .macro deleteparty
+    .byte 0xe7
+    .endm
+	
+@ Like callnative, but function expects a ctx
+.macro callfunc func:req
+	.byte 0xe8
+	.4byte \func
+	.endm
+
+	@ Removes PokÃ©mon from player's party. 1 = KENYA, 2 = SHUCKIE
+	@ VAR_RESULT will be set to MON_GIVEN_TO_PARTY, MON_CANT_GIVE depending on the outcome.
+	.macro remove5mons 
+	.byte 0xeb
+	.endm
+
+	@ Gives the player a PokÃ©mon. 1 = KENYA, 2 = SHUCKIE, 3 = EEVEE
+	@ VAR_RESULT will be set to MON_GIVEN_TO_PARTY, MON_GIVEN_TO_PC, or MON_CANT_GIVE depending on the outcome.
+	.macro givenamedmon number:req
+	.byte 0xe9
+	.2byte \number
+	.endm
+
+	@ Removes PokÃ©mon from player's party. 1 = KENYA, 2 = SHUCKIE
+	@ VAR_RESULT will be set to MON_GIVEN_TO_PARTY, MON_CANT_GIVE depending on the outcome.
+	.macro removenamedmon number:req
+	.byte 0xea
+	.2byte \number
+	.endm
+
+	@ Removes PokÃ©mon from player's party. If species in VAR_0x8004 matches the species passed in as number, it will remove the mon.
+	@ VAR_RESULT will be set to TRUE if it works. FALSE if it doesn't.
+	.macro removegenericmon number:req
+	.byte 0xed
+	.2byte \number
+	.endm
+
+	@ New: Check Baoba target species in party slot VAR_0x8004.
+	@ Usage (script): baobacheckmon <1|2|3|4>
+	@ Result: gSpecialVar_Result = TRUE if the mon at VAR_0x8004 matches the allowed
+	@ species list for the given case; FALSE otherwise.
+	.macro baobacheckmon number:req
+	.byte 0xee
+	.2byte \number
+	.endm
+
+	@ Gives the player the odd egg. If name matches, 100% shiny. If not, 14% shiny. Input parameter 1-7
+	@ VAR_RESULT will be set to MON_GIVEN_TO_PARTY, or MON_CANT_GIVE depending on the outcome.
+	.macro giveoddegg number:req
+	.byte 0xef
+	.2byte \number
+	.endm
+
+	@ Gives the player the number of BP (battle points) inputted
+	.macro givebp number:req
+	.byte 0xf0
+	.2byte \number
+	.endm
+
+	@ Opens the bag in the specified pocket and lets the Player choose an item.
+	@ This item can be used for scripting purposes and it's stored in VAR_ITEM_ID.
+	.macro chooseitem pocket:req
+	setvar VAR_TEMP_1, \pocket
+	fadescreen FADE_TO_BLACK
+	special ChooseItemFromBag
+	waitstate
+	.endm
+
+@ Prepares to start a wild battle against a 'species' at 'level' holding 'item'. Running this command will not affect
+	@ normal wild battles. You start the prepared battle with dowildbattle.
+	.macro setwildbattleshiny species:req, level:req, item=ITEM_NONE
+	.byte 0xec
+	.2byte \species
+	.byte \level
+	.2byte \item
+	.endm
+
+	@ Checks to see if the player has a Pokemon in their party. Result returns to VAR_RESULT
+    .macro checkpartymonlevel level:req
+    .byte 0xe4
+    .2byte \level
+    .endm

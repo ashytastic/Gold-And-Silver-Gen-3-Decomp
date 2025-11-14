@@ -4,7 +4,7 @@ MarineCave_End_MapScripts::
 	.byte 0
 
 MarineCave_End_OnResume:
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, MarineCave_End_EventScript_TryRemoveKyogre
+	call_if_set FLAG_GARBAGEFLAG, MarineCave_End_EventScript_TryRemoveKyogre
 	end
 
 MarineCave_End_EventScript_TryRemoveKyogre::
@@ -18,7 +18,7 @@ MarineCave_End_OnTransition:
 	end
 
 MarineCave_End_EventScript_ShowKyogre::
-	clearflag FLAG_HIDE_MARINE_CAVE_KYOGRE
+	clearflag FLAG_GARBAGEFLAG
 	setvar VAR_TEMP_1, 1
 	return
 
@@ -34,10 +34,10 @@ MarineCave_End_EventScript_Kyogre::
 	waitmoncry
 	setvar VAR_LAST_TALKED, LOCALID_MARINE_CAVE_KYOGRE
 	setwildbattle SPECIES_KYOGRE, 70
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_GARBAGEFLAG
 	special BattleSetup_StartLegendaryBattle
 	waitstate
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	clearflag FLAG_GARBAGEFLAG
 	setvar VAR_TEMP_1, 0
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, MarineCave_End_EventScript_DefeatedKyogre

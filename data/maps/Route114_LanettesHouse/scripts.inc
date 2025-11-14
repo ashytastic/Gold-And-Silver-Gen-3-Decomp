@@ -3,18 +3,18 @@ Route114_LanettesHouse_MapScripts::
 	.byte 0
 
 Route114_LanettesHouse_OnTransition:
-	setflag FLAG_LANDMARK_LANETTES_HOUSE
+	setflag FLAG_GARBAGEFLAG
 	end
 
 Route114_LanettesHouse_EventScript_Lanette::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_DOLL_LANETTE, Route114_LanettesHouse_EventScript_OfferAdvice
-	setflag FLAG_SYS_PC_LANETTE
+	goto_if_set FLAG_GARBAGEFLAG, Route114_LanettesHouse_EventScript_OfferAdvice
+	setflag FLAG_GARBAGEFLAG
 	msgbox Route114_LanettesHouse_Text_EverythingClutteredKeepThis, MSGBOX_DEFAULT
 	givedecoration DECOR_LOTAD_DOLL
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowNoRoomForDecor
-	setflag FLAG_RECEIVED_DOLL_LANETTE
+	setflag FLAG_GARBAGEFLAG
 	release
 	end
 

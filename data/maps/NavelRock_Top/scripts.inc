@@ -21,7 +21,7 @@ NavelRock_Top_EventScript_TryShowHoOh::
 	return
 
 NavelRock_Top_OnResume:
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, NavelRock_Top_EventScript_TryRemoveHoOh
+	call_if_set FLAG_GARBAGEFLAG, NavelRock_Top_EventScript_TryRemoveHoOh
 	end
 
 NavelRock_Top_EventScript_TryRemoveHoOh::
@@ -56,10 +56,10 @@ NavelRock_Top_EventScript_HoOh::
 	waitmovement 0
 	special RemoveCameraObject
 	seteventmon SPECIES_HO_OH, 70
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_GARBAGEFLAG
 	special BattleSetup_StartLegendaryBattle
 	waitstate
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	clearflag FLAG_GARBAGEFLAG
 	setvar VAR_LAST_TALKED, LOCALID_NAVEL_ROCK_HO_OH
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NavelRock_Top_EventScript_DefeatedHoOh

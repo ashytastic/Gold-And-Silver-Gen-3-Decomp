@@ -779,6 +779,65 @@
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
 
+// gTileset_VioletCity
+#define METATILE_VioletCity_Dojo_Door  0x32B
+
+// gTileset_ssaqua
+#define METATILE_ssaqua_Door  0x281
+
+// Other
+#define METATILE_61_azalea_Azalea                                0x2A2
+#define METATILE_Cave5_Door                                      0x2FF
+#define METATILE_Cherrygrove_Door_Red                            0x2EB
+#define METATILE_CianwoodSafariGate_Cianwood                     0x29A
+#define METATILE_GreenHouses_Elevator                            0x2AB
+#define METATILE_IceCave_38_IcePath_CrackedFloor                 0x39E
+#define METATILE_IceCave_38_IcePath_CrackedFloorHole             0x39F
+#define METATILE_JohtoShop_Door                                  0x28D
+#define METATILE_Olivine_6_Door                                  0x312
+#define METATILE_Olivine_6_Vermilion                             0x29E
+#define METATILE_Pewter_Pewter                                   0x2CE
+#define METATILE_R26_21_Broken_Window                            0x32B
+#define METATILE_RSMossdeepGym_RedArrow_Down                     0x205
+#define METATILE_RSMossdeepGym_RedArrow_Left                     0x20C
+#define METATILE_RSMossdeepGym_RedArrow_Right                    0x204
+#define METATILE_RSMossdeepGym_RedArrow_Up                       0x20D
+#define METATILE_RSMossdeepGym_Switch_Down                       0x239
+#define METATILE_RSMossdeepGym_Switch_Up                         0x238
+#define METATILE_Route38Farm_Grass                               0x2E4
+#define METATILE_TanobyRuins_69_Floor_Hole                       0x280
+#define METATILE_VermilionGym_Beam_MidBottom                     0x28D
+#define METATILE_VermilionGym_Beam_MidBottom_HalfOn              0x2C5
+#define METATILE_VermilionGym_Beam_MidTop                        0x285
+#define METATILE_VermilionGym_Beam_MidTop_HalfOn                 0x2BD
+#define METATILE_VermilionGym_Beam_Node_BottomLeft_Edge_HalfOn   0x2C4
+#define METATILE_VermilionGym_Beam_Node_BottomLeft_Edge_Off      0x29C
+#define METATILE_VermilionGym_Beam_Node_BottomLeft_Edge_On       0x2B2
+#define METATILE_VermilionGym_Beam_Node_BottomLeft_HalfOn        0x2C3
+#define METATILE_VermilionGym_Beam_Node_BottomLeft_Off           0x29B
+#define METATILE_VermilionGym_Beam_Node_BottomLeft_On            0x2B1
+#define METATILE_VermilionGym_Beam_Node_BottomRight_Edge_HalfOn  0x2C6
+#define METATILE_VermilionGym_Beam_Node_BottomRight_Edge_Off     0x29D
+#define METATILE_VermilionGym_Beam_Node_BottomRight_Edge_On      0x2B3
+#define METATILE_VermilionGym_Beam_Node_BottomRight_HalfOn       0x2C7
+#define METATILE_VermilionGym_Beam_Node_BottomRight_Off          0x29E
+#define METATILE_VermilionGym_Beam_Node_BottomRight_On           0x2B4
+#define METATILE_VermilionGym_Beam_Node_TopLeft_Edge_HalfOn      0x2BC
+#define METATILE_VermilionGym_Beam_Node_TopLeft_Edge_Off         0x294
+#define METATILE_VermilionGym_Beam_Node_TopLeft_Edge_On          0x2AA
+#define METATILE_VermilionGym_Beam_Node_TopLeft_HalfOn           0x2BB
+#define METATILE_VermilionGym_Beam_Node_TopLeft_Off              0x293
+#define METATILE_VermilionGym_Beam_Node_TopLeft_On               0x2A9
+#define METATILE_VermilionGym_Beam_Node_TopRight_Edge_HalfOn     0x2BE
+#define METATILE_VermilionGym_Beam_Node_TopRight_Edge_Off        0x295
+#define METATILE_VermilionGym_Beam_Node_TopRight_Edge_On         0x2AB
+#define METATILE_VermilionGym_Beam_Node_TopRight_HalfOn          0x2BF
+#define METATILE_VermilionGym_Beam_Node_TopRight_Off             0x296
+#define METATILE_VermilionGym_Beam_Node_TopRight_On              0x2AC
+#define METATILE_VermilionGym_Floor                              0x281
+#define METATILE_Viridian_2_Viridian                             0x299
+#define METATILE_route34_11_Saffron                              0x35C
+
 // Other
 #define METATILE_RSMossdeepGym_RedArrow_Down   0x205
 #define METATILE_RSMossdeepGym_RedArrow_Left   0x20C

@@ -10,11 +10,11 @@ SealedChamber_OuterRoom_OnResume:
 	end
 
 SealedChamber_OuterRoom_OnTransition:
-	setflag FLAG_LANDMARK_SEALED_CHAMBER
+	setflag FLAG_GARBAGEFLAG
 	end
 
 SealedChamber_OuterRoom_OnLoad:
-	call_if_unset FLAG_SYS_BRAILLE_DIG, SealedChamber_OuterRoom_EventScript_CloseInnerRoomEntrance
+	call_if_unset FLAG_GARBAGEFLAG, SealedChamber_OuterRoom_EventScript_CloseInnerRoomEntrance
 	end
 
 SealedChamber_OuterRoom_EventScript_CloseInnerRoomEntrance::
@@ -88,7 +88,7 @@ SealedChamber_OuterRoom_EventScript_BrailleComma::
 
 SealedChamber_OuterRoom_EventScript_InnerRoomEntranceWall::
 	lockall
-	goto_if_set FLAG_SYS_BRAILLE_DIG, SealedChamber_OuterRoom_EventScript_HoleInWall
+	goto_if_set FLAG_GARBAGEFLAG, SealedChamber_OuterRoom_EventScript_HoleInWall
 	braillemsgbox SealedChamber_OuterRoom_Braille_DigHere
 	releaseall
 	end

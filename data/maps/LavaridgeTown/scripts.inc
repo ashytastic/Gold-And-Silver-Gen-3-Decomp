@@ -4,13 +4,13 @@ LavaridgeTown_MapScripts::
 	.byte 0
 
 LavaridgeTown_OnTransition:
-	setflag FLAG_VISITED_LAVARIDGE_TOWN
+	setflag FLAG_GARBAGEFLAG
 	call_if_set FLAG_WHITEOUT_TO_LAVARIDGE, LavaridgeTown_EventScript_ClearLavaridgeWhiteOut
 	call_if_set FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY, LavaridgeTown_EventScript_ShowMtChimneyTrainers
 	call Common_EventScript_SetupRivalGfxId
 	call Common_EventScript_SetupRivalOnBikeGfxId
-	call_if_eq VAR_LAVARIDGE_TOWN_STATE, 1, LavaridgeTown_EventScript_CheckSetRivalPos
-	call_if_eq VAR_LAVARIDGE_TOWN_STATE, 1, LavaridgeTown_EventScript_HideMapNamePopup
+	call_if_eq VAR_GARBAGEVAR, 1, LavaridgeTown_EventScript_CheckSetRivalPos
+	call_if_eq VAR_GARBAGEVAR, 1, LavaridgeTown_EventScript_HideMapNamePopup
 	end
 
 LavaridgeTown_EventScript_ClearLavaridgeWhiteOut::
@@ -26,19 +26,19 @@ LavaridgeTown_EventScript_SetRivalPos::
 	setobjectxyperm LOCALID_LAVARIDGE_RIVAL, 11, 9
 	setobjectxyperm LOCALID_LAVARIDGE_RIVAL_ON_BIKE, 9, 8
 	setobjectmovementtype LOCALID_LAVARIDGE_RIVAL_ON_BIKE, MOVEMENT_TYPE_FACE_UP
-	clearflag FLAG_HIDE_LAVARIDGE_TOWN_RIVAL
+	clearflag FLAG_GARBAGEFLAG
 	return
 
 LavaridgeTown_EventScript_ShowMtChimneyTrainers::
-	clearflag FLAG_HIDE_MT_CHIMNEY_TRAINERS
+	clearflag FLAG_GARBAGEFLAG
 	return
 
 LavaridgeTown_EventScript_HideMapNamePopup::
-	setflag FLAG_HIDE_MAP_NAME_POPUP
+	setflag FLAG_GARBAGEFLAG
 	return
 
 LavaridgeTown_OnFrame:
-	map_script_2 VAR_LAVARIDGE_TOWN_STATE, 1, LavaridgeTown_EventScript_RivalGiveGoGoggles
+	map_script_2 VAR_GARBAGEVAR, 1, LavaridgeTown_EventScript_RivalGiveGoGoggles
 	.2byte 0
 
 LavaridgeTown_EventScript_RivalGiveGoGoggles::
@@ -81,8 +81,8 @@ LavaridgeTown_EventScript_RivalExit::
 	call_if_eq VAR_0x8008, 9, LavaridgeTown_EventScript_RivalExit1
 	call_if_ne VAR_0x8008, 9, LavaridgeTown_EventScript_RivalExit2
 	removeobject LOCALID_LAVARIDGE_RIVAL_ON_BIKE
-	setvar VAR_LAVARIDGE_TOWN_STATE, 2
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	setvar VAR_GARBAGEVAR, 2
+	clearflag FLAG_GARBAGEFLAG
 	savebgm MUS_DUMMY
 	fadedefaultbgm
 	releaseall

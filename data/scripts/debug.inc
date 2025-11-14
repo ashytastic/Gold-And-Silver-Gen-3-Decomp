@@ -9,66 +9,59 @@ Debug_ShowFieldMessageStringVar4::
 	goto Debug_MessageEnd
 
 Debug_CheatStart::
-	setflag FLAG_SYS_POKEMON_GET
-	setflag FLAG_RESCUED_BIRCH
-	setflag FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE
-	setflag FLAG_ADVENTURE_STARTED
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH
-	setflag FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG
-	setvar VAR_BIRCH_LAB_STATE, 2
-	setvar VAR_ROUTE101_STATE, 3
-	givemon SPECIES_BLAZIKEN, 50, ITEM_NONE
-	givemon SPECIES_SCEPTILE, 50, ITEM_NONE
-	givemon SPECIES_SWAMPERT, 50, ITEM_NONE
-	givemon SPECIES_JOLTEON, 50, ITEM_NONE
-	givemon SPECIES_UMBREON, 50, ITEM_NONE
-	givemon SPECIES_GLACEON, 50, ITEM_NONE
-	setflag FLAG_SYS_POKEDEX_GET
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	clearflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setvar FLAG_GARBAGEFLAG, 2
+	setvar FLAG_GARBAGEFLAG, 3
+	givemon SPECIES_TREECKO, 20, ITEM_NONE
+	givemon SPECIES_TORCHIC, 20, ITEM_NONE
+	givemon SPECIES_MUDKIP, 20, ITEM_NONE
+	setflag FLAG_GARBAGEFLAG
 	special SetUnlockedPokedexFlags
-	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
-	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 2
-	setflag FLAG_SYS_NATIONAL_DEX
+	setflag FLAG_GARBAGEFLAG
+	setvar FLAG_GARBAGEFLAG, 2
+	setflag FLAG_GARBAGEFLAG
 	special EnableNationalPokedex
-	setflag FLAG_RECEIVED_RUNNING_SHOES
-	setflag FLAG_SYS_B_DASH
-	setvar VAR_LITTLEROOT_TOWN_STATE, 4 @ 4: Received Running Shoes
-	setvar VAR_LITTLEROOT_INTRO_STATE, 7 @ 7: Told to go meet rival
-	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 2 @ 2: Met Rival's Mom (and is corresponding gender)
-	setvar VAR_LITTLEROOT_HOUSES_STATE_MAY, 2 @ 2: Met Rival's Mom (and is corresponding gender)
-	setvar VAR_LITTLEROOT_RIVAL_STATE, 4 @ 4: Received Pokedex
-	setflag FLAG_RECEIVED_BIKE
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setvar FLAG_GARBAGEFLAG, 4 @ 4: Received Running Shoes
+	setvar FLAG_GARBAGEFLAG, 7 @ 7: Told to go meet rival
+	setvar FLAG_GARBAGEFLAG, 2 @ 2: Met Rival's Mom (and is corresponding gender)
+	setvar FLAG_GARBAGEFLAG, 2 @ 2: Met Rival's Mom (and is corresponding gender)
+	setvar FLAG_GARBAGEFLAG, 4 @ 4: Received Pokedex
+	setflag FLAG_GARBAGEFLAG
 	additem ITEM_ACRO_BIKE
-	setvar VAR_BRINEY_HOUSE_STATE, 1
-	setvar VAR_ROUTE116_STATE, 2
-	setflag FLAG_HIDE_ROUTE_116_MR_BRINEY
-	setflag FLAG_BADGE01_GET
-	setflag FLAG_BADGE02_GET
-	setflag FLAG_BADGE03_GET
-	setflag FLAG_BADGE04_GET
-	setflag FLAG_BADGE05_GET
-	setflag FLAG_BADGE06_GET
-	setflag FLAG_BADGE07_GET
-	setflag FLAG_BADGE08_GET
-	setflag FLAG_VISITED_LITTLEROOT_TOWN
-	setflag FLAG_VISITED_OLDALE_TOWN
-	setflag FLAG_VISITED_DEWFORD_TOWN
-	setflag FLAG_VISITED_LAVARIDGE_TOWN
-	setflag FLAG_VISITED_FALLARBOR_TOWN
-	setflag FLAG_VISITED_VERDANTURF_TOWN
-	setflag FLAG_VISITED_PACIFIDLOG_TOWN
-	setflag FLAG_VISITED_PETALBURG_CITY
-	setflag FLAG_VISITED_SLATEPORT_CITY
-	setflag FLAG_VISITED_MAUVILLE_CITY
-	setflag FLAG_VISITED_RUSTBORO_CITY
-	setflag FLAG_VISITED_FORTREE_CITY
-	setflag FLAG_VISITED_LILYCOVE_CITY
-	setflag FLAG_VISITED_MOSSDEEP_CITY
-	setflag FLAG_VISITED_SOOTOPOLIS_CITY
-	setflag FLAG_VISITED_EVER_GRANDE_CITY
-	setflag FLAG_LANDMARK_POKEMON_LEAGUE
-	setflag FLAG_LANDMARK_BATTLE_FRONTIER
-	clearflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
-	clearflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
+	setvar FLAG_GARBAGEFLAG, 1
+	setvar FLAG_GARBAGEFLAG, 2
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_GARBAGEFLAG
 	release
 	end
 
@@ -100,10 +93,10 @@ Debug_BoxFilledMessage_Text:
 Debug_EventScript_CheckEVs::
 	lockall
 	getpartysize
-	goto_if_eq VAR_RESULT, 0, Debug_NoPokemon
+	goto_if_eq FLAG_GARBAGEFLAG, 0, Debug_NoPokemon
 	special ChoosePartyMon
 	waitstate
-	goto_if_ge VAR_0x8004, PARTY_SIZE, Debug_EventScript_CheckEVs_End
+	goto_if_ge FLAG_GARBAGEFLAG, PARTY_SIZE, Debug_EventScript_CheckEVs_End
 	callnative Script_GetChosenMonOffensiveEVs
 	msgbox Debug_EventScript_Text_OffensiveEVs, MSGBOX_DEFAULT
 	callnative Script_GetChosenMonDefensiveEVs
@@ -121,10 +114,10 @@ Debug_EventScript_Text_DefensiveEVs:
 Debug_EventScript_CheckIVs::
 	lockall
 	getpartysize
-	goto_if_eq VAR_RESULT, 0, Debug_NoPokemon
+	goto_if_eq FLAG_GARBAGEFLAG, 0, Debug_NoPokemon
 	special ChoosePartyMon
 	waitstate
-	goto_if_ge VAR_0x8004, PARTY_SIZE, Debug_EventScript_CheckIVs_End
+	goto_if_ge FLAG_GARBAGEFLAG, PARTY_SIZE, Debug_EventScript_CheckIVs_End
 	callnative Script_GetChosenMonOffensiveIVs
 	msgbox Debug_EventScript_Text_OffensiveIVs, MSGBOX_DEFAULT
 	callnative Script_GetChosenMonDefensiveIVs
@@ -212,12 +205,12 @@ Debug_ROMSize::
 Debug_HatchAnEgg::
 	lockall
 	getpartysize
-	goto_if_eq VAR_RESULT, 0, Debug_NoPokemon
+	goto_if_eq FLAG_GARBAGEFLAG, 0, Debug_NoPokemon
 	special ChoosePartyMon
 	waitstate
-	goto_if_ge VAR_0x8004, PARTY_SIZE, Debug_HatchAnEgg_End
-	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
-	goto_if_ne VAR_RESULT, SPECIES_EGG, DebugScript_HatchAnEgg_CantForceHatch
+	goto_if_ge FLAG_GARBAGEFLAG, PARTY_SIZE, Debug_HatchAnEgg_End
+	specialvar FLAG_GARBAGEFLAG, ScriptGetPartyMonSpecies
+	goto_if_ne FLAG_GARBAGEFLAG, SPECIES_EGG, DebugScript_HatchAnEgg_CantForceHatch
 	special EggHatch
 	waitstate
 Debug_HatchAnEgg_End::
@@ -317,12 +310,12 @@ DebugText_BerryWeedsDisabled:
 Debug_EventScript_InflictStatus1::
 	lockall
 	getpartysize
-	goto_if_eq VAR_RESULT, 0, Debug_NoPokemon
+	goto_if_eq FLAG_GARBAGEFLAG, 0, Debug_NoPokemon
 	dynmultipush Debug_EventScript_InflictStatus1_Text_Single, 0
 	dynmultipush Debug_EventScript_InflictStatus1_Text_PartyWide, 1
 	dynmultipush Debug_EventScript_InflictStatus1_Text_Close, 2
 	dynmultistack 0, 0, FALSE, 3 FALSE, 0, NULL
-	switch VAR_RESULT
+	switch FLAG_GARBAGEFLAG
 	case 0, Debug_EventScript_InflictStatus1_Single
 	case 1, Debug_EventScript_InflictStatus1_Party
 	case 2, Debug_EventScript_InflictStatus1_Close
@@ -333,9 +326,9 @@ Debug_EventScript_InflictStatus1_Close:
 Debug_EventScript_InflictStatus1_Single:
 	special ChoosePartyMon
 	waitstate
-	goto_if_ge VAR_0x8004, PARTY_SIZE, Debug_EventScript_InflictStatus1_Close
-	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
-	goto_if_eq VAR_RESULT, SPECIES_EGG, Debug_EventScript_InflictStatus1_Close
+	goto_if_ge FLAG_GARBAGEFLAG, PARTY_SIZE, Debug_EventScript_InflictStatus1_Close
+	specialvar FLAG_GARBAGEFLAG, ScriptGetPartyMonSpecies
+	goto_if_eq FLAG_GARBAGEFLAG, SPECIES_EGG, Debug_EventScript_InflictStatus1_Close
 	dynmultipush Debug_EventScript_InflictStatus1_Text_Poison, 0
 	dynmultipush Debug_EventScript_InflictStatus1_Text_Paralysis, 1
 	dynmultipush Debug_EventScript_InflictStatus1_Text_Sleep, 2
@@ -344,7 +337,7 @@ Debug_EventScript_InflictStatus1_Single:
 	dynmultipush Debug_EventScript_InflictStatus1_Text_Frostbite, 5
 	dynmultipush Debug_EventScript_InflictStatus1_Text_Close, 6
 	dynmultistack 0, 0, FALSE, 7, FALSE, 0, NULL
-	switch VAR_RESULT
+	switch FLAG_GARBAGEFLAG
 	case 0, Debug_EventScript_InflictStatus1_Single_Poison
 	case 1, Debug_EventScript_InflictStatus1_Single_Paralysis
 	case 2, Debug_EventScript_InflictStatus1_Single_Sleep
@@ -359,9 +352,9 @@ Debug_EventScript_InflictStatus1_Single:
 Debug_EventScript_SetHiddenNature::
 	special ChoosePartyMon
 	waitstate
-	goto_if_ge VAR_0x8004, PARTY_SIZE, Debug_EventScript_InflictStatus1_Close
-	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
-	goto_if_eq VAR_RESULT, SPECIES_EGG, Debug_EventScript_InflictStatus1_Close
+	goto_if_ge FLAG_GARBAGEFLAG, PARTY_SIZE, Debug_EventScript_InflictStatus1_Close
+	specialvar FLAG_GARBAGEFLAG, ScriptGetPartyMonSpecies
+	goto_if_eq FLAG_GARBAGEFLAG, SPECIES_EGG, Debug_EventScript_InflictStatus1_Close
 	dynmultipush Debug_EventScript_ChangeNature_Text_Hardy, 0
 	dynmultipush Debug_EventScript_ChangeNature_Text_Lonely, 1
 	dynmultipush Debug_EventScript_ChangeNature_Text_Brave, 2
@@ -388,39 +381,39 @@ Debug_EventScript_SetHiddenNature::
 	dynmultipush Debug_EventScript_ChangeNature_Text_Careful, 23
 	dynmultipush Debug_EventScript_ChangeNature_Text_Quirky, 24
 	dynmultistack 0, 0, TRUE, 7, FALSE, 0, NULL
-	switch VAR_RESULT
+	switch FLAG_GARBAGEFLAG
 	case MULTI_B_PRESSED, Debug_EventScript_InflictStatus1_Close
     special SetHiddenNature
 	releaseall
 	end
 
 Debug_EventScript_InflictStatus1_Single_Poison:
-	setstatus1 STATUS1_POISON, VAR_0x8004
+	setstatus1 STATUS1_POISON, FLAG_GARBAGEFLAG
 	releaseall
 	end
 
 Debug_EventScript_InflictStatus1_Single_Paralysis:
-	setstatus1 STATUS1_PARALYSIS, VAR_0x8004
+	setstatus1 STATUS1_PARALYSIS, FLAG_GARBAGEFLAG
 	releaseall
 	end
 
 Debug_EventScript_InflictStatus1_Single_Sleep:
-	setstatus1 STATUS1_SLEEP, VAR_0x8004
+	setstatus1 STATUS1_SLEEP, FLAG_GARBAGEFLAG
 	releaseall
 	end
 
 Debug_EventScript_InflictStatus1_Single_Burn:
-	setstatus1 STATUS1_BURN, VAR_0x8004
+	setstatus1 STATUS1_BURN, FLAG_GARBAGEFLAG
 	releaseall
 	end
 
 Debug_EventScript_InflictStatus1_Single_Freeze:
-	setstatus1 STATUS1_FREEZE, VAR_0x8004
+	setstatus1 STATUS1_FREEZE, FLAG_GARBAGEFLAG
 	releaseall
 	end
 
 Debug_EventScript_InflictStatus1_Single_Frostbite:
-	setstatus1 STATUS1_FROSTBITE, VAR_0x8004
+	setstatus1 STATUS1_FROSTBITE, FLAG_GARBAGEFLAG
 	releaseall
 	end
 
@@ -433,7 +426,7 @@ Debug_EventScript_InflictStatus1_Party:
 	dynmultipush Debug_EventScript_InflictStatus1_Text_Frostbite, 5
 	dynmultipush Debug_EventScript_InflictStatus1_Text_Close, 6
 	dynmultistack 0, 0, FALSE, 7, FALSE, 0, NULL
-	switch VAR_RESULT
+	switch FLAG_GARBAGEFLAG
 	case 0, Debug_EventScript_InflictStatus1_Party_Poison
 	case 1, Debug_EventScript_InflictStatus1_Party_Paralysis
 	case 2, Debug_EventScript_InflictStatus1_Party_Sleep
@@ -682,12 +675,12 @@ Debug_PrintFontTest::
 Debug_EventScript_FontTest::
 	lockall
 	goto Debug_PrintFontTest
-@	goto_if_eq VAR_RESULT, 0, Debug_NoPokemon
+@	goto_if_eq FLAG_GARBAGEFLAG, 0, Debug_NoPokemon
 @	dynmultipush Debug_EventScript_InflictStatus1_Text_Single, 0
 @	dynmultipush Debug_EventScript_InflictStatus1_Text_PartyWide, 1
 @	dynmultipush Debug_EventScript_InflictStatus1_Text_Close, 2
 @	dynmultistack 0, 0, FALSE, 3 FALSE, 0, NULL
-@	switch VAR_RESULT
+@	switch FLAG_GARBAGEFLAG
 @	case 0, Debug_EventScript_InflictStatus1_Single
 @	case 1, Debug_EventScript_InflictStatus1_Party
 @	case 2, Debug_EventScript_InflictStatus1_Close

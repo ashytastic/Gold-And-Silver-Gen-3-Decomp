@@ -7,7 +7,7 @@ NewMauville_Inside_MapScripts::
 NewMauville_Inside_OnResume:
 	call_if_eq VAR_TEMP_1, 1, NewMauville_Inside_EventScript_SetBarrierStateBlueButton
 	call_if_eq VAR_TEMP_2, 1, NewMauville_Inside_EventScript_SetBarrierStateGreenButton
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, NewMauville_Inside_EventScript_TryRemoveVoltorb
+	call_if_set FLAG_GARBAGEFLAG, NewMauville_Inside_EventScript_TryRemoveVoltorb
 	end
 
 NewMauville_Inside_EventScript_TryRemoveVoltorb::
@@ -25,15 +25,15 @@ NewMauville_Inside_OnTransition:
 	end
 
 NewMauville_Inside_EventScript_ShowVoltorb1::
-	clearflag FLAG_HIDE_NEW_MAUVILLE_VOLTORB_1
+	clearflag FLAG_GARBAGEFLAG
 	return
 
 NewMauville_Inside_EventScript_ShowVoltorb2::
-	clearflag FLAG_HIDE_NEW_MAUVILLE_VOLTORB_2
+	clearflag FLAG_GARBAGEFLAG
 	return
 
 NewMauville_Inside_EventScript_ShowVoltorb3::
-	clearflag FLAG_HIDE_NEW_MAUVILLE_VOLTORB_3
+	clearflag FLAG_GARBAGEFLAG
 	return
 
 NewMauville_Inside_OnLoad:
@@ -181,9 +181,9 @@ NewMauville_Inside_EventScript_Voltorb1::
 	playmoncry SPECIES_VOLTORB, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_GARBAGEFLAG
 	dowildbattle
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	clearflag FLAG_GARBAGEFLAG
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NewMauville_Inside_EventScript_DefeatedVoltorb1
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NewMauville_Inside_EventScript_DefeatedVoltorb1
@@ -205,9 +205,9 @@ NewMauville_Inside_EventScript_Voltorb2::
 	playmoncry SPECIES_VOLTORB, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_GARBAGEFLAG
 	dowildbattle
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	clearflag FLAG_GARBAGEFLAG
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NewMauville_Inside_EventScript_DefeatedVoltorb2
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NewMauville_Inside_EventScript_DefeatedVoltorb2
@@ -229,9 +229,9 @@ NewMauville_Inside_EventScript_Voltorb3::
 	playmoncry SPECIES_VOLTORB, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_GARBAGEFLAG
 	dowildbattle
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	clearflag FLAG_GARBAGEFLAG
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, NewMauville_Inside_EventScript_DefeatedVoltorb3
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NewMauville_Inside_EventScript_DefeatedVoltorb3

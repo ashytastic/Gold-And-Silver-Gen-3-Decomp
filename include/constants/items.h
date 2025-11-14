@@ -994,10 +994,24 @@
 
 #define ITEM_STRANGE_BALL 828
 
+//HnS johto key items
+
+#define ITEM_LOST_ITEM 829
+#define ITEM_MACHINE_PART 830
+#define ITEM_MYSTERY_EGG 831
+#define ITEM_PASS 832
+#define ITEM_RAINBOW_WING 833
+#define ITEM_RED_SCALE 834
+#define ITEM_SECRET_POTION 835
+#define ITEM_SILVER_WING 836
+#define ITEM_CLEAR_BELL 837
+#define ITEM_TIDAL_BELL 838
+#define ITEM_RADIO 839
+
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 829
+#define ITEMS_COUNT 840
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

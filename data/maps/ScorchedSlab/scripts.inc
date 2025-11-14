@@ -3,6 +3,6 @@ ScorchedSlab_MapScripts::
 	.byte 0
 
 ScorchedSlab_OnTransition:
-	setflag FLAG_LANDMARK_SCORCHED_SLAB
+	setflag FLAG_GARBAGEFLAG
 	end
 

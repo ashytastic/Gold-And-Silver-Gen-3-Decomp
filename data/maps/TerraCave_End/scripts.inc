@@ -4,7 +4,7 @@ TerraCave_End_MapScripts::
 	.byte 0
 
 TerraCave_End_OnResume:
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, TerraCave_End_EventScript_TryRemoveGroudon
+	call_if_set FLAG_GARBAGEFLAG, TerraCave_End_EventScript_TryRemoveGroudon
 	end
 
 TerraCave_End_EventScript_TryRemoveGroudon::
@@ -18,7 +18,7 @@ TerraCave_End_OnTransition:
 	end
 
 TerraCave_End_EventScript_ShowGroudon::
-	clearflag FLAG_HIDE_TERRA_CAVE_GROUDON
+	clearflag FLAG_GARBAGEFLAG
 	setvar VAR_TEMP_1, 1
 	return
 
@@ -34,10 +34,10 @@ TerraCave_End_EventScript_Groudon::
 	waitmoncry
 	setvar VAR_LAST_TALKED, LOCALID_TERRA_CAVE_GROUDON
 	setwildbattle SPECIES_GROUDON, 70
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_GARBAGEFLAG
 	special BattleSetup_StartLegendaryBattle
 	waitstate
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	clearflag FLAG_GARBAGEFLAG
 	setvar VAR_TEMP_1, 0
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, TerraCave_End_EventScript_DefeatedGroudon

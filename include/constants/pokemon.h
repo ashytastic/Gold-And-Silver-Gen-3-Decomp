@@ -175,6 +175,9 @@
 #define MON_FEMALE     0xFE
 #define MON_GENDERLESS 0xFF
 
+#define MON_UNSATISFACTORY 1
+#define MON_SATISFACTORY 2
+
 // Constants for AdjustFriendship
 #define FRIENDSHIP_EVENT_GROW_LEVEL       0
 #define FRIENDSHIP_EVENT_VITAMIN          1 // unused, handled by PokemonUseItemEffects
@@ -185,6 +188,8 @@
 #define FRIENDSHIP_EVENT_FAINT_SMALL      6
 #define FRIENDSHIP_EVENT_FAINT_FIELD_PSN  7
 #define FRIENDSHIP_EVENT_FAINT_LARGE      8 // If opponent was >= 30 levels higher. See AdjustFriendshipOnBattleFaint
+#define FRIENDSHIP_EVENT_HAIRCUT1         9
+#define FRIENDSHIP_EVENT_HAIRCUT2         10
 
 // Constants for GetLeadMonFriendshipScore
 #define FRIENDSHIP_NONE        0

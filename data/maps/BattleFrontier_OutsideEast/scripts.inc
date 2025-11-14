@@ -4,7 +4,7 @@ BattleFrontier_OutsideEast_MapScripts::
 	.byte 0
 
 BattleFrontier_OutsideEast_OnResume:
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, BattleFrontier_OutsideEast_EventScript_TryRemoveSudowoodo
+	call_if_set FLAG_GARBAGEFLAG, BattleFrontier_OutsideEast_EventScript_TryRemoveSudowoodo
 	end
 
 BattleFrontier_OutsideEast_EventScript_TryRemoveSudowoodo::
@@ -128,9 +128,9 @@ BattleFrontier_OutsideEast_EventScript_WaterSudowoodo::
 	waitmoncry
 	setvar VAR_LAST_TALKED, LOCALID_FRONTIER_SUDOWOODO
 	setwildbattle SPECIES_SUDOWOODO, 40
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_GARBAGEFLAG
 	dowildbattle
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	clearflag FLAG_GARBAGEFLAG
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, BattleFrontier_OutsideEast_EventScript_DefeatedSudowoodo
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, BattleFrontier_OutsideEast_EventScript_DefeatedSudowoodo

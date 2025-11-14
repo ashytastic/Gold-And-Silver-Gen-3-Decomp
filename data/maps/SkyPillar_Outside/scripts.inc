@@ -5,16 +5,16 @@ SkyPillar_Outside_MapScripts::
 	.byte 0
 
 SkyPillar_Outside_OnTransition:
-	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 3, SkyPillar_Outside_EventScript_HideMapNamePopup
-	call_if_ge VAR_SOOTOPOLIS_CITY_STATE, 4, SkyPillar_Outside_EventScript_CheckSetAbnormalWeather
+	call_if_eq VAR_GARBAGEVAR, 3, SkyPillar_Outside_EventScript_HideMapNamePopup
+	call_if_ge VAR_GARBAGEVAR, 4, SkyPillar_Outside_EventScript_CheckSetAbnormalWeather
 	end
 
 SkyPillar_Outside_EventScript_HideMapNamePopup::
-	setflag FLAG_HIDE_MAP_NAME_POPUP
+	setflag FLAG_GARBAGEFLAG
 	return
 
 SkyPillar_Outside_EventScript_CheckSetAbnormalWeather::
-	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+	call_if_set FLAG_GARBAGEFLAG, Common_EventScript_SetAbnormalWeather
 	return
 
 SkyPillar_Outside_OnLoad:
@@ -27,7 +27,7 @@ SkyPillar_Outside_EventScript_OpenDoor::
 	return
 
 SkyPillar_Outside_OnFrame:
-	map_script_2 VAR_SOOTOPOLIS_CITY_STATE, 3, SkyPillar_Outside_EventScript_WallaceScene
+	map_script_2 VAR_GARBAGEVAR, 3, SkyPillar_Outside_EventScript_WallaceScene
 	.2byte 0
 
 SkyPillar_Outside_EventScript_WallaceScene::
@@ -69,7 +69,7 @@ SkyPillar_Outside_EventScript_WallaceScene::
 	delay 30
 	msgbox SkyPillar_Outside_Text_SituationGettingWorse, MSGBOX_DEFAULT
 	closemessage
-	setflag FLAG_SYS_WEATHER_CTRL
+	setflag FLAG_GARBAGEFLAG
 	setweather WEATHER_ABNORMAL
 	doweather
 	special WaitWeather
@@ -79,10 +79,10 @@ SkyPillar_Outside_EventScript_WallaceScene::
 	closemessage
 	playse SE_EXIT
 	fadescreenswapbuffers FADE_TO_BLACK
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
-	setvar VAR_SOOTOPOLIS_CITY_STATE, 4
+	clearflag FLAG_GARBAGEFLAG
+	setvar VAR_GARBAGEVAR, 4
 	removeobject LOCALID_SKY_PILLAR_WALLACE
-	clearflag FLAG_HIDE_SOOTOPOLIS_CITY_WALLACE
+	clearflag FLAG_GARBAGEFLAG
 	fadescreenswapbuffers FADE_FROM_BLACK
 	releaseall
 	end

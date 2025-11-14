@@ -4,7 +4,7 @@ Underwater_MarineCave_MapScripts::
 	.byte 0
 
 Underwater_MarineCave_OnTransition:
-	setflag FLAG_ARRIVED_AT_MARINE_CAVE_EMERGE_SPOT
+	setflag FLAG_GARBAGEFLAG
 	end
 
 Underwater_MarineCave_OnResume:

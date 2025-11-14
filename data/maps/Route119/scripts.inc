@@ -4,7 +4,7 @@ Route119_MapScripts::
 	.byte 0
 
 Route119_OnResume:
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, Route119_EventScript_TryRemoveKecleon
+	call_if_set FLAG_GARBAGEFLAG, Route119_EventScript_TryRemoveKecleon
 	end
 
 Route119_EventScript_TryRemoveKecleon::
@@ -21,8 +21,8 @@ Route119_OnTransition:
 	end
 
 Route119_EventScript_MoveInstituteWorkersDownstairs::
-	setflag FLAG_HIDE_WEATHER_INSTITUTE_2F_WORKERS
-	clearflag FLAG_HIDE_WEATHER_INSTITUTE_1F_WORKERS
+	setflag FLAG_GARBAGEFLAG
+	clearflag FLAG_GARBAGEFLAG
 	setvar VAR_WEATHER_INSTITUTE_STATE, 2
 	return
 
@@ -142,7 +142,7 @@ Route119_EventScript_RivalExitScottArrive::
 	call_if_eq VAR_TEMP_1, 1, Route119_EventScript_RivalExit1
 	call_if_eq VAR_TEMP_1, 2, Route119_EventScript_RivalExit2
 	removeobject LOCALID_ROUTE119_RIVAL_ON_BIKE
-	setvar VAR_ROUTE119_STATE, 1
+	setvar VAR_GARBAGEVAR, 1
 	savebgm MUS_DUMMY
 	fadedefaultbgm
 	delay 60
@@ -348,7 +348,7 @@ Route119_EventScript_Kent::
 	end
 
 Route119_EventScript_Jackson::
-	trainerbattle_single TRAINER_JACKSON_1, Route119_Text_JacksonIntro, Route119_Text_JacksonDefeat, Route119_EventScript_RegisterJackson
+	trainerbattle_single TRAINER_NONE, Route119_Text_JacksonIntro, Route119_Text_JacksonDefeat, Route119_EventScript_RegisterJackson
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route119_EventScript_RematchJackson
 	msgbox Route119_Text_JacksonPostBattle, MSGBOX_DEFAULT
@@ -359,17 +359,16 @@ Route119_EventScript_RegisterJackson::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route119_Text_JacksonRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_JACKSON_1
 	release
 	end
 
 Route119_EventScript_RematchJackson::
-	trainerbattle_rematch TRAINER_JACKSON_1, Route119_Text_JacksonRematchIntro, Route119_Text_JacksonRematchDefeat
+	trainerbattle_rematch TRAINER_NONE, Route119_Text_JacksonRematchIntro, Route119_Text_JacksonRematchDefeat
 	msgbox Route119_Text_JacksonPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_Catherine::
-	trainerbattle_single TRAINER_CATHERINE_1, Route119_Text_CatherineIntro, Route119_Text_CatherineDefeat, Route119_EventScript_RegisterCatherine
+	trainerbattle_single TRAINER_NONE, Route119_Text_CatherineIntro, Route119_Text_CatherineDefeat, Route119_EventScript_RegisterCatherine
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route119_EventScript_RematchCatherine
 	msgbox Route119_Text_CatherinePostBattle, MSGBOX_DEFAULT
@@ -380,12 +379,11 @@ Route119_EventScript_RegisterCatherine::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route119_Text_CatherineRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_CATHERINE_1
 	release
 	end
 
 Route119_EventScript_RematchCatherine::
-	trainerbattle_rematch TRAINER_CATHERINE_1, Route119_Text_CatherineRematchIntro, Route119_Text_CatherineRematchDefeat
+	trainerbattle_rematch TRAINER_NONE, Route119_Text_CatherineRematchIntro, Route119_Text_CatherineRematchDefeat
 	msgbox Route119_Text_CatherinePostRematch, MSGBOX_AUTOCLOSE
 	end
 
@@ -410,22 +408,22 @@ Route119_EventScript_Takashi::
 	end
 
 Route119_EventScript_Hideo::
-	trainerbattle_single TRAINER_HIDEO, Route119_Text_HideoIntro, Route119_Text_HideoDefeat
+	trainerbattle_single TRAINER_NONE, Route119_Text_HideoIntro, Route119_Text_HideoDefeat
 	msgbox Route119_Text_HideoPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_Chris::
-	trainerbattle_single TRAINER_CHRIS, Route119_Text_ChrisIntro, Route119_Text_ChrisDefeat
+	trainerbattle_single TRAINER_NONE, Route119_Text_ChrisIntro, Route119_Text_ChrisDefeat
 	msgbox Route119_Text_ChrisPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_Fabian::
-	trainerbattle_single TRAINER_FABIAN, Route119_Text_FabianIntro, Route119_Text_FabianDefeat
+	trainerbattle_single TRAINER_NONE, Route119_Text_FabianIntro, Route119_Text_FabianDefeat
 	msgbox Route119_Text_FabianPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_Dayton::
-	trainerbattle_single TRAINER_DAYTON, Route119_Text_DaytonIntro, Route119_Text_DaytonDefeat
+	trainerbattle_single TRAINER_NONE, Route119_Text_DaytonIntro, Route119_Text_DaytonDefeat
 	msgbox Route119_Text_DaytonPostBattle, MSGBOX_AUTOCLOSE
 	end
 

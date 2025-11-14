@@ -7,12 +7,12 @@ EverGrandeCity_SidneysRoom_MapScripts::
 
 EverGrandeCity_SidneysRoom_OnTransition:
 	setflag FLAG_MET_SCOTT_IN_EVERGRANDE
-	setflag FLAG_HIDE_EVER_GRANDE_POKEMON_CENTER_1F_SCOTT
+	setflag FLAG_GARBAGEFLAG
 	end
 
 EverGrandeCity_SidneysRoom_OnLoad:
-	call_if_set FLAG_DEFEATED_ELITE_4_SIDNEY, EverGrandeCity_SidneysRoom_EventScript_ResetAdvanceToNextRoom
-	call_if_eq VAR_ELITE_4_STATE, 1, EverGrandeCity_SidneysRoom_EventScript_CloseDoor
+	call_if_set FLAG_GARBAGEFLAG, EverGrandeCity_SidneysRoom_EventScript_ResetAdvanceToNextRoom
+	call_if_eq VAR_GARBAGEVAR, 1, EverGrandeCity_SidneysRoom_EventScript_CloseDoor
 	end
 
 EverGrandeCity_SidneysRoom_EventScript_ResetAdvanceToNextRoom::
@@ -32,20 +32,20 @@ EverGrandeCity_SidneysRoom_EventScript_PlayerTurnNorth::
 	end
 
 EverGrandeCity_SidneysRoom_OnFrame:
-	map_script_2 VAR_ELITE_4_STATE, 0, EverGrandeCity_SidneysRoom_EventScript_WalkInCloseDoor
+	map_script_2 VAR_GARBAGEVAR, 0, EverGrandeCity_SidneysRoom_EventScript_WalkInCloseDoor
 	.2byte 0
 
 EverGrandeCity_SidneysRoom_EventScript_WalkInCloseDoor::
 	lockall
 	call PokemonLeague_EliteFour_EventScript_WalkInCloseDoor
-	setvar VAR_ELITE_4_STATE, 1
+	setvar VAR_GARBAGEVAR, 1
 	releaseall
 	end
 
 EverGrandeCity_SidneysRoom_EventScript_Sidney::
 	lock
 	faceplayer
-	goto_if_set FLAG_DEFEATED_ELITE_4_SIDNEY, EverGrandeCity_SidneysRoom_EventScript_PostBattleSpeech
+	goto_if_set FLAG_GARBAGEFLAG, EverGrandeCity_SidneysRoom_EventScript_PostBattleSpeech
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_SidneysRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_SIDNEY, EverGrandeCity_SidneysRoom_Text_Defeat
@@ -58,7 +58,7 @@ EverGrandeCity_SidneysRoom_EventScript_PostBattleSpeech::
 	end
 
 EverGrandeCity_SidneysRoom_EventScript_Defeated::
-	setflag FLAG_DEFEATED_ELITE_4_SIDNEY
+	setflag FLAG_GARBAGEFLAG
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
 	msgbox EverGrandeCity_SidneysRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
 	release
@@ -66,14 +66,13 @@ EverGrandeCity_SidneysRoom_EventScript_Defeated::
 
 EverGrandeCity_SidneysRoom_Text_IntroSpeech:
 	.string "Welcome, challenger!\n"
-	.string "I'm Will of the Elite Four.\p"
-	.string "I train in Psychic-type Pokémon.\p"
-	.string "We Psychics have mastered the art\n"
-	.string "of training our Pokémon to the\l"
-	.string "furthest, pushing our Pokémon to\l"
-	.string "their greatest potential.\p"
-	.string "Are you ready?\n"
-	.string "Here we go!$"
+	.string "I'm SIDNEY of the ELITE FOUR.\p"
+	.string "I like that look you're giving me.\n"
+	.string "I guess you'll give me a good match.\l"
+	.string "That's good! Looking real good!\p"
+	.string "All right! You and me, let's enjoy\n"
+	.string "a battle that can only be staged\l"
+	.string "here in the POKéMON LEAGUE!$"
 
 EverGrandeCity_SidneysRoom_Text_Defeat:
 	.string "Well, how do you like that? I lost!\n"
@@ -85,3 +84,4 @@ EverGrandeCity_SidneysRoom_Text_PostBattleSpeech:
 	.string "You've got what it takes to go far.\n"
 	.string "Now, go on to the next room and enjoy\l"
 	.string "your next battle!$"
+

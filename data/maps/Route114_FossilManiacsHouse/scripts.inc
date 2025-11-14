@@ -3,7 +3,7 @@ Route114_FossilManiacsHouse_MapScripts::
 	.byte 0
 
 Route114_FossilManiacsHouse_OnTransition:
-	setflag FLAG_LANDMARK_FOSSIL_MANIACS_HOUSE
+	setflag FLAG_GARBAGEFLAG
 	end
 
 Route114_FossilManiacsHouse_EventScript_FossilManiacsBrother::

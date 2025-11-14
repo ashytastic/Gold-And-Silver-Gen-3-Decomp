@@ -385,6 +385,10 @@ const u8 gBattleBackgroundNames[][30] =
     [MAP_BATTLE_SCENE_GROUDON]  = _("GROUDON                 "),
     [MAP_BATTLE_SCENE_KYOGRE]   = _("KYOGRE                  "),
     [MAP_BATTLE_SCENE_RAYQUAZA] = _("RAYQUAZA                "),
+    [MAP_BATTLE_SCENE_WILL]   = _("WILL                  "),
+    [MAP_BATTLE_SCENE_KOGA]   = _("KOGA                  "),
+    [MAP_BATTLE_SCENE_BRUNO]   = _("BRUNO                  "),
+    [MAP_BATTLE_SCENE_KAREN]    = _("KAREN                   "),
 };
 
 const u8 gBattleBackgroundTerrainNames[][26] =
@@ -1000,6 +1004,26 @@ static void LoadBattleBg(u8 battleBgType, enum BattleEnvironments battleEnvironm
         DecompressDataWithHeaderVram(gBattleEnvironmentTilemap_Rayquaza, (void*)(BG_SCREEN_ADDR(26)));
         LoadPalette(gBattleEnvironmentPalette_Rayquaza, 0x20, 0x60);
         break;
+    case MAP_BATTLE_SCENE_WILL:
+        DecompressDataWithHeaderVram(gBattleEnvironmentTiles_Stadium, (void*)(BG_CHAR_ADDR(2)));
+        DecompressDataWithHeaderVram(gBattleEnvironmentTilemap_Stadium, (void*)(BG_SCREEN_ADDR(26)));
+        LoadPalette(gBattleEnvironmentPalette_StadiumWill, 0x20, 0x60);
+        break;
+    case MAP_BATTLE_SCENE_KOGA:
+            DecompressDataWithHeaderVram(gBattleEnvironmentTiles_Stadium, (void*)(BG_CHAR_ADDR(2)));
+            DecompressDataWithHeaderVram(gBattleEnvironmentTilemap_Stadium, (void*)(BG_SCREEN_ADDR(26)));
+            LoadPalette(gBattleEnvironmentPalette_StadiumKoga, 0x20, 0x60);
+            break;
+    case MAP_BATTLE_SCENE_BRUNO:
+            DecompressDataWithHeaderVram(gBattleEnvironmentTiles_Stadium, (void*)(BG_CHAR_ADDR(2)));
+            DecompressDataWithHeaderVram(gBattleEnvironmentTilemap_Stadium, (void*)(BG_SCREEN_ADDR(26)));
+            LoadPalette(gBattleEnvironmentPalette_StadiumBruno, 0x20, 0x60);
+            break;
+    case MAP_BATTLE_SCENE_KAREN:
+            DecompressDataWithHeaderVram(gBattleEnvironmentTiles_Stadium, (void*)(BG_CHAR_ADDR(2)));
+            DecompressDataWithHeaderVram(gBattleEnvironmentTilemap_Stadium, (void*)(BG_SCREEN_ADDR(26)));
+            LoadPalette(gBattleEnvironmentPalette_StadiumKaren, 0x20, 0x60);
+            break;
     }
 }
 

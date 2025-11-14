@@ -348,6 +348,7 @@ static void (*const sMovementTypeCallbacks[])(struct Sprite *) =
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT] = MovementType_WalkSlowlyInPlace,
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT] = MovementType_WalkSlowlyInPlace,
     [MOVEMENT_TYPE_FOLLOW_PLAYER] = MovementType_FollowPlayer,
+    [MOVEMENT_TYPE_TOWER_BEAM] = MovementType_TowerBeam,
 };
 
 static const bool8 sMovementTypeHasRange[NUM_MOVEMENT_TYPES] = {
@@ -11564,6 +11565,64 @@ bool8 MovementAction_SurfStillRight_Step1(struct ObjectEvent *objectEvent, struc
     {
         sprite->sActionFuncId = 2;
         return TRUE;
+    }
+    return FALSE;
+}
+
+//HnS tower beam movement 
+#define TOWER_BEAM_ANIM_COUNT 4
+
+movement_type_def(MovementType_TowerBeam, gMovementTypeFuncs_TowerBeam)
+
+static const u8 sTowerBeamAnimActions[TOWER_BEAM_ANIM_COUNT] = {
+    MOVEMENT_ACTION_WALK_IN_PLACE_FAST_LEFT,
+    MOVEMENT_ACTION_WALK_IN_PLACE_FAST_LEFT,
+    MOVEMENT_ACTION_WALK_IN_PLACE_FAST_RIGHT,
+    MOVEMENT_ACTION_WALK_IN_PLACE_FAST_DOWN,
+};
+bool8 MovementType_TowerBeam_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ClearObjectEventMovement(objectEvent, sprite);
+    ObjectEventSetSingleMovement(objectEvent, sprite, MOVEMENT_ACTION_WALK_IN_PLACE_FAST_LEFT);
+    sprite->sTypeFuncId = 1;
+    return TRUE;
+}
+
+bool8 MovementType_TowerBeam_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (ObjectEventExecSingleMovementAction(objectEvent, sprite))
+    {
+        ObjectEventSetSingleMovement(objectEvent, sprite, MOVEMENT_ACTION_WALK_IN_PLACE_NORMAL_LEFT);
+        sprite->sTypeFuncId = 2;
+    }
+    return FALSE;
+}
+
+bool8 MovementType_TowerBeam_Step2(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (ObjectEventExecSingleMovementAction(objectEvent, sprite))
+    {
+        ObjectEventSetSingleMovement(objectEvent, sprite, MOVEMENT_ACTION_WALK_IN_PLACE_NORMAL_RIGHT);
+        sprite->sTypeFuncId = 3;
+    }
+    return FALSE;
+}
+
+bool8 MovementType_TowerBeam_Step3(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (ObjectEventExecSingleMovementAction(objectEvent, sprite))
+    {
+        ObjectEventSetSingleMovement(objectEvent, sprite, MOVEMENT_ACTION_WALK_IN_PLACE_NORMAL_DOWN);
+        sprite->sTypeFuncId = 4;
+    }
+    return FALSE;
+}
+
+bool8 MovementType_TowerBeam_Step4(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (ObjectEventExecSingleMovementAction(objectEvent, sprite))
+    {
+        sprite->sTypeFuncId = 0; // Loop back to beginning
     }
     return FALSE;
 }

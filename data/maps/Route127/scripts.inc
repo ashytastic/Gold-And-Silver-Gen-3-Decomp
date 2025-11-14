@@ -5,7 +5,7 @@ Route127_MapScripts::
 	.byte 0
 
 Route127_OnTransition:
-	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+	call_if_set FLAG_GARBAGEFLAG, Common_EventScript_SetAbnormalWeather
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_127_NORTH, AbnormalWeather_StartKyogreWeather
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_127_SOUTH, AbnormalWeather_StartKyogreWeather
@@ -21,12 +21,12 @@ Route127_OnFrame:
 	.2byte 0
 
 Route127_EventScript_Camden::
-	trainerbattle_single TRAINER_CAMDEN, Route127_Text_CamdenIntro, Route127_Text_CamdenDefeat
+	trainerbattle_single TRAINER_NONE, Route127_Text_CamdenIntro, Route127_Text_CamdenDefeat
 	msgbox Route127_Text_CamdenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route127_EventScript_Donny::
-	trainerbattle_single TRAINER_DONNY, Route127_Text_DonnyIntro, Route127_Text_DonnyDefeat
+	trainerbattle_single TRAINER_NONE, Route127_Text_DonnyIntro, Route127_Text_DonnyDefeat
 	msgbox Route127_Text_DonnyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -46,12 +46,12 @@ Route127_EventScript_Roger::
 	end
 
 Route127_EventScript_Aidan::
-	trainerbattle_single TRAINER_AIDAN, Route127_Text_AidanIntro, Route127_Text_AidanDefeat
+	trainerbattle_single TRAINER_NONE, Route127_Text_AidanIntro, Route127_Text_AidanDefeat
 	msgbox Route127_Text_AidanPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route127_EventScript_Athena::
-	trainerbattle_single TRAINER_ATHENA, Route127_Text_AthenaIntro, Route127_Text_AthenaDefeat
+	trainerbattle_single TRAINER_NONE, Route127_Text_AthenaIntro, Route127_Text_AthenaDefeat
 	msgbox Route127_Text_AthenaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -67,7 +67,6 @@ Route127_EventScript_RegisterKoji::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route127_Text_KojiRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_KOJI_1
 	release
 	end
 

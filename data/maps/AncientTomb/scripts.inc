@@ -5,7 +5,7 @@ AncientTomb_MapScripts::
 	.byte 0
 
 AncientTomb_OnResume:
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, AncientTomb_EventScript_TryRemoveRegisteel
+	call_if_set FLAG_GARBAGEFLAG, AncientTomb_EventScript_TryRemoveRegisteel
 	end
 
 AncientTomb_EventScript_TryRemoveRegisteel::
@@ -15,7 +15,7 @@ AncientTomb_EventScript_TryRemoveRegisteel::
 	return
 
 AncientTomb_OnTransition:
-	setflag FLAG_LANDMARK_ANCIENT_TOMB
+	setflag FLAG_GARBAGEFLAG
 	call_if_unset FLAG_DEFEATED_REGISTEEL, AncientTomb_EventScript_ShowRegisteel
 	end
 
@@ -24,7 +24,7 @@ AncientTomb_EventScript_ShowRegisteel::
 	return
 
 AncientTomb_OnLoad:
-	call_if_unset FLAG_SYS_REGISTEEL_PUZZLE_COMPLETED, AncientTomb_EventScript_HideRegiEntrance
+	call_if_unset FLAG_GARBAGEFLAG, AncientTomb_EventScript_HideRegiEntrance
 	end
 
 AncientTomb_EventScript_HideRegiEntrance::
@@ -38,7 +38,7 @@ AncientTomb_EventScript_HideRegiEntrance::
 
 AncientTomb_EventScript_CaveEntranceMiddle::
 	lockall
-	goto_if_set FLAG_SYS_REGISTEEL_PUZZLE_COMPLETED, AncientTomb_EventScript_BigHoleInWall
+	goto_if_set FLAG_GARBAGEFLAG, AncientTomb_EventScript_BigHoleInWall
 	braillemsgbox AncientTomb_Braille_ShineInTheMiddle
 	releaseall
 	end
@@ -62,10 +62,10 @@ AncientTomb_EventScript_Registeel::
 	delay 40
 	waitmoncry
 	setwildbattle SPECIES_REGISTEEL, 40
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_GARBAGEFLAG
 	special StartRegiBattle
 	waitstate
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	clearflag FLAG_GARBAGEFLAG
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, AncientTomb_EventScript_DefeatedRegisteel
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, AncientTomb_EventScript_RanFromRegisteel

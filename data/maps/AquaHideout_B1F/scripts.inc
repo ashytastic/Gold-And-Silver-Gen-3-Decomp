@@ -4,7 +4,7 @@ AquaHideout_B1F_MapScripts::
 	.byte 0
 
 AquaHideout_B1F_OnResume:
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, AquaHideout_B1F_EventScript_TryRemoveElectrode
+	call_if_set FLAG_GARBAGEFLAG, AquaHideout_B1F_EventScript_TryRemoveElectrode
 	end
 
 AquaHideout_B1F_EventScript_TryRemoveElectrode::
@@ -19,11 +19,11 @@ AquaHideout_B1F_OnTransition:
 	end
 
 AquaHideout_B1F_EventScript_ShowElectrode1::
-	clearflag FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_1
+	clearflag FLAG_GARBAGEFLAG
 	return
 
 AquaHideout_B1F_EventScript_ShowElectrode2::
-	clearflag FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_2
+	clearflag FLAG_GARBAGEFLAG
 	return
 
 AquaHideout_B1F_EventScript_Electrode1::
@@ -34,9 +34,9 @@ AquaHideout_B1F_EventScript_Electrode1::
 	playmoncry SPECIES_ELECTRODE, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_GARBAGEFLAG
 	dowildbattle
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	clearflag FLAG_GARBAGEFLAG
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, AquaHideout_B1F_EventScript_DefeatedElectrode1
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, AquaHideout_B1F_EventScript_DefeatedElectrode1
@@ -58,9 +58,9 @@ AquaHideout_B1F_EventScript_Electrode2::
 	playmoncry SPECIES_ELECTRODE, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_GARBAGEFLAG
 	dowildbattle
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	clearflag FLAG_GARBAGEFLAG
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, AquaHideout_B1F_EventScript_DefeatedElectrode2
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, AquaHideout_B1F_EventScript_DefeatedElectrode2
@@ -75,7 +75,7 @@ AquaHideout_B1F_EventScript_DefeatedElectrode2::
 	end
 
 AquaHideout_B1F_EventScript_Grunt2::
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_2, AquaHideout_B1F_Text_Grunt2Intro, AquaHideout_B1F_Text_Grunt2Defeat, AquaHideout_B1F_EventScript_Grunt2Defeated
+	trainerbattle_single TRAINER_NONE, AquaHideout_B1F_Text_Grunt2Intro, AquaHideout_B1F_Text_Grunt2Defeat, AquaHideout_B1F_EventScript_Grunt2Defeated
 	msgbox AquaHideout_B1F_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -87,7 +87,7 @@ AquaHideout_B1F_EventScript_Grunt2Defeated::
 	end
 
 AquaHideout_B1F_EventScript_Grunt3::
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_3, AquaHideout_B1F_Text_Grunt3Intro, AquaHideout_B1F_Text_Grunt3Defeat, AquaHideout_B1F_EventScript_Grunt3Defeated
+	trainerbattle_single TRAINER_NONE, AquaHideout_B1F_Text_Grunt3Intro, AquaHideout_B1F_Text_Grunt3Defeat, AquaHideout_B1F_EventScript_Grunt3Defeated
 	msgbox AquaHideout_B1F_Text_Grunt3PostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -97,12 +97,12 @@ AquaHideout_B1F_EventScript_Grunt3Defeated::
 	end
 
 AquaHideout_B1F_EventScript_Grunt5::
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_5, AquaHideout_B1F_Text_Grunt5Intro, AquaHideout_B1F_Text_Grunt5Defeat
+	trainerbattle_single TRAINER_NONE, AquaHideout_B1F_Text_Grunt5Intro, AquaHideout_B1F_Text_Grunt5Defeat
 	msgbox AquaHideout_B1F_Text_Grunt5PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 AquaHideout_B1F_EventScript_Grunt7::
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_7, AquaHideout_B1F_Text_Grunt7Intro, AquaHideout_B1F_Text_Grunt7Defeat
+	trainerbattle_single TRAINER_NONE, AquaHideout_B1F_Text_Grunt7Intro, AquaHideout_B1F_Text_Grunt7Defeat
 	msgbox AquaHideout_B1F_Text_Grunt7PostBattle, MSGBOX_AUTOCLOSE
 	end
 

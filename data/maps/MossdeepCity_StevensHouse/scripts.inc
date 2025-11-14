@@ -5,7 +5,7 @@ MossdeepCity_StevensHouse_MapScripts::
 	.byte 0
 
 MossdeepCity_StevensHouse_OnLoad:
-	call_if_unset FLAG_SYS_GAME_CLEAR, MossdeepCity_StevensHouse_EventScript_HideStevensNote
+	call_if_unset FLAG_GARBAGEFLAG, MossdeepCity_StevensHouse_EventScript_HideStevensNote
 	end
 
 MossdeepCity_StevensHouse_EventScript_HideStevensNote::
@@ -45,8 +45,8 @@ MossdeepCity_StevensHouse_EventScript_StevenGivesDive::
 	delay 20
 	applymovement LOCALID_STEVENS_HOUSE_STEVEN, MossdeepCity_StevensHouse_Movement_StevenReturn
 	waitmovement 0
-	setflag FLAG_HIDE_MOSSDEEP_CITY_SCOTT
-	setflag FLAG_HIDE_SEAFLOOR_CAVERN_ENTRANCE_AQUA_GRUNT
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
 	setvar VAR_STEVENS_HOUSE_STATE, 2
 	releaseall
 	end
@@ -122,7 +122,7 @@ MossdeepCity_StevensHouse_EventScript_ReceivedBeldumFanfare::
 	return
 
 MossdeepCity_StevensHouse_EventScript_ReceivedBeldum::
-	setflag FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_BELDUM_POKEBALL
+	setflag FLAG_GARBAGEFLAG
 	setflag FLAG_RECEIVED_BELDUM
 	releaseall
 	end

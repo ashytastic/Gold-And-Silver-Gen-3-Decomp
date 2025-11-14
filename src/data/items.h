@@ -143,6 +143,65 @@ static const u8 sGenericMulchDesc[]   = _("A fertilizer that\n"
                                           "is unsuitable for\n"
                                           "local soil.");
 
+//HnS JOHTO ITEMS START
+
+static const u8 sClearBellDesc[] = _(
+    "Old fashioned bell\n"
+    "that makes a\n"
+    "gentle ringing.");
+
+static const u8 sLostItemDesc[] = _(
+    "The POKéDOLL lost\n"
+    "by the copycat.");
+
+static const u8 sMachinePartDesc[] = _(
+    "Important machine\n"
+    "part stolen from\n"
+    "the POWER PLANT.");
+
+static const u8 sMysteryEggDesc[] = _(
+    "Obtained from MR.\n"
+    "Pokémon. Who knows\n"
+    "what's inside?");
+
+static const u8 sPassDesc[] = _(
+    "A ticket for\n"
+    "riding the Magnet\n"
+    "Train.");
+
+static const u8 sRainbowWingDesc[] = _(
+    "A mystical\n"
+    "rainbow feather\n"
+    "that sparkles.");
+
+static const u8 sRedScaleDesc[] = _(
+    "A scale from the\n"
+    "red GYARADOS.\n"
+    "It glows red.");
+
+static const u8 sSecretPotionDesc[] = _(
+    "A fantastic\n"
+    "medicine from the\n"
+    "Cianwood pharmacy.");
+
+static const u8 sSilverWingDesc[] = _(
+    "A strange silvery\n"
+    "feather that\n"
+    "sparkles.");
+
+static const u8 sRageCandyBarDesc[] = _(
+    "A famous candy in\n"
+    "Mahogany Town");
+
+static const u8 sTidalBellDesc[] = _(
+    "Old-fashioned bell\n"
+    "with a gentle,\n"
+    "soothing sound.");
+
+static const u8 sRadioDesc[] = _(
+    "A shiny new radio\n"
+    "that plays music.");
+
 const struct Item gItemsInfo[] =
 {
     [ITEM_NONE] =
@@ -14589,6 +14648,136 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
     },
+    //HnS Johto key items
+
+    [ITEM_CLEAR_BELL] = {    
+        .name = ITEM_NAME("Clear Bell"),
+        .price = 0,
+        .description = sClearBellDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_ClearBell,
+        .iconPalette = gItemIcon_Palette_ClearBell,
+    },
+
+    [ITEM_LOST_ITEM] = {    
+        .name = ITEM_NAME("Lost Item"),
+        .price = 0,
+        .description = sLostItemDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_LostItem,
+        .iconPalette = gItemIcon_Palette_LostItem,
+    },
+
+    [ITEM_MACHINE_PART] = {    
+        .name = ITEM_NAME("Machine Part"),
+        .price = 0,
+        .description = sMachinePartDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_MachinePart,
+        .iconPalette = gItemIcon_Palette_MachinePart,
+    },
+
+    [ITEM_MYSTERY_EGG] = {    
+        .name = ITEM_NAME("Mystery Egg"),
+        .price = 0,
+        .description = sMysteryEggDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_MysteryEgg,
+        .iconPalette = gItemIcon_Palette_MysteryEgg,
+    },
+
+    [ITEM_PASS] = {    
+        .name = ITEM_NAME("Pass"),
+        .price = 0,
+        .description = sPassDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_Pass,
+        .iconPalette = gItemIcon_Palette_Pass,
+    },
+
+    [ITEM_RAINBOW_WING] = {    
+        .name = ITEM_NAME("Rainbow Wing"),
+        .price = 0,
+        .description = sRainbowWingDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_RainbowWing,
+        .iconPalette = gItemIcon_Palette_RainbowWing,
+    },
+
+    [ITEM_RED_SCALE] = {    
+        .name = ITEM_NAME("Red Scale"),
+        .price = 0,
+        .description = sRedScaleDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_RedScale,
+        .iconPalette = gItemIcon_Palette_RedScale,
+    },
+
+    [ITEM_SECRET_POTION] = {    
+        .name = ITEM_NAME("Secret Potion"),
+        .price = 0,
+        .description = sSecretPotionDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_SecretPotion,
+        .iconPalette = gItemIcon_Palette_SecretPotion,
+    },
+
+    [ITEM_SILVER_WING] = {    
+        .name = ITEM_NAME("Silver Wing"),
+        .price = 0,
+        .description = sSilverWingDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_SilverWing,
+        .iconPalette = gItemIcon_Palette_SilverWing,
+    },
+
+    [ITEM_TIDAL_BELL] = {    
+        .name = ITEM_NAME("Tidal Bell"),
+        .price = 0,
+        .description = sTidalBellDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_TidalBell,
+        .iconPalette = gItemIcon_Palette_TidalBell,
+    },
+    [ITEM_RADIO] =
+    {
+        .name = ITEM_NAME("Radio"),
+        .price = 0,
+        .description = sRadioDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+    }, 
 };
 
 #undef ITEM_NAME

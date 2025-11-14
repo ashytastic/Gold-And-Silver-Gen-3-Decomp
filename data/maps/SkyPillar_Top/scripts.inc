@@ -5,7 +5,7 @@ SkyPillar_Top_MapScripts::
 	.byte 0
 
 SkyPillar_Top_OnResume:
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, SkyPillar_Top_EventScript_TryRemoveRayquaza
+	call_if_set FLAG_GARBAGEFLAG, SkyPillar_Top_EventScript_TryRemoveRayquaza
 	end
 
 SkyPillar_Top_EventScript_TryRemoveRayquaza::
@@ -29,7 +29,7 @@ SkyPillar_Top_EventScript_TryShowRayquaza::
 	return
 
 SkyPillar_Top_EventScript_ShowRayquaza::
-	clearflag FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL
+	clearflag FLAG_GARBAGEFLAG
 	return
 
 SkyPillar_Top_OnWarp:
@@ -47,10 +47,10 @@ SkyPillar_Top_EventScript_Rayquaza::
 	delay 40
 	waitmoncry
 	setwildbattle SPECIES_RAYQUAZA, 70
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_GARBAGEFLAG
 	special BattleSetup_StartLegendaryBattle
 	waitstate
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	clearflag FLAG_GARBAGEFLAG
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, SkyPillar_Top_EventScript_DefeatedRayquaza
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, SkyPillar_Top_EventScript_RanFromRayquaza
@@ -124,7 +124,7 @@ SkyPillar_Top_EventScript_AwakenRayquaza::
 	applymovement LOCALID_CAMERA, SkyPillar_Top_Movement_CameraPanDown
 	waitmovement 0
 	special RemoveCameraObject
-	setvar VAR_SOOTOPOLIS_CITY_STATE, 5
+	setvar VAR_GARBAGEVAR, 5
 	setvar VAR_SKY_PILLAR_STATE, 1
 	setvar VAR_SKY_PILLAR_RAYQUAZA_CRY_DONE, 1
 	releaseall

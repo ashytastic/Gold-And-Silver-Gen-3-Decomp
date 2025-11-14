@@ -24,7 +24,7 @@ UnionRoom_OnResume:
 	end
 
 UnionRoom_OnTransition:
-	setflag FLAG_TEMP_HIDE_FOLLOWER
+	setflag FLAG_GARBAGEFLAG
 	end
 
 UnionRoom_EventScript_Player1::

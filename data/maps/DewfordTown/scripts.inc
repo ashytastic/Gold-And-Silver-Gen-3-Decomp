@@ -3,7 +3,7 @@ DewfordTown_MapScripts::
 	.byte 0
 
 DewfordTown_OnTransition:
-	setflag FLAG_VISITED_DEWFORD_TOWN
+	setflag FLAG_GARBAGEFLAG
 	end
 
 DewfordTown_EventScript_Briney::
@@ -129,15 +129,15 @@ DewfordTown_EventScript_SailToPetalburg::
 	applymovement LOCALID_PLAYER, DewfordTown_Movement_ExitBoatPetalburg
 	waitmovement 0
 	showobjectat LOCALID_PLAYER, MAP_ROUTE104
-	clearflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
-	clearflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
-	clearflag FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT
-	setflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
+	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
 	hideobjectat LOCALID_DEWFORD_BOAT, MAP_DEWFORD_TOWN
-	setvar VAR_BOARD_BRINEY_BOAT_STATE, 2
+	setvar VAR_GARBAGEVAR, 2
 	resetobjectsubpriority LOCALID_PLAYER, MAP_DEWFORD_TOWN
 	warp MAP_ROUTE104_MR_BRINEYS_HOUSE, 5, 4
-	copyvar VAR_BRINEY_LOCATION, VAR_0x8008
+	copyvar VAR_GARBAGEVAR, VAR_0x8008
 	waitstate
 	release
 	end
@@ -165,15 +165,15 @@ DewfordTown_EventScript_SailToSlateport::
 	setobjectsubpriority LOCALID_ROUTE109_BRINEY, MAP_ROUTE109, 0
 	applymovement LOCALID_ROUTE109_BRINEY, DewfordTown_Movement_BrineyExitBoat
 	waitmovement 0
-	clearflag FLAG_HIDE_ROUTE_109_MR_BRINEY
+	clearflag FLAG_GARBAGEFLAG
 	addobject LOCALID_ROUTE109_BOAT
-	clearflag FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT
-	setflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
+	clearflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
 	hideobjectat LOCALID_DEWFORD_BOAT, MAP_DEWFORD_TOWN
 	call_if_unset FLAG_DELIVERED_DEVON_GOODS, DewfordTown_EventScript_LandedSlateportDeliverGoods
 	call_if_set FLAG_DELIVERED_DEVON_GOODS, DewfordTown_EventScript_LandedSlateport
 	closemessage
-	copyvar VAR_BRINEY_LOCATION, VAR_0x8008
+	copyvar VAR_GARBAGEVAR, VAR_0x8008
 	resetobjectsubpriority LOCALID_PLAYER, MAP_DEWFORD_TOWN
 	resetobjectsubpriority LOCALID_ROUTE109_BRINEY, MAP_ROUTE109
 	copyobjectxytoperm LOCALID_ROUTE109_BRINEY

@@ -3,7 +3,7 @@ Route131_MapScripts::
 	.byte 0
 
 Route131_OnTransition:
-	call_if_ge VAR_SOOTOPOLIS_CITY_STATE, 4, Route131_EventScript_CheckSetAbnormalWeather
+	call_if_ge VAR_GARBAGEVAR, 4, Route131_EventScript_CheckSetAbnormalWeather
 	call Route131_EventScript_SetLayout
 	end
 
@@ -12,7 +12,7 @@ Route131_EventScript_SetLayout::
 	return
 
 Route131_EventScript_CheckSetAbnormalWeather::
-	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+	call_if_set FLAG_GARBAGEFLAG, Common_EventScript_SetAbnormalWeather
 	return
 
 Route131_EventScript_Richard::

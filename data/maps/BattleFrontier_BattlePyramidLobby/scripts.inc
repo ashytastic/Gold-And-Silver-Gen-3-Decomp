@@ -51,7 +51,7 @@ BattleFrontier_BattlePyramidLobby_EventScript_DefeatedKing::
 BattleFrontier_BattlePyramidLobby_EventScript_GiveBattlePoints::
 	special DoBattlePyramidMonsHaveHeldItem
 	call_if_eq VAR_RESULT, TRUE, BattleFrontier_BattlePyramidLobby_EventScript_StoreHeldItemsInPyramidBag
-	clearflag FLAG_STORING_ITEMS_IN_PYRAMID_BAG
+	clearflag FLAG_GARBAGEFLAG
 	frontier_checkairshow
 	special LoadPlayerParty
 	pyramid_clearhelditems
@@ -424,7 +424,7 @@ BattleFrontier_BattlePyramidLobby_Movement_PlayerStepOnPanel:
 
 BattleFrontier_BattlePyramidLobby_EventScript_StoreHeldItemsInPyramidBag::
 	msgbox BattleFrontier_BattlePyramidLobby_Text_MonHoldingItemCannotTake, MSGBOX_DEFAULT
-	setflag FLAG_STORING_ITEMS_IN_PYRAMID_BAG
+	setflag FLAG_GARBAGEFLAG
 	special TryStoreHeldItemsInPyramidBag
 	goto_if_eq VAR_RESULT, 0, BattleFrontier_BattlePyramidLobby_EventScript_HeldItemsStoredInPyramidBag
 	message BattleFrontier_BattlePyramidLobby_Text_BagCannotHoldPickItemsToKeep

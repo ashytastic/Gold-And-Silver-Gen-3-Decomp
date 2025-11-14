@@ -10,8 +10,8 @@ struct Landmark
 
 struct LandmarkList
 {
-    mapsec_u8_t mapSection;
-    u8 id;
+    mapsec_u16_t mapSection;
+    u16 id;
     const struct Landmark *const *landmarks;
 };
 
@@ -338,23 +338,6 @@ static const struct Landmark *const Landmarks_MtChimney_2[]  =
 
 static const struct LandmarkList sLandmarkLists[] =
 {
-    {MAPSEC_ROUTE_103, 2, Landmarks_Route103_2},
-    {MAPSEC_ROUTE_104, 0, Landmarks_Route104_0},
-    {MAPSEC_ROUTE_104, 1, Landmarks_Route104_1},
-    {MAPSEC_ROUTE_105, 0, Landmarks_Route105_0},
-    {MAPSEC_ROUTE_106, 1, Landmarks_Route106_1},
-    {MAPSEC_ROUTE_108, 0, Landmarks_Route108_0},
-    {MAPSEC_ROUTE_109, 0, Landmarks_Route109_0},
-    {MAPSEC_ROUTE_110, 0, Landmarks_Route110_0},
-    {MAPSEC_ROUTE_110, 1, Landmarks_Route110_1},
-    {MAPSEC_ROUTE_110, 2, Landmarks_Route110_2},
-    {MAPSEC_ROUTE_111, 0, Landmarks_Route111_0},
-    {MAPSEC_ROUTE_111, 1, Landmarks_Route111_1},
-    {MAPSEC_ROUTE_111, 2, Landmarks_Route111_2},
-    {MAPSEC_ROUTE_111, 3, Landmarks_Route111_3},
-    {MAPSEC_ROUTE_111, 4, Landmarks_Route111_4},
-    {MAPSEC_ROUTE_112, 0, Landmarks_Route112_0},
-    {MAPSEC_ROUTE_112, 1, Landmarks_Route112_1},
     {MAPSEC_ROUTE_113, 1, Landmarks_Route113_1},
     {MAPSEC_ROUTE_114, 1, Landmarks_Route114_1},
     {MAPSEC_ROUTE_114, 2, Landmarks_Route114_2},
@@ -392,9 +375,9 @@ static const struct LandmarkList sLandmarkLists[] =
     {MAPSEC_NONE, 0, NULL},
 };
 
-static const struct Landmark *const *GetLandmarks(mapsec_u8_t mapSection, u8 id);
+static const struct Landmark *const *GetLandmarks(mapsec_u16_t mapSection, u16 id);
 
-const u8 *GetLandmarkName(mapsec_u8_t mapSection, u8 id, u8 count)
+const u8 *GetLandmarkName(mapsec_u8_t mapSection, u16 id, u16 count)
 {
     const struct Landmark *const *landmarks = GetLandmarks(mapSection, id);
 
@@ -421,7 +404,7 @@ const u8 *GetLandmarkName(mapsec_u8_t mapSection, u8 id, u8 count)
     return (*landmarks)->name;
 }
 
-static const struct Landmark *const *GetLandmarks(mapsec_u8_t mapSection, u8 id)
+static const struct Landmark *const *GetLandmarks(mapsec_u16_t mapSection, u16 id)
 {
     u16 i = 0;
 

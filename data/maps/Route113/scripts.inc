@@ -47,12 +47,12 @@ Route113_EventScript_TrainerTipsRegisterKeyItems::
 	end
 
 Route113_EventScript_Jaylen::
-	trainerbattle_single TRAINER_JAYLEN, Route113_Text_JaylenIntro, Route113_Text_JaylenDefeat
+	trainerbattle_single TRAINER_NONE, Route113_Text_JaylenIntro, Route113_Text_JaylenDefeat
 	msgbox Route113_Text_JaylenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route113_EventScript_Dillon::
-	trainerbattle_single TRAINER_DILLON, Route113_Text_DillonIntro, Route113_Text_DillonDefeat
+	trainerbattle_single TRAINER_NONE, Route113_Text_DillonIntro, Route113_Text_DillonDefeat
 	msgbox Route113_Text_DillonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -68,7 +68,6 @@ Route113_EventScript_RegisterMadeline::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route113_Text_MadelineRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_MADELINE_1
 	release
 	end
 
@@ -89,7 +88,6 @@ Route113_EventScript_RegisterLao::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route113_Text_LaoRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_LAO_1
 	release
 	end
 
@@ -119,7 +117,7 @@ Route113_EventScript_Sophie::
 	end
 
 Route113_EventScript_Coby::
-	trainerbattle_single TRAINER_COBY, Route113_Text_CobyIntro, Route113_Text_CobyDefeat
+	trainerbattle_single TRAINER_NONE, Route113_Text_CobyIntro, Route113_Text_CobyDefeat
 	msgbox Route113_Text_CobyPostBattle, MSGBOX_AUTOCLOSE
 	end
 

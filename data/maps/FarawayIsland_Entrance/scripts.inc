@@ -3,7 +3,7 @@ FarawayIsland_Entrance_MapScripts::
 	.byte 0
 
 FarawayIsland_Entrance_OnTransition:
-	setflag FLAG_ARRIVED_ON_FARAWAY_ISLAND
+	setflag FLAG_GARBAGEFLAG
 	end
 
 FarawayIsland_Entrance_EventScript_SetCloudsWeather::

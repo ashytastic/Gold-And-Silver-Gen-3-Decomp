@@ -628,3 +628,34 @@ void Script_SetStatus1(struct ScriptContext *ctx)
         SetMonData(&gPlayerParty[slot], MON_DATA_STATUS, &status1);
     }
 }
+
+u32 GenerateShinyPersonalityForOtId(u32 otId)
+{
+    u32 personality;
+    do {
+        personality = Random32(); // or a deterministic value if you want
+    } while ((HIHALF(otId) ^ LOHALF(otId) ^ HIHALF(personality) ^ LOHALF(personality)) >= 8);
+    return personality;
+}
+
+void CreateShinyScriptedMon(u16 species, u8 level, u16 item)
+{
+    u8 heldItem[2];
+    ZeroEnemyPartyMons();
+
+    u32 otId = gSaveBlock2Ptr->playerTrainerId[0]
+             | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
+             | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
+             | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
+
+    u32 shinyPersonality = GenerateShinyPersonalityForOtId(otId);
+
+    CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, TRUE, shinyPersonality, OT_ID_PLAYER_ID, 0);
+
+    if (item) {
+        heldItem[0] = item;
+        heldItem[1] = item >> 8;
+        SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, heldItem);
+    }
+
+}

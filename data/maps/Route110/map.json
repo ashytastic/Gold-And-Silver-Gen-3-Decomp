@@ -3,7 +3,7 @@
   "name": "Route110",
   "layout": "LAYOUT_ROUTE110",
   "music": "MUS_ROUTE110",
-  "region_map_section": "MAPSEC_ROUTE_110",
+  "region_map_section": "MAPSEC_NONE",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",
@@ -275,7 +275,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_DIRE_HIT",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_110_DIRE_HIT"
+      "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -288,7 +288,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_RARE_CANDY",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_110_RARE_CANDY"
+      "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "local_id": "LOCALID_CHALLENGE_BIKER",
@@ -315,7 +315,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route110_EventScript_AquaGrunt1",
-      "flag": "FLAG_HIDE_ROUTE_110_TEAM_AQUA"
+      "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
@@ -328,7 +328,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route110_EventScript_AquaGrunt2",
-      "flag": "FLAG_HIDE_ROUTE_110_TEAM_AQUA"
+      "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
@@ -341,7 +341,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route110_EventScript_AquaGrunt3",
-      "flag": "FLAG_HIDE_ROUTE_110_TEAM_AQUA"
+      "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
@@ -354,7 +354,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route110_EventScript_AquaGrunt4",
-      "flag": "FLAG_HIDE_ROUTE_110_TEAM_AQUA"
+      "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
@@ -367,7 +367,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-      "flag": "FLAG_HIDE_ROUTE_110_TEAM_AQUA"
+      "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
@@ -394,7 +394,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-      "flag": "FLAG_HIDE_ROUTE_110_RIVAL"
+      "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "local_id": "LOCALID_ROUTE110_RIVAL_ON_BIKE",
@@ -408,7 +408,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-      "flag": "FLAG_HIDE_ROUTE_110_RIVAL_ON_BIKE"
+      "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
@@ -486,7 +486,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_ELIXIR",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_110_ELIXIR"
+      "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "local_id": "LOCALID_ROUTE110_BIRCH",
@@ -500,7 +500,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-      "flag": "FLAG_HIDE_ROUTE_110_BIRCH"
+      "flag": "FLAG_GARBAGEFLAG"
     }
   ],
   "warp_events": [
@@ -571,7 +571,7 @@
       "x": 33,
       "y": 56,
       "elevation": 3,
-      "var": "VAR_ROUTE110_STATE",
+      "var": "VAR_GARBAGEVAR",
       "var_value": "0",
       "script": "Route110_EventScript_RivalTrigger1"
     },
@@ -580,7 +580,7 @@
       "x": 34,
       "y": 56,
       "elevation": 3,
-      "var": "VAR_ROUTE110_STATE",
+      "var": "VAR_GARBAGEVAR",
       "var_value": "0",
       "script": "Route110_EventScript_RivalTrigger2"
     },
@@ -589,7 +589,7 @@
       "x": 35,
       "y": 56,
       "elevation": 3,
-      "var": "VAR_ROUTE110_STATE",
+      "var": "VAR_GARBAGEVAR",
       "var_value": "0",
       "script": "Route110_EventScript_RivalTrigger3"
     },

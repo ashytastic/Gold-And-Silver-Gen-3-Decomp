@@ -5,7 +5,7 @@ IslandCave_MapScripts::
 	.byte 0
 
 IslandCave_OnResume:
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, IslandCave_EventScript_TryRemoveRegice
+	call_if_set FLAG_GARBAGEFLAG, IslandCave_EventScript_TryRemoveRegice
 	end
 
 IslandCave_EventScript_TryRemoveRegice::
@@ -15,7 +15,7 @@ IslandCave_EventScript_TryRemoveRegice::
 	return
 
 IslandCave_OnLoad:
-	call_if_unset FLAG_SYS_BRAILLE_REGICE_COMPLETED, IslandCave_EventScript_HideRegiEntrance
+	call_if_unset FLAG_GARBAGEFLAG, IslandCave_EventScript_HideRegiEntrance
 	end
 
 IslandCave_EventScript_HideRegiEntrance::
@@ -28,7 +28,7 @@ IslandCave_EventScript_HideRegiEntrance::
 	return
 
 IslandCave_OnTransition:
-	setflag FLAG_LANDMARK_ISLAND_CAVE
+	setflag FLAG_GARBAGEFLAG
 	call IslandCave_EventScript_ClearSteps
 	call_if_unset FLAG_DEFEATED_REGICE, IslandCave_EventScript_ShowRegice
 	end
@@ -46,15 +46,15 @@ IslandCave_EventScript_OpenRegiEntrance::
 	setmetatile 9, 20, METATILE_Cave_SealedChamberEntrance_BottomRight, TRUE
 	special DrawWholeMapView
 	playse SE_BANG
-	setflag FLAG_SYS_BRAILLE_REGICE_COMPLETED
+	setflag FLAG_GARBAGEFLAG
 	end
 
 IslandCave_EventScript_CaveEntranceMiddle::
 	lockall
-	call_if_set FLAG_TEMP_REGICE_PUZZLE_FAILED, IslandCave_EventScript_ClearSteps
-	goto_if_set FLAG_SYS_BRAILLE_REGICE_COMPLETED, IslandCave_EventScript_BigHoleInWall
+	call_if_set FLAG_GARBAGEFLAG, IslandCave_EventScript_ClearSteps
+	goto_if_set FLAG_GARBAGEFLAG, IslandCave_EventScript_BigHoleInWall
 	braillemessage IslandCave_Braille_RunLapAroundWall
-	setflag FLAG_TEMP_REGICE_PUZZLE_STARTED
+	setflag FLAG_GARBAGEFLAG
 	special ShouldDoBrailleRegicePuzzle
 	goto IslandCave_EventScript_CloseBrailleMsg
 	end
@@ -66,10 +66,10 @@ IslandCave_EventScript_BigHoleInWall::
 
 IslandCave_EventScript_CaveEntranceSide::
 	lockall
-	call_if_set FLAG_TEMP_REGICE_PUZZLE_FAILED, IslandCave_EventScript_ClearSteps
+	call_if_set FLAG_GARBAGEFLAG, IslandCave_EventScript_ClearSteps
 	braillemessage IslandCave_Braille_RunLapAroundWall
-	goto_if_set FLAG_SYS_BRAILLE_REGICE_COMPLETED, IslandCave_EventScript_CloseBrailleMsg
-	setflag FLAG_TEMP_REGICE_PUZZLE_STARTED
+	goto_if_set FLAG_GARBAGEFLAG, IslandCave_EventScript_CloseBrailleMsg
+	setflag FLAG_GARBAGEFLAG
 	special ShouldDoBrailleRegicePuzzle
 	goto IslandCave_EventScript_CloseBrailleMsg
 	end
@@ -84,7 +84,7 @@ IslandCave_EventScript_ClearSteps::
 	setvar VAR_REGICE_STEPS_1, 0
 	setvar VAR_REGICE_STEPS_2, 0
 	setvar VAR_REGICE_STEPS_3, 0
-	clearflag FLAG_TEMP_REGICE_PUZZLE_FAILED
+	clearflag FLAG_GARBAGEFLAG
 	return
 
 IslandCave_EventScript_Regice::
@@ -95,10 +95,10 @@ IslandCave_EventScript_Regice::
 	delay 40
 	waitmoncry
 	setwildbattle SPECIES_REGICE, 40
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_GARBAGEFLAG
 	special StartRegiBattle
 	waitstate
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	clearflag FLAG_GARBAGEFLAG
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, IslandCave_EventScript_DefeatedRegice
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, IslandCave_EventScript_RanFromRegice

@@ -46,23 +46,23 @@ BattleFrontier_BattleTowerMultiCorridor_OnFrame:
 
 BattleFrontier_BattleTowerMultiCorridor_EventScript_EnterCorridor::
 	lockall
-	setflag FLAG_ENABLE_MULTI_CORRIDOR_DOOR
+	setflag FLAG_GARBAGEFLAG
 	setvar VAR_0x8004, 14  @ x coord of far door, used by DrawDoor
 	setvar VAR_0x8005, 1   @ y coord of far door, used by DrawDoor
 	opendoor 1, 1
 	waitdooranim
-	clearflag FLAG_ENABLE_MULTI_CORRIDOR_DOOR
+	clearflag FLAG_GARBAGEFLAG
 	showobjectat LOCALID_TOWER_MULTI_CORRIDOR_PLAYER, MAP_BATTLE_FRONTIER_BATTLE_TOWER_MULTI_CORRIDOR
 	showobjectat LOCALID_TOWER_MULTI_CORRIDOR_PARTNER, MAP_BATTLE_FRONTIER_BATTLE_TOWER_MULTI_CORRIDOR
 	applymovement LOCALID_TOWER_MULTI_CORRIDOR_PLAYER, BattleFrontier_BattleTowerMultiCorridor_Movement_ExitElevator
 	applymovement LOCALID_TOWER_MULTI_CORRIDOR_PARTNER, BattleFrontier_BattleTowerMultiCorridor_Movement_ExitElevator
 	waitmovement 0
-	setflag FLAG_ENABLE_MULTI_CORRIDOR_DOOR
+	setflag FLAG_GARBAGEFLAG
 	setvar VAR_0x8004, 14  @ x coord of far door, used by DrawDoor
 	setvar VAR_0x8005, 1   @ y coord of far door, used by DrawDoor
 	closedoor 1, 1
 	waitdooranim
-	clearflag FLAG_ENABLE_MULTI_CORRIDOR_DOOR
+	clearflag FLAG_GARBAGEFLAG
 	applymovement LOCALID_TOWER_MULTI_CORRIDOR_PLAYER, BattleFrontier_BattleTowerMultiCorridor_Movement_PlayerWalkToDoor
 	applymovement LOCALID_TOWER_MULTI_CORRIDOR_PARTNER, BattleFrontier_BattleTowerMultiCorridor_Movement_PartnerWalkToDoor
 	applymovement LOCALID_TOWER_MULTI_CORRIDOR_ATTENDANT_2, BattleFrontier_BattleTowerMultiCorridor_Movement_PlayerAttendantWalkToDoor

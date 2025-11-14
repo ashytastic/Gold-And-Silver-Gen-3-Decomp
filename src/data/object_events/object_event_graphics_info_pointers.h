@@ -276,6 +276,34 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Burglar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Proton;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Archer;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Whirlpool;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BaldingMan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LittleGirl;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WorkerM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Policeman;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bill;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GymGuy;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CooltrainerF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AttendantM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldMan2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AttendantF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Camper;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Picnicker;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WorkerF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BattleTowerTrainerDude;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SuperNerd;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Channeler;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FR_Lass;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TrainFront;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TrainMid;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TrainBack;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MrFuji;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Giovanni;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfOak;
+extern const struct ObjectEventGraphicsInfo  gObjectEventGraphicsInfo_Eusine;
+extern const struct ObjectEventGraphicsInfo  gObjectEventGraphicsInfo_NurseChansey;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LegendaryShadow;
+
 // Begin pokemon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
@@ -569,6 +597,31 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ARCHER] =                    &gObjectEventGraphicsInfo_Archer,
     [OBJ_EVENT_GFX_PROF_ELM] =                    &gObjectEventGraphicsInfo_ProfElm,
     [OBJ_EVENT_GFX_WHIRLPOOL] =         &gObjectEventGraphicsInfo_Whirlpool,
+    [OBJ_EVENT_GFX_WORKER_M] =                    &gObjectEventGraphicsInfo_WorkerM,
+    [OBJ_EVENT_GFX_POLICEMAN] =                 &gObjectEventGraphicsInfo_Policeman, //leader_liza, //aroma_lady
+    [OBJ_EVENT_GFX_BILL] =                &gObjectEventGraphicsInfo_Bill,
+    [OBJ_EVENT_GFX_GYM_GUY] =                    &gObjectEventGraphicsInfo_GymGuy,
+    [OBJ_EVENT_GFX_COOLTRAINER_F] =                  &gObjectEventGraphicsInfo_CooltrainerF,
+    [OBJ_EVENT_GFX_ATTENDANT_M] =                &gObjectEventGraphicsInfo_AttendantM,
+    [OBJ_EVENT_GFX_OLD_MAN_2] =                  &gObjectEventGraphicsInfo_OldMan2,
+    [OBJ_EVENT_GFX_ATTENDANT] =                &gObjectEventGraphicsInfo_AttendantF,
+    [OBJ_EVENT_GFX_FR_LASS] =                   &gObjectEventGraphicsInfo_FR_Lass,
+    [OBJ_EVENT_GFX_MAN] =                    &gObjectEventGraphicsInfo_Man,
+    [OBJ_EVENT_GFX_WORKER_F] =                  &gObjectEventGraphicsInfo_WorkerF,
+    [OBJ_EVENT_GFX_TRAINER_TOWER_DUDE] =                &gObjectEventGraphicsInfo_BattleTowerTrainerDude,
+    [OBJ_EVENT_GFX_SUPER_NERD] =                   &gObjectEventGraphicsInfo_SuperNerd,
+    [OBJ_EVENT_GFX_CHANNELER] =               &gObjectEventGraphicsInfo_Channeler,
+    [OBJ_EVENT_GFX_PROF_OAK] =                    &gObjectEventGraphicsInfo_ProfOak,
+    [OBJ_EVENT_GFX_EUSINE] =            &gObjectEventGraphicsInfo_Eusine,
+    [OBJ_EVENT_GFX_NURSE_CHANSEY] =                   &gObjectEventGraphicsInfo_NurseChansey,
+    [OBJ_EVENT_GFX_GIOVANNI] =                  &gObjectEventGraphicsInfo_Giovanni,
+    [OBJ_EVENT_GFX_TRAIN_FRONT] =                &gObjectEventGraphicsInfo_TrainFront,
+    [OBJ_EVENT_GFX_TRAIN_MID] =                &gObjectEventGraphicsInfo_TrainMid,
+    [OBJ_EVENT_GFX_TRAIN_BACK] =                &gObjectEventGraphicsInfo_TrainBack,
+    [OBJ_EVENT_GFX_MR_FUJI] =                    &gObjectEventGraphicsInfo_MrFuji,
+    [OBJ_EVENT_GFX_BIG_SNORLAX] =         &gObjectEventGraphicsInfo_BigSnorlaxDoll,
+    [OBJ_EVENT_GFX_RED_NORMAL] =         &gObjectEventGraphicsInfo_Red,
+    [OBJ_EVENT_GFX_LEGENDARY_SHADOW] =         &gObjectEventGraphicsInfo_LegendaryShadow,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

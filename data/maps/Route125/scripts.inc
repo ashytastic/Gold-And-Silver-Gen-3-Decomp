@@ -5,7 +5,7 @@ Route125_MapScripts::
 	.byte 0
 
 Route125_OnTransition:
-	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+	call_if_set FLAG_GARBAGEFLAG, Common_EventScript_SetAbnormalWeather
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_125_WEST, AbnormalWeather_StartKyogreWeather
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_125_EAST, AbnormalWeather_StartKyogreWeather
@@ -41,7 +41,7 @@ Route125_EventScript_Sharon::
 	end
 
 Route125_EventScript_Ernest::
-	trainerbattle_single TRAINER_ERNEST_1, Route125_Text_ErnestIntro, Route125_Text_ErnestDefeat, Route125_EventScript_RegisterErnest
+	trainerbattle_single TRAINER_NONE, Route125_Text_ErnestIntro, Route125_Text_ErnestDefeat, Route125_EventScript_RegisterErnest
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route125_EventScript_RematchErnest
 	msgbox Route125_Text_ErnestPostBattle, MSGBOX_DEFAULT
@@ -52,12 +52,11 @@ Route125_EventScript_RegisterErnest::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route125_Text_ErnestRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_ERNEST_1
 	release
 	end
 
 Route125_EventScript_RematchErnest::
-	trainerbattle_rematch TRAINER_ERNEST_1, Route125_Text_ErnestRematchIntro, Route125_Text_ErnestRematchDefeat
+	trainerbattle_rematch TRAINER_NONE, Route125_Text_ErnestRematchIntro, Route125_Text_ErnestRematchDefeat
 	msgbox Route125_Text_ErnestRematchPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -77,7 +76,7 @@ Route125_EventScript_Presley::
 	end
 
 Route125_EventScript_Auron::
-	trainerbattle_single TRAINER_AURON, Route125_Text_AuronIntro, Route125_Text_AuronDefeat
+	trainerbattle_single TRAINER_NONE, Route125_Text_AuronIntro, Route125_Text_AuronDefeat
 	msgbox Route125_Text_AuronPostBattle, MSGBOX_AUTOCLOSE
 	end
 

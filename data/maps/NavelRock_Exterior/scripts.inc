@@ -3,6 +3,6 @@ NavelRock_Exterior_MapScripts::
 	.byte 0
 
 NavelRock_Exterior_OnTransition:
-	setflag FLAG_ARRIVED_AT_NAVEL_ROCK
+	setflag FLAG_GARBAGEFLAG
 	end
 

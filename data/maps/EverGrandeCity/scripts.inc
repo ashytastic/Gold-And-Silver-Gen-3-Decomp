@@ -3,7 +3,7 @@ EverGrandeCity_MapScripts::
 	.byte 0
 
 EverGrandeCity_OnTransition:
-	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+	call_if_set FLAG_GARBAGEFLAG, Common_EventScript_SetAbnormalWeather
 	end
 
 EverGrandeCity_EventScript_VictoryRoadSign::
@@ -19,7 +19,7 @@ EverGrandeCity_EventScript_PokemonLeagueSign::
 	end
 
 EverGrandeCity_EventScript_SetVisitedEverGrande::
-	setflag FLAG_VISITED_EVER_GRANDE_CITY
+	setflag FLAG_GARBAGEFLAG
 	setvar VAR_TEMP_1, 1
 	end
 

@@ -6,7 +6,7 @@ FarawayIsland_Interior_MapScripts::
 	.byte 0
 
 FarawayIsland_Interior_OnReturnToField:
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, FarawayIsland_Interior_EventScript_TrySetMewAboveGrass
+	call_if_set FLAG_GARBAGEFLAG, FarawayIsland_Interior_EventScript_TrySetMewAboveGrass
 	end
 
 FarawayIsland_Interior_EventScript_TrySetMewAboveGrass::
@@ -23,7 +23,7 @@ FarawayIsland_Interior_EventScript_SetMewAboveGrass::
 	return
 
 FarawayIsland_Interior_OnResume:
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, FarawayIsland_Interior_EventScript_TryRemoveMew
+	call_if_set FLAG_GARBAGEFLAG, FarawayIsland_Interior_EventScript_TryRemoveMew
 	end
 
 FarawayIsland_Interior_EventScript_TryRemoveMew::
@@ -128,10 +128,10 @@ FarawayIsland_Interior_EventScript_Mew::
 	delay 40
 	waitmoncry
 	seteventmon SPECIES_MEW, 30
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_GARBAGEFLAG
 	special BattleSetup_StartLegendaryBattle
 	waitstate
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	clearflag FLAG_GARBAGEFLAG
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, FarawayIsland_Interior_EventScript_MewDefeated
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, FarawayIsland_Interior_EventScript_PlayerOrMewRan

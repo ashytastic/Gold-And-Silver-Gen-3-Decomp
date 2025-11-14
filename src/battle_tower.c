@@ -81,6 +81,10 @@ static void SetEReaderTrainerChecksum(struct BattleTowerEReaderTrainer *ereaderT
 #endif //FREE_BATTLE_TOWER_E_READER
 static u8 SetTentPtrsGetLevel(void);
 
+//Rocket B2F stuff.
+extern const u8 RocketHideout_B2F_EventScript_ArianaTrainer[];
+extern const u8 RocketHideout_B2F_EventScript_GruntTrainer[];
+
 #include "data/battle_frontier/battle_frontier_trainer_mons.h"
 #include "data/battle_frontier/battle_frontier_trainers.h"
 #include "data/battle_frontier/battle_frontier_mons.h"
@@ -2078,6 +2082,17 @@ void DoSpecialTrainerBattle(void)
         CreateTask(Task_StartBattleAfterTransition, 1);
         PlayMapChosenOrBattleBGM(0);
         BattleTransition_StartOnField(GetSpecialBattleTransition(B_TRANSITION_GROUP_B_PIKE));
+        break;
+    case SPECIAL_BATTLE_LANCE:
+        gBattleTypeFlags = BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER;
+        FillPartnerParty(gPartnerTrainerId);
+        gApproachingTrainerId = 0;
+        BattleSetup_ConfigureTrainerBattle(RocketHideout_B2F_EventScript_ArianaTrainer + 1);
+        gApproachingTrainerId = 1;
+        BattleSetup_ConfigureTrainerBattle(RocketHideout_B2F_EventScript_GruntTrainer + 1);
+        CreateTask(Task_StartBattleAfterTransition, 1);
+        PlayMapChosenOrBattleBGM(0);
+        BattleTransition_StartOnField(B_TRANSITION_ROCKET);
         break;
     case SPECIAL_BATTLE_MULTI:
         if (gSpecialVar_0x8005 & MULTI_BATTLE_2_VS_WILD) // Player + AI against wild mon

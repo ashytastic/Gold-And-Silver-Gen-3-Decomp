@@ -23,7 +23,7 @@ Route110_SeasideCyclingRoadNorthEntrance_EventScript_BikeCheck::
 	specialvar VAR_RESULT, GetPlayerAvatarBike
 	call_if_eq VAR_RESULT, 2, Route110_SeasideCyclingRoadNorthEntrance_EventScript_OnMachBike
 	goto_if_eq VAR_RESULT, 0, Route110_SeasideCyclingRoadNorthEntrance_EventScript_NoBike
-	setflag FLAG_SYS_CYCLING_ROAD
+	setflag FLAG_GARBAGEFLAG
 	setvar VAR_TEMP_1, 1
 	releaseall
 	end
@@ -47,7 +47,7 @@ Route110_SeasideCyclingRoadNorthEntrance_Movement_PushPlayerBackFromCounter:
 Route110_SeasideCyclingRoadNorthEntrance_EventScript_ClearCyclingRoad::
 	lockall
 	setvar VAR_CYCLING_CHALLENGE_STATE, 0
-	clearflag FLAG_SYS_CYCLING_ROAD
+	clearflag FLAG_GARBAGEFLAG
 	setvar VAR_TEMP_1, 0
 	releaseall
 	end

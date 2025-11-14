@@ -6,7 +6,7 @@ Route120_MapScripts::
 	.byte 0
 
 Route120_OnResume:
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, Route120_EventScript_RemoveKecleonObject
+	call_if_set FLAG_GARBAGEFLAG, Route120_EventScript_RemoveKecleonObject
 	end
 
 Route120_EventScript_RemoveKecleonObject::
@@ -87,7 +87,7 @@ Route120_EventScript_BerryBeauty::
 	lock
 	faceplayer
 	dotimebasedevents
-	goto_if_set FLAG_DAILY_ROUTE_120_RECEIVED_BERRY, Route120_EventScript_ReceivedBerry
+	goto_if_set FLAG_GARBAGEFLAG, Route120_EventScript_ReceivedBerry
 	msgbox Route120_Text_BerriesExpressionOfLoveIsntIt, MSGBOX_YESNO
 	call_if_eq VAR_RESULT, YES, Route120_EventScript_BerryLove
 	call_if_eq VAR_RESULT, NO, Route120_EventScript_BerryNotLove
@@ -133,7 +133,7 @@ Route120_EventScript_GiveIapapaBerry::
 Route120_EventScript_GiveBerry::
 	giveitem VAR_0x8004
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_DAILY_ROUTE_120_RECEIVED_BERRY
+	setflag FLAG_GARBAGEFLAG
 	msgbox Route120_Text_BerryIsRareRaiseItWithCare, MSGBOX_DEFAULT
 	release
 	end
@@ -192,9 +192,9 @@ Route120_EventScript_StevenBattleKecleon::
 	waitmoncry
 	setwildbattle SPECIES_KECLEON, 30
 	setvar VAR_0x8009, 0
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_GARBAGEFLAG
 	dowildbattle
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	clearflag FLAG_GARBAGEFLAG
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route120_EventScript_RemoveBridgeKecleonPostBattle
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route120_EventScript_RemoveBridgeKecleonPostBattle
@@ -279,7 +279,6 @@ Route120_EventScript_RegisterRobert::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route120_Text_RobertRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_ROBERT_1
 	release
 	end
 
@@ -294,12 +293,12 @@ Route120_EventScript_Lorenzo::
 	end
 
 Route120_EventScript_Jenna::
-	trainerbattle_single TRAINER_JENNA, Route120_Text_JennaIntro, Route120_Text_JennaDefeat
+	trainerbattle_single TRAINER_NONE, Route120_Text_JennaIntro, Route120_Text_JennaDefeat
 	msgbox Route120_Text_JennaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route120_EventScript_Jeffrey::
-	trainerbattle_single TRAINER_JEFFREY_1, Route120_Text_JeffreyIntro, Route120_Text_JeffreyDefeat, Route120_EventScript_RegisterJeffrey
+	trainerbattle_single TRAINER_NONE, Route120_Text_JeffreyIntro, Route120_Text_JeffreyDefeat, Route120_EventScript_RegisterJeffrey
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route120_EventScript_RematchJeffrey
 	msgbox Route120_Text_JeffreyPostBattle, MSGBOX_DEFAULT
@@ -310,22 +309,21 @@ Route120_EventScript_RegisterJeffrey::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route120_Text_JeffreyRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_JEFFREY_1
 	release
 	end
 
 Route120_EventScript_RematchJeffrey::
-	trainerbattle_rematch TRAINER_JEFFREY_1, Route120_Text_JeffreyRematchIntro, Route120_Text_JeffreyRematchDefeat
+	trainerbattle_rematch TRAINER_NONE, Route120_Text_JeffreyRematchIntro, Route120_Text_JeffreyRematchDefeat
 	msgbox Route120_Text_JeffreyPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route120_EventScript_Jennifer::
-	trainerbattle_single TRAINER_JENNIFER, Route120_Text_JenniferIntro, Route120_Text_JenniferDefeat
+	trainerbattle_single TRAINER_NONE, Route120_Text_JenniferIntro, Route120_Text_JenniferDefeat
 	msgbox Route120_Text_JenniferPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route120_EventScript_Chip::
-	trainerbattle_single TRAINER_CHIP, Route120_Text_ChipIntro, Route120_Text_ChipDefeat
+	trainerbattle_single TRAINER_NONE, Route120_Text_ChipIntro, Route120_Text_ChipDefeat
 	msgbox Route120_Text_ChipPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -355,7 +353,7 @@ Route120_EventScript_Leonel::
 	end
 
 Route120_EventScript_Callie::
-	trainerbattle_single TRAINER_CALLIE, Route120_Text_CallieIntro, Route120_Text_CallieDefeat
+	trainerbattle_single TRAINER_NONE, Route120_Text_CallieIntro, Route120_Text_CallieDefeat
 	msgbox Route120_Text_CalliePostBattle, MSGBOX_AUTOCLOSE
 	end
 

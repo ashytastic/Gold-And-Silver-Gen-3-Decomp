@@ -16,11 +16,11 @@ LilycoveCity_PokemonCenter_1F_EventScript_SetLilycoveLadyGfx::
 	end
 
 LilycoveCity_PokemonCenter_1F_EventScript_HideContestLadyMon::
-	setflag FLAG_HIDE_LILYCOVE_POKEMON_CENTER_CONTEST_LADY_MON
+	setflag FLAG_GARBAGEFLAG
 	end
 
 LilycoveCity_PokemonCenter_1F_EventScript_ShowContestLadyMon::
-	clearflag FLAG_HIDE_LILYCOVE_POKEMON_CENTER_CONTEST_LADY_MON
+	clearflag FLAG_GARBAGEFLAG
 	end
 
 LilycoveCity_PokemonCenter_1F_EventScript_Nurse::
@@ -38,7 +38,7 @@ LilycoveCity_PokemonCenter_1F_EventScript_Boy::
 LilycoveCity_PokemonCenter_1F_EventScript_Maniac::
 	lock
 	faceplayer
-	goto_if_set FLAG_BADGE07_GET, LilycoveCity_PokemonCenter_1F_EventScript_ManiacBadTeamGone
+	goto_if_set FLAG_GARBAGEFLAG, LilycoveCity_PokemonCenter_1F_EventScript_ManiacBadTeamGone
 	msgbox LilycoveCity_PokemonCenter_1F_Text_HeardAboutRottenScoundrels, MSGBOX_DEFAULT
 	release
 	end

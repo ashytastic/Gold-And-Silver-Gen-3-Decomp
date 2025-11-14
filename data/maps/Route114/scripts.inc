@@ -23,14 +23,14 @@ Route114_EventScript_Man::
 	lock
 	faceplayer
 	dotimebasedevents
-	goto_if_set FLAG_DAILY_ROUTE_114_RECEIVED_BERRY, Route114_EventScript_ReceivedBerry
+	goto_if_set FLAG_GARBAGEFLAG, Route114_EventScript_ReceivedBerry
 	msgbox Route114_Text_LoveUsingBerryCrushShareBerry, MSGBOX_DEFAULT
 	random NUM_ROUTE_114_MAN_BERRIES
 	addvar VAR_RESULT, NUM_ROUTE_114_MAN_BERRIES_SKIPPED
 	addvar VAR_RESULT, FIRST_BERRY_INDEX
 	giveitem VAR_RESULT
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_DAILY_ROUTE_114_RECEIVED_BERRY
+	setflag FLAG_GARBAGEFLAG
 	msgbox Route114_Text_TryBerryCrushWithFriends, MSGBOX_DEFAULT
 	release
 	end
@@ -111,7 +111,6 @@ Route114_EventScript_RegisterSteve::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route114_Text_SteveRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_STEVE_1
 	release
 	end
 
@@ -121,7 +120,7 @@ Route114_EventScript_RematchSteve::
 	end
 
 Route114_EventScript_Bernie::
-	trainerbattle_single TRAINER_BERNIE_1, Route114_Text_BernieIntro, Route114_Text_BernieDefeat, Route114_EventScript_RegisterBernie
+	trainerbattle_single TRAINER_NONE, Route114_Text_BernieIntro, Route114_Text_BernieDefeat, Route114_EventScript_RegisterBernie
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route114_EventScript_RematchBernie
 	msgbox Route114_Text_BerniePostBattle, MSGBOX_DEFAULT
@@ -132,12 +131,11 @@ Route114_EventScript_RegisterBernie::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route114_Text_BernieRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_BERNIE_1
 	release
 	end
 
 Route114_EventScript_RematchBernie::
-	trainerbattle_rematch TRAINER_BERNIE_1, Route114_Text_BernieRematchIntro, Route114_Text_BernieRematchDefeat
+	trainerbattle_rematch TRAINER_NONE, Route114_Text_BernieRematchIntro, Route114_Text_BernieRematchDefeat
 	msgbox Route114_Text_BerniePostRematch, MSGBOX_AUTOCLOSE
 	end
 
@@ -162,12 +160,12 @@ Route114_EventScript_Ivy::
 	end
 
 Route114_EventScript_Angelina::
-	trainerbattle_single TRAINER_ANGELINA, Route114_Text_AngelinaIntro, Route114_Text_AngelinaDefeat
+	trainerbattle_single TRAINER_NONE, Route114_Text_AngelinaIntro, Route114_Text_AngelinaDefeat
 	msgbox Route114_Text_AngelinaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route114_EventScript_Charlotte::
-	trainerbattle_single TRAINER_CHARLOTTE, Route114_Text_CharlotteIntro, Route114_Text_CharlotteDefeat
+	trainerbattle_single TRAINER_NONE, Route114_Text_CharlotteIntro, Route114_Text_CharlotteDefeat
 	msgbox Route114_Text_CharlottePostBattle, MSGBOX_AUTOCLOSE
 	end
 

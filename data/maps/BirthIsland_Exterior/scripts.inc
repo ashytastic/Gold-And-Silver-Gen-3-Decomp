@@ -9,7 +9,7 @@ BirthIsland_Exterior_OnReturnToField:
 	end
 
 BirthIsland_Exterior_OnTransition:
-	setflag FLAG_MAP_SCRIPT_CHECKED_DEOXYS
+	setflag FLAG_GARBAGEFLAG
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL
 	setvar VAR_DEOXYS_ROCK_STEP_COUNT, 0
 	setvar VAR_DEOXYS_ROCK_LEVEL, 0
@@ -25,11 +25,11 @@ BirthIsland_Exterior_EventScript_HideDeoxysAndPuzzle::
 BirthIsland_Exterior_EventScript_TryShowDeoxysPuzzle::
 	goto_if_set FLAG_DEFEATED_DEOXYS, Common_EventScript_NopReturn
 	clearflag FLAG_HIDE_BIRTH_ISLAND_DEOXYS_TRIANGLE
-	clearflag FLAG_DEOXYS_ROCK_COMPLETE
+	clearflag FLAG_GARBAGEFLAG
 	return
 
 BirthIsland_Exterior_OnResume:
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, BirthIsland_Exterior_EventScript_TryRemoveDeoxys
+	call_if_set FLAG_GARBAGEFLAG, BirthIsland_Exterior_EventScript_TryRemoveDeoxys
 	end
 
 BirthIsland_Exterior_EventScript_TryRemoveDeoxys::
@@ -82,10 +82,10 @@ BirthIsland_Exterior_EventScript_Deoxys::
 	waitmoncry
 	setvar VAR_LAST_TALKED, LOCALID_BIRTH_ISLAND_DEOXYS
 	seteventmon SPECIES_DEOXYS_NORMAL, 30
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_GARBAGEFLAG
 	special BattleSetup_StartLegendaryBattle
 	waitstate
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	clearflag FLAG_GARBAGEFLAG
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, BirthIsland_Exterior_EventScript_DefeatedDeoxys
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, BirthIsland_Exterior_EventScript_RanFromDeoxys

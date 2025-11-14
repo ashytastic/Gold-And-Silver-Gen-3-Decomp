@@ -4,11 +4,11 @@ PetalburgCity_MapScripts::
 	.byte 0
 
 PetalburgCity_OnTransition:
-	setflag FLAG_VISITED_PETALBURG_CITY
-	call_if_eq VAR_PETALBURG_CITY_STATE, 0, PetalburgCity_EventScript_MoveGymBoyToWestEntrance
-	call_if_eq VAR_PETALBURG_CITY_STATE, 2, PetalburgCity_EventScript_DisableMapNameAndMusic
-	call_if_eq VAR_PETALBURG_CITY_STATE, 4, PetalburgCity_EventScript_DisableMapNameAndMusic
-	call_if_eq VAR_PETALBURG_GYM_STATE, 8, PetalburgCity_EventScript_SetGymDoorsUnlocked
+	setflag FLAG_GARBAGEFLAG
+	call_if_eq VAR_GARBAGEVAR, 0, PetalburgCity_EventScript_MoveGymBoyToWestEntrance
+	call_if_eq VAR_GARBAGEVAR, 2, PetalburgCity_EventScript_DisableMapNameAndMusic
+	call_if_eq VAR_GARBAGEVAR, 4, PetalburgCity_EventScript_DisableMapNameAndMusic
+	call_if_eq VAR_GARBAGEVAR, 8, PetalburgCity_EventScript_SetGymDoorsUnlocked
 	end
 
 PetalburgCity_EventScript_MoveGymBoyToWestEntrance::
@@ -16,17 +16,17 @@ PetalburgCity_EventScript_MoveGymBoyToWestEntrance::
 	return
 
 PetalburgCity_EventScript_DisableMapNameAndMusic::
-	setflag FLAG_HIDE_MAP_NAME_POPUP
+	setflag FLAG_GARBAGEFLAG
 	savebgm MUS_FOLLOW_ME
 	return
 
 PetalburgCity_EventScript_SetGymDoorsUnlocked::
-	setvar VAR_PETALBURG_GYM_STATE, 7
+	setvar VAR_GARBAGEVAR, 7
 	return
 
 PetalburgCity_OnFrame:
-	map_script_2 VAR_PETALBURG_CITY_STATE, 2, PetalburgCity_EventScript_WallyTutorial
-	map_script_2 VAR_PETALBURG_CITY_STATE, 4, PetalburgCity_EventScript_WalkToWallyHouse
+	map_script_2 VAR_GARBAGEVAR, 2, PetalburgCity_EventScript_WallyTutorial
+	map_script_2 VAR_GARBAGEVAR, 4, PetalburgCity_EventScript_WalkToWallyHouse
 	.2byte 0
 
 PetalburgCity_EventScript_WallyTutorial::
@@ -44,12 +44,12 @@ PetalburgCity_EventScript_WallyTutorial::
 	waitmovement LOCALID_PETALBURG_WALLY, MAP_PETALBURG_CITY
 	msgbox Route102_Text_LetsGoBack, MSGBOX_DEFAULT
 	closemessage
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
-	setvar VAR_PETALBURG_CITY_STATE, 3
+	clearflag FLAG_GARBAGEFLAG
+	setvar VAR_GARBAGEVAR, 3
 	fadedefaultbgm
-	clearflag FLAG_DONT_TRANSITION_MUSIC
+	clearflag FLAG_GARBAGEFLAG
 	special LoadPlayerParty
-	setvar VAR_PETALBURG_GYM_STATE, 1
+	setvar VAR_GARBAGEVAR, 1
 	warp MAP_PETALBURG_CITY_GYM, 4, 108
 	waitstate
 	releaseall
@@ -57,7 +57,7 @@ PetalburgCity_EventScript_WallyTutorial::
 
 PetalburgCity_EventScript_WalkToWallyHouse::
 	lockall
-	setflag FLAG_HIDE_MAP_NAME_POPUP
+	setflag FLAG_GARBAGEFLAG
 	applymovement LOCALID_PETALBURG_WALLYS_DAD, PetalburgCity_Movement_WalkToWallyHouseWallysDad
 	applymovement LOCALID_PLAYER, PetalburgCity_Movement_WalkToWallyHousePlayer
 	waitmovement 0
@@ -68,13 +68,13 @@ PetalburgCity_EventScript_WalkToWallyHouse::
 	applymovement LOCALID_PETALBURG_WALLYS_DAD, PetalburgCity_Movement_WalkInsideHouseWallysDad
 	applymovement LOCALID_PLAYER, PetalburgCity_Movement_WalkInsideHousePlayer
 	waitmovement 0
-	setflag FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD
+	setflag FLAG_GARBAGEFLAG
 	hideobjectat LOCALID_PLAYER, MAP_PETALBURG_CITY
 	closedoor VAR_0x8004, VAR_0x8005
 	waitdooranim
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	clearflag FLAG_GARBAGEFLAG
 	fadedefaultbgm
-	clearflag FLAG_DONT_TRANSITION_MUSIC
+	clearflag FLAG_GARBAGEFLAG
 	warp MAP_PETALBURG_CITY_WALLYS_HOUSE, 2, 4
 	waitstate
 	releaseall

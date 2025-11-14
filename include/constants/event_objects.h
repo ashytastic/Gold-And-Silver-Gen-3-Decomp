@@ -283,11 +283,54 @@
 #define OBJ_EVENT_GFX_ARIANA             276
 #define OBJ_EVENT_GFX_BURGLAR             277
 #define OBJ_EVENT_GFX_KURT                 278
+#define OBJ_EVENT_GFX_JUGGLER		279
+#define OBJ_EVENT_GFX_CAPTAIN		280
+#define OBJ_EVENT_GFX_WORKER_M		281
+#define OBJ_EVENT_GFX_BOY		282
+#define OBJ_EVENT_GFX_OLD_MAN_1		283
+#define OBJ_EVENT_GFX_FISHER		284
+#define OBJ_EVENT_GFX_GBA_KID		285
+#define OBJ_EVENT_GFX_CHANNELER		286
+#define OBJ_EVENT_GFX_SUPER_NERD		287
+#define OBJ_EVENT_GFX_BALDING_MAN		288
+#define OBJ_EVENT_GFX_GYM_GUY		289
+#define OBJ_EVENT_GFX_MAN		290
+#define OBJ_EVENT_GFX_COOLTRAINER_M		291
+#define OBJ_EVENT_GFX_CLERK		292
+#define OBJ_EVENT_GFX_TRAINER_TOWER_DUDE		293
+#define OBJ_EVENT_GFX_ATTENDANT_M		294
+#define OBJ_EVENT_GFX_ATTENDANT		295
+#define OBJ_EVENT_GFX_OLD_MAN_2		296
+#define OBJ_EVENT_GFX_POLICEMAN		297
+#define OBJ_EVENT_GFX_SCIENTIST_F		298
+#define OBJ_EVENT_GFX_SCIENTIST_M		299
+#define OBJ_EVENT_GFX_SWIMMER_F_WATER		300
+#define OBJ_EVENT_GFX_TUBER_M_WATER		301
+#define OBJ_EVENT_GFX_ENGINEER		302
+#define OBJ_EVENT_GFX_SWIMMER_M_WATER		303
+#define OBJ_EVENT_GFX_WORKER_F		304
+#define OBJ_EVENT_GFX_COOLTRAINER_F		305
+#define OBJ_EVENT_GFX_BIKER		306
+#define OBJ_EVENT_GFX_BATTLE_GIRL		307
+#define OBJ_EVENT_GFX_FR_LASS                        308
+#define OBJ_EVENT_GFX_BILL              309
+#define OBJ_EVENT_GFX_NURSE_CHANSEY              310
+#define OBJ_EVENT_GFX_PROF_OAK              311
+#define OBJ_EVENT_GFX_MR_FUJI               312
+#define OBJ_EVENT_GFX_TRAIN_FRONT               313
+#define OBJ_EVENT_GFX_GIOVANNI               314
+#define OBJ_EVENT_GFX_BIG_SNORLAX               315
+#define OBJ_EVENT_GFX_EUSINE                    316
+#define OBJ_EVENT_GFX_SLOWPOKE_NO_TAIL          317
+#define OBJ_EVENT_GFX_RED_NORMAL                318
+#define OBJ_EVENT_GFX_TRAIN_MID                319
+#define OBJ_EVENT_GFX_TRAIN_BACK                320
+#define OBJ_EVENT_GFX_LEGENDARY_SHADOW          321
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        279
+#define NUM_OBJ_EVENT_GFX                        322
 
 
 // These are dynamic object gfx ids.

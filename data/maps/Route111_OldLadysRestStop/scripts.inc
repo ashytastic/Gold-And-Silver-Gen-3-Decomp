@@ -3,7 +3,7 @@ Route111_OldLadysRestStop_MapScripts::
 	.byte 0
 
 Route111_OldLadysRestStop_OnTransition:
-	setflag FLAG_LANDMARK_OLD_LADY_REST_SHOP
+	setflag FLAG_GARBAGEFLAG
 	end
 
 Route111_OldLadysRestStop_EventScript_OldLady::

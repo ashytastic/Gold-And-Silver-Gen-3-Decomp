@@ -17,7 +17,7 @@ NewMauville_Entrance_EventScript_CloseDoor::
 	return
 
 NewMauville_Entrance_OnTransition:
-	setflag FLAG_LANDMARK_NEW_MAUVILLE
+	setflag FLAG_GARBAGEFLAG
 	end
 
 NewMauville_Entrance_EventScript_Door::

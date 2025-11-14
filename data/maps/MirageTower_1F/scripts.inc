@@ -3,7 +3,7 @@ MirageTower_1F_MapScripts::
 	.byte 0
 
 MirageTower_1F_OnTransition:
-	setflag FLAG_ENTERED_MIRAGE_TOWER
+	setflag FLAG_GARBAGEFLAG
 	setflag FLAG_FORCE_MIRAGE_TOWER_VISIBLE
 	setflag FLAG_LANDMARK_MIRAGE_TOWER
 	end

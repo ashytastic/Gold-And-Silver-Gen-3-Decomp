@@ -21,6 +21,7 @@
 #include "international_string_util.h"
 #include "item.h"
 #include "item_icon.h"
+#include "item_menu.h"
 #include "link.h"
 #include "list_menu.h"
 #include "load_save.h"
@@ -1433,16 +1434,16 @@ bool8 Special_AreLeadMonEVsMaxedOut(void)
 
 u8 TryUpdateRusturfTunnelState(void)
 {
-    if (!FlagGet(FLAG_RUSTURF_TUNNEL_OPENED)
+    if (!FlagGet(FLAG_GARBAGEFLAG)
         && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_RUSTURF_TUNNEL)
         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_RUSTURF_TUNNEL))
     {
-        if (FlagGet(FLAG_HIDE_RUSTURF_TUNNEL_ROCK_1))
+        if (FlagGet(FLAG_GARBAGEFLAG))
         {
             VarSet(VAR_RUSTURF_TUNNEL_STATE, 4);
             return TRUE;
         }
-        else if (FlagGet(FLAG_HIDE_RUSTURF_TUNNEL_ROCK_2))
+        else if (FlagGet(FLAG_GARBAGEFLAG))
         {
             VarSet(VAR_RUSTURF_TUNNEL_STATE, 5);
             return TRUE;
@@ -2395,6 +2396,16 @@ void ShowScrollableMultichoice(void)
         task->tTop = 1;
         task->tWidth = 14;
         task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+     case SCROLL_MULTI_BF_MOVE_TUTOR_3:
+        task->tMaxItemsOnScreen = 4;
+        task->tNumItems = 4;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 8;
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
@@ -3546,7 +3557,6 @@ u32 GetMartEmployeeObjectEventId(void)
         { MAP_GROUP(MAP_FORTREE_CITY_MART),    MAP_NUM(MAP_FORTREE_CITY_MART),    LOCALID_FORTREE_MART_CLERK },
         { MAP_GROUP(MAP_MOSSDEEP_CITY_MART),   MAP_NUM(MAP_MOSSDEEP_CITY_MART),   LOCALID_MOSSDEEP_MART_CLERK },
         { MAP_GROUP(MAP_SOOTOPOLIS_CITY_MART), MAP_NUM(MAP_SOOTOPOLIS_CITY_MART), LOCALID_SOOTOPOLIS_MART_CLERK },
-        { MAP_GROUP(MAP_BATTLE_FRONTIER_MART), MAP_NUM(MAP_BATTLE_FRONTIER_MART), LOCALID_FRONTIER_MART_CLERK },
     };
 
     u8 i;
@@ -3934,11 +3944,11 @@ void UpdateTrainerFanClubGameClear(void)
         SetPlayerGotFirstFans();
         SetInitialFansOfPlayer();
         gSaveBlock1Ptr->vars[VAR_FANCLUB_LOSE_FAN_TIMER - VARS_START] = gSaveBlock2Ptr->playTimeHours;
-        FlagClear(FLAG_HIDE_FANCLUB_OLD_LADY);
-        FlagClear(FLAG_HIDE_FANCLUB_BOY);
-        FlagClear(FLAG_HIDE_FANCLUB_LITTLE_BOY);
-        FlagClear(FLAG_HIDE_FANCLUB_LADY);
-        FlagClear(FLAG_HIDE_LILYCOVE_FAN_CLUB_INTERVIEWER);
+        FlagClear(FLAG_GARBAGEFLAG);
+        FlagClear(FLAG_GARBAGEFLAG);
+        FlagClear(FLAG_GARBAGEFLAG);
+        FlagClear(FLAG_GARBAGEFLAG);
+        FlagClear(FLAG_GARBAGEFLAG);
         VarSet(VAR_LILYCOVE_FAN_CLUB_STATE, 1);
     }
 }
@@ -4368,4 +4378,188 @@ void SetHiddenNature(void)
     u32 hiddenNature = gSpecialVar_Result;
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HIDDEN_NATURE, &hiddenNature);
     CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+void ChooseItemFromBag(void)
+{
+    switch (VarGet(VAR_TEMP_1))
+    {
+    case POCKET_ITEMS:
+    case POCKET_POKE_BALLS:
+    case POCKET_TM_HM:
+    case POCKET_BERRIES:
+    case POCKET_KEY_ITEMS:
+        GoToBagMenu(ITEMMENULOCATION_CHOOSE_ITEM, VarGet(VAR_TEMP_1), CB2_ReturnToFieldContinueScript);
+    default:
+        break;
+    }
+}
+// Sets the HP Stat of the Pokémon according to the current value of var 0x8000 
+void SetHpStat(void)
+{
+    u16 HpStat = gSpecialVar_0x8000;
+    SetMonData(&gEnemyParty[0], MON_DATA_HP, &HpStat);
+    SetMonData(&gEnemyParty[0], MON_DATA_MAX_HP, &HpStat);
+}
+
+// Sets the Atk Stat of the Pokémon according to the current value of var 0x8001
+void SetAtkStat(void)
+{
+    u16 AtkStat = gSpecialVar_0x8001;
+    SetMonData(&gEnemyParty[0], MON_DATA_ATK, &AtkStat);
+}
+
+// Sets the Def Stat of the Pokémon according to the current value of var 0x8002
+void SetDefStat(void)
+{
+    u16 DefStat = gSpecialVar_0x8002;
+    SetMonData(&gEnemyParty[0], MON_DATA_DEF, &DefStat);
+}
+
+// Sets the Spd Stat of the Pokémon according to the current value of var 0x8003
+void SetSpdStat(void)
+{
+    u16 SpdStat = gSpecialVar_0x8003;
+    SetMonData(&gEnemyParty[0], MON_DATA_SPEED, &SpdStat);
+}
+
+// Sets the SpAtk Stat of the Pokémon according to the current value of var 0x8005
+void SetSpAtkStat(void)
+{
+    u16 SpAtkStat = gSpecialVar_0x8005;
+    SetMonData(&gEnemyParty[0], MON_DATA_SPATK, &SpAtkStat);
+}
+
+// Sets the SpDef Stat of the Pokémon according to the current value of var 0x8006
+void SetSpDefStat(void)
+{
+    u16 SpDefStat = gSpecialVar_0x8006;
+    SetMonData(&gEnemyParty[0], MON_DATA_SPDEF, &SpDefStat);
+}
+
+//HnS haircut
+void HaircutBrother1(void)
+{
+    AdjustFriendship(&gPlayerParty[gSpecialVar_0x8004], FRIENDSHIP_EVENT_HAIRCUT1);
+}
+
+void HaircutBrother2(void)
+{
+    AdjustFriendship(&gPlayerParty[gSpecialVar_0x8004], FRIENDSHIP_EVENT_HAIRCUT2);
+}
+
+void SetVermilionTrashCans(void)
+{
+    u16 idx = (Random() % 15) + 1;
+    gSpecialVar_0x8004 = idx;
+    gSpecialVar_0x8005 = idx;
+    switch (gSpecialVar_0x8004)
+    {
+    case 1:
+        idx = Random() % 2;
+        if (idx == 0)
+            gSpecialVar_0x8005 += 1;
+        else
+            gSpecialVar_0x8005 += 5;
+        break;
+    case 2:
+    case 3:
+    case 4:
+        idx = Random() % 3;
+        if (idx == 0)
+            gSpecialVar_0x8005 += 1;
+        else if (idx == 1)
+            gSpecialVar_0x8005 += 5;
+        else
+            gSpecialVar_0x8005 -= 1;
+        break;
+    case 5:
+        idx = Random() % 2;
+        if (idx == 0)
+            gSpecialVar_0x8005 += 5;
+        else
+            gSpecialVar_0x8005 -= 1;
+        break;
+    case 6:
+        idx = Random() % 3;
+        if (idx == 0)
+            gSpecialVar_0x8005 -= 5;
+        else if (idx == 1)
+            gSpecialVar_0x8005 += 1;
+        else
+            gSpecialVar_0x8005 += 5;
+        break;
+    case 7:
+    case 8:
+    case 9:
+        idx = Random() % 4;
+        if (idx == 0)
+            gSpecialVar_0x8005 -= 5;
+        else if (idx == 1)
+            gSpecialVar_0x8005 += 1;
+        else if (idx == 2)
+            gSpecialVar_0x8005 += 5;
+        else
+            gSpecialVar_0x8005 -= 1;
+        break;
+    case 10:
+        idx = Random() % 3;
+        if (idx == 0)
+            gSpecialVar_0x8005 -= 5;
+        else if (idx == 1)
+            gSpecialVar_0x8005 += 5;
+        else
+            gSpecialVar_0x8005 -= 1;
+        break;
+    case 11:
+        idx = Random() % 2;
+        if (idx == 0)
+            gSpecialVar_0x8005 -= 5;
+        else
+            gSpecialVar_0x8005 += 1;
+        break;
+    case 12:
+    case 13:
+    case 14:
+        idx = Random() % 3;
+        if (idx == 0)
+            gSpecialVar_0x8005 -= 5;
+        else if (idx == 1)
+            gSpecialVar_0x8005 += 1;
+        else
+            gSpecialVar_0x8005 -= 1;
+        break;
+    case 15:
+        idx = Random() % 2;
+        if (idx == 0)
+            gSpecialVar_0x8005 -= 5;
+        else
+            gSpecialVar_0x8005 -= 1;
+        break;
+    }
+    if (gSpecialVar_0x8005 > 15)
+    {
+        if (gSpecialVar_0x8004 % 5 == 1)
+            gSpecialVar_0x8005 = gSpecialVar_0x8004 + 1;
+        else if (gSpecialVar_0x8004 % 5 == 0)
+            gSpecialVar_0x8005 = gSpecialVar_0x8004 - 1;
+        else
+            gSpecialVar_0x8005 = gSpecialVar_0x8004 + 1;
+    }
+}
+void SwitchMonAbility(void)
+{
+    u16 species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES, NULL);
+    u8 currentAbilityNum = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ABILITY_NUM, NULL);
+
+    if (gSpeciesInfo[species].abilities[1] != 0 && gSpeciesInfo[species].abilities[0] != gSpeciesInfo[species].abilities[1])
+    {
+        u8 newAbilityNum = !currentAbilityNum;
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ABILITY_NUM, &newAbilityNum);
+        gSpecialVar_Result = TRUE;
+    }
+    else
+    {
+        gSpecialVar_Result = FALSE;
+    }
 }

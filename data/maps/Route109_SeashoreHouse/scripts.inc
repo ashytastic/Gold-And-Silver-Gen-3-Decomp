@@ -3,7 +3,7 @@ Route109_SeashoreHouse_MapScripts::
 	.byte 0
 
 Route109_SeashoreHouse_OnTransition:
-	setflag FLAG_LANDMARK_SEASHORE_HOUSE
+	setflag FLAG_GARBAGEFLAG
 	end
 
 Route109_SeashoreHouse_EventScript_Owner::

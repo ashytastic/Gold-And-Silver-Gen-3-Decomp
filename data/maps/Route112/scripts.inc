@@ -61,7 +61,7 @@ Route112_EventScript_Hiker::
 	end
 
 Route112_EventScript_Brice::
-	trainerbattle_single TRAINER_BRICE, Route112_Text_BriceIntro, Route112_Text_BriceDefeat
+	trainerbattle_single TRAINER_NONE, Route112_Text_BriceIntro, Route112_Text_BriceDefeat
 	msgbox Route112_Text_BricePostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -77,7 +77,6 @@ Route112_EventScript_RegisterTrent::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route112_Text_TrentRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_TRENT_1
 	release
 	end
 
@@ -97,7 +96,7 @@ Route112_EventScript_Carol::
 	end
 
 Route112_EventScript_Bryant::
-	trainerbattle_single TRAINER_BRYANT, Route112_Text_BryantIntro, Route112_Text_BryantDefeat
+	trainerbattle_single TRAINER_NONE, Route112_Text_BryantIntro, Route112_Text_BryantDefeat
 	msgbox Route112_Text_BryantPostBattle, MSGBOX_AUTOCLOSE
 	end
 

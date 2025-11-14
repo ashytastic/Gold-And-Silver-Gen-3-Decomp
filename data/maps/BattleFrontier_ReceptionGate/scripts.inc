@@ -4,7 +4,7 @@ BattleFrontier_ReceptionGate_MapScripts::
 	.byte 0
 
 BattleFrontier_ReceptionGate_OnTransition:
-	setflag FLAG_LANDMARK_BATTLE_FRONTIER
+	setflag FLAG_GARBAGEFLAG
 	end
 
 BattleFrontier_ReceptionGate_OnFrame:
@@ -34,7 +34,7 @@ BattleFrontier_ReceptionGate_EventScript_ScottScene::
 	waitfanfare
 	waitmessage
 	msgbox BattleFrontier_ReceptionGate_Text_PlacedTrainerCardInFrontierPass, MSGBOX_DEFAULT
-	setflag FLAG_SYS_FRONTIER_PASS
+	setflag FLAG_GARBAGEFLAG
 	msgbox BattleFrontier_ReceptionGate_Text_EnjoyBattleFrontier, MSGBOX_DEFAULT
 	msgbox BattleFrontier_ReceptionGate_Text_IfItIsntPlayerYouCame, MSGBOX_DEFAULT
 	closemessage

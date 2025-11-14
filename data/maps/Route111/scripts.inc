@@ -75,10 +75,10 @@ Route111_EventScript_EndCheckSetSandstorm::
 	return
 
 Route111_EventScript_SetWinstratesNotDefeated::
-	clearflag FLAG_HIDE_ROUTE_111_VICTOR_WINSTRATE
-	setflag FLAG_HIDE_ROUTE_111_VICTORIA_WINSTRATE
-	setflag FLAG_HIDE_ROUTE_111_VIVI_WINSTRATE
-	setflag FLAG_HIDE_ROUTE_111_VICKY_WINSTRATE
+	clearflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
 	cleartrainerflag TRAINER_VICTOR
 	cleartrainerflag TRAINER_VICTORIA
 	cleartrainerflag TRAINER_VIVI
@@ -123,7 +123,7 @@ Route111_EventScript_MirageTowerDisappear::
 	special StartMirageTowerFossilFallAndSink
 	waitstate
 	setvar VAR_MIRAGE_TOWER_STATE, 2
-	clearflag FLAG_HIDE_DESERT_UNDERPASS_FOSSIL
+	clearflag FLAG_GARBAGEFLAG
 	goto_if_set FLAG_CHOSE_CLAW_FOSSIL, Route111_EventScript_RootFossilDisappeared
 	msgbox Route111_Text_ClawFossilDisappeared, MSGBOX_DEFAULT
 	releaseall
@@ -149,11 +149,11 @@ Route111_EventScript_Girl::
 	lock
 	faceplayer
 	dotimebasedevents
-	goto_if_set FLAG_DAILY_ROUTE_111_RECEIVED_BERRY, Route111_EventScript_ReceivedBerry
+	goto_if_set FLAG_GARBAGEFLAG, Route111_EventScript_ReceivedBerry
 	msgbox Route111_Text_WateredPlantsEveryDayTakeBerry, MSGBOX_DEFAULT
 	giveitem ITEM_RAZZ_BERRY
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_DAILY_ROUTE_111_RECEIVED_BERRY
+	setflag FLAG_GARBAGEFLAG
 	special GetPlayerBigGuyGirlString
 	msgbox Route111_Text_GoingToTryToMakeDifferentColorBerries, MSGBOX_DEFAULT
 	release
@@ -259,7 +259,7 @@ Route111_EventScript_SandstormTrigger::
 Route111_EventScript_Victor::
 	lock
 	faceplayer
-	setflag FLAG_LANDMARK_WINSTRATE_FAMILY
+	setflag FLAG_GARBAGEFLAG
 	msgbox Route111_Text_BattleOurFamily, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, Route111_EventScript_BattleWinstrates
 	msgbox Route111_Text_IsThatSo, MSGBOX_DEFAULT
@@ -429,7 +429,7 @@ Route111_EventScript_RockSmashTipFatMan::
 	end
 
 Route111_EventScript_Drew::
-	trainerbattle_single TRAINER_DREW, Route111_Text_DrewIntro, Route111_Text_DrewDefeat
+	trainerbattle_single TRAINER_NONE, Route111_Text_DrewIntro, Route111_Text_DrewDefeat
 	msgbox Route111_Text_DrewPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -439,17 +439,17 @@ Route111_EventScript_Heidi::
 	end
 
 Route111_EventScript_Beau::
-	trainerbattle_single TRAINER_BEAU, Route111_Text_BeauIntro, Route111_Text_BeauDefeat
+	trainerbattle_single TRAINER_NONE, Route111_Text_BeauIntro, Route111_Text_BeauDefeat
 	msgbox Route111_Text_BeauPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_Becky::
-	trainerbattle_single TRAINER_BECKY, Route111_Text_BeckyIntro, Route111_Text_BeckyDefeat
+	trainerbattle_single TRAINER_NONE, Route111_Text_BeckyIntro, Route111_Text_BeckyDefeat
 	msgbox Route111_Text_BeckyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_Dusty::
-	trainerbattle_single TRAINER_DUSTY_1, Route111_Text_DustyIntro, Route111_Text_DustyDefeat, Route111_EventScript_RegisterDusty
+	trainerbattle_single TRAINER_NONE, Route111_Text_DustyIntro, Route111_Text_DustyDefeat, Route111_EventScript_RegisterDusty
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route111_EventScript_RematchDusty
 	msgbox Route111_Text_DustyPostBattle, MSGBOX_DEFAULT
@@ -460,12 +460,11 @@ Route111_EventScript_RegisterDusty::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route111_Text_DustyRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_DUSTY_1
 	release
 	end
 
 Route111_EventScript_RematchDusty::
-	trainerbattle_rematch TRAINER_DUSTY_1, Route111_Text_DustyRematchIntro, Route111_Text_DustyRematchDefeat
+	trainerbattle_rematch TRAINER_NONE, Route111_Text_DustyRematchIntro, Route111_Text_DustyRematchDefeat
 	msgbox Route111_Text_DustyPostRematch, MSGBOX_AUTOCLOSE
 	end
 
@@ -480,7 +479,7 @@ Route111_EventScript_Irene::
 	end
 
 Route111_EventScript_Daisuke::
-	trainerbattle_single TRAINER_DAISUKE, Route111_Text_DaisukeIntro, Route111_Text_DaisukeDefeat
+	trainerbattle_single TRAINER_NONE, Route111_Text_DaisukeIntro, Route111_Text_DaisukeDefeat
 	msgbox Route111_Text_DaisukePostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -496,7 +495,6 @@ Route111_EventScript_RegisterWilton::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route111_Text_WiltonRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_WILTON_1
 	release
 	end
 
@@ -506,7 +504,7 @@ Route111_EventScript_RematchWilton::
 	end
 
 Route111_EventScript_Brooke::
-	trainerbattle_single TRAINER_BROOKE_1, Route111_Text_BrookeIntro, Route111_Text_BrookeDefeat, Route111_EventScript_RegisterBrooke
+	trainerbattle_single TRAINER_NONE, Route111_Text_BrookeIntro, Route111_Text_BrookeDefeat, Route111_EventScript_RegisterBrooke
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route111_EventScript_RematchBrooke
 	msgbox Route111_Text_BrookePostBattle, MSGBOX_DEFAULT
@@ -517,17 +515,16 @@ Route111_EventScript_RegisterBrooke::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route111_Text_BrookeRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_BROOKE_1
 	release
 	end
 
 Route111_EventScript_RematchBrooke::
-	trainerbattle_rematch TRAINER_BROOKE_1, Route111_Text_BrookeRematchIntro, Route111_Text_BrookeRematchDefeat
+	trainerbattle_rematch TRAINER_NONE, Route111_Text_BrookeRematchIntro, Route111_Text_BrookeRematchDefeat
 	msgbox Route111_Text_BrookePostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_Hayden::
-	trainerbattle_single TRAINER_HAYDEN, Route111_Text_HaydenIntro, Route111_Text_HaydenDefeat
+	trainerbattle_single TRAINER_NONE, Route111_Text_HaydenIntro, Route111_Text_HaydenDefeat
 	msgbox Route111_Text_HaydenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -542,12 +539,12 @@ Route111_EventScript_Tyron::
 	end
 
 Route111_EventScript_Celina::
-	trainerbattle_single TRAINER_CELINA, Route111_Text_CelinaIntro, Route111_Text_CelinaDefeat
+	trainerbattle_single TRAINER_NONE, Route111_Text_CelinaIntro, Route111_Text_CelinaDefeat
 	msgbox Route111_Text_CelinaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_Celia::
-	trainerbattle_single TRAINER_CELIA, Route111_Text_CeliaIntro, Route111_Text_CeliaDefeat
+	trainerbattle_single TRAINER_NONE, Route111_Text_CeliaIntro, Route111_Text_CeliaDefeat
 	msgbox Route111_Text_CeliaPostBattle, MSGBOX_AUTOCLOSE
 	end
 

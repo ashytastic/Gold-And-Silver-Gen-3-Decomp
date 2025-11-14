@@ -3,7 +3,7 @@ SouthernIsland_Exterior_MapScripts::
 	.byte 0
 
 SouthernIsland_Exterior_OnTransition:
-	setflag FLAG_LANDMARK_SOUTHERN_ISLAND
+	setflag FLAG_GARBAGEFLAG
 	end
 
 SouthernIsland_Exterior_EventScript_Sailor::

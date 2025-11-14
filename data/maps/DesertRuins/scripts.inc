@@ -5,7 +5,7 @@ DesertRuins_MapScripts::
 	.byte 0
 
 DesertRuins_OnResume:
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, DesertRuins_EventScript_TryRemoveRegirock
+	call_if_set FLAG_GARBAGEFLAG, DesertRuins_EventScript_TryRemoveRegirock
 	end
 
 DesertRuins_EventScript_TryRemoveRegirock::
@@ -15,7 +15,7 @@ DesertRuins_EventScript_TryRemoveRegirock::
 	return
 
 DesertRuins_OnLoad:
-	call_if_unset FLAG_SYS_REGIROCK_PUZZLE_COMPLETED, DesertRuins_EventScript_HideRegiEntrance
+	call_if_unset FLAG_GARBAGEFLAG, DesertRuins_EventScript_HideRegiEntrance
 	end
 
 DesertRuins_EventScript_HideRegiEntrance::
@@ -28,7 +28,7 @@ DesertRuins_EventScript_HideRegiEntrance::
 	return
 
 DesertRuins_OnTransition:
-	setflag FLAG_LANDMARK_DESERT_RUINS
+	setflag FLAG_GARBAGEFLAG
 	call_if_unset FLAG_DEFEATED_REGIROCK, DesertRuins_EventScript_ShowRegirock
 	end
 
@@ -38,7 +38,7 @@ DesertRuins_EventScript_ShowRegirock::
 
 DesertRuins_EventScript_CaveEntranceMiddle::
 	lockall
-	goto_if_set FLAG_SYS_REGIROCK_PUZZLE_COMPLETED, DesertRuins_EventScript_BigHoleInWall
+	goto_if_set FLAG_GARBAGEFLAG, DesertRuins_EventScript_BigHoleInWall
 	braillemsgbox DesertRuins_Braille_UseRockSmash
 	releaseall
 	end
@@ -62,10 +62,10 @@ DesertRuins_EventScript_Regirock::
 	delay 40
 	waitmoncry
 	setwildbattle SPECIES_REGIROCK, 40
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_GARBAGEFLAG
 	special StartRegiBattle
 	waitstate
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	clearflag FLAG_GARBAGEFLAG
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, DesertRuins_EventScript_DefeatedRegirock
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, DesertRuins_EventScript_RanFromRegirock

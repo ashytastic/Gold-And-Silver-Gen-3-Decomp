@@ -28,7 +28,7 @@ Route121_EventScript_AquaGruntsMoveOut::
 	removeobject LOCALID_ROUTE121_GRUNT_1
 	removeobject LOCALID_ROUTE121_GRUNT_2
 	removeobject LOCALID_ROUTE121_GRUNT_3
-	setvar VAR_ROUTE121_STATE, 1
+	setvar VAR_GARBAGEVAR, 1
 	releaseall
 	end
 
@@ -82,7 +82,6 @@ Route121_EventScript_RegisterWalter::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route121_Text_WalterRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_WALTER_1
 	release
 	end
 
@@ -107,7 +106,7 @@ Route121_EventScript_Joy::
 	end
 
 Route121_EventScript_Jessica::
-	trainerbattle_single TRAINER_JESSICA_1, Route121_Text_JessicaIntro, Route121_Text_JessicaDefeat, Route121_EventScript_RegisterJessica
+	trainerbattle_single TRAINER_NONE, Route121_Text_JessicaIntro, Route121_Text_JessicaDefeat, Route121_EventScript_RegisterJessica
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route121_EventScript_RematchJessica
 	msgbox Route121_Text_JessicaPostBattle, MSGBOX_DEFAULT
@@ -118,17 +117,16 @@ Route121_EventScript_RegisterJessica::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route121_Text_JessicaRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_JESSICA_1
 	release
 	end
 
 Route121_EventScript_RematchJessica::
-	trainerbattle_rematch TRAINER_JESSICA_1, Route121_Text_JessicaRematchIntro, Route121_Text_JessicaRematchDefeat
+	trainerbattle_rematch TRAINER_NONE, Route121_Text_JessicaRematchIntro, Route121_Text_JessicaRematchDefeat
 	msgbox Route121_Text_JessicaPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route121_EventScript_Cale::
-	trainerbattle_single TRAINER_CALE, Route121_Text_CaleIntro, Route121_Text_CaleDefeat
+	trainerbattle_single TRAINER_NONE, Route121_Text_CaleIntro, Route121_Text_CaleDefeat
 	msgbox Route121_Text_CalePostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -148,7 +146,7 @@ Route121_EventScript_Marcel::
 	end
 
 Route121_EventScript_Cristin::
-	trainerbattle_single TRAINER_CRISTIN_1, Route121_Text_CristinIntro, Route121_Text_CristinDefeat, Route121_EventScript_RegisterCristin
+	trainerbattle_single TRAINER_NONE, Route121_Text_CristinIntro, Route121_Text_CristinDefeat, Route121_EventScript_RegisterCristin
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route121_EventScript_RematchCristin
 	msgbox Route121_Text_CristinPostBattle, MSGBOX_DEFAULT
@@ -159,12 +157,11 @@ Route121_EventScript_RegisterCristin::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route121_Text_CristinRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_CRISTIN_1
 	release
 	end
 
 Route121_EventScript_RematchCristin::
-	trainerbattle_rematch TRAINER_CRISTIN_1, Route121_Text_CristinRematchIntro, Route121_Text_CristinRematchDefeat
+	trainerbattle_rematch TRAINER_NONE, Route121_Text_CristinRematchIntro, Route121_Text_CristinRematchDefeat
 	msgbox Route121_Text_CristinPostRematch, MSGBOX_AUTOCLOSE
 	end
 

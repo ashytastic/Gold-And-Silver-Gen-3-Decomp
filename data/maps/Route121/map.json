@@ -185,7 +185,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-      "flag": "FLAG_HIDE_ROUTE_121_TEAM_AQUA_GRUNTS"
+      "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "local_id": "LOCALID_ROUTE121_GRUNT_2",
@@ -199,7 +199,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-      "flag": "FLAG_HIDE_ROUTE_121_TEAM_AQUA_GRUNTS"
+      "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "local_id": "LOCALID_ROUTE121_GRUNT_3",
@@ -213,7 +213,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-      "flag": "FLAG_HIDE_ROUTE_121_TEAM_AQUA_GRUNTS"
+      "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
@@ -304,7 +304,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_CARBOS",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_121_CARBOS"
+      "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
@@ -395,7 +395,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_REVIVE",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_121_REVIVE"
+      "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -408,25 +408,17 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_ZINC",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_121_ZINC"
+      "flag": "FLAG_GARBAGEFLAG"
     }
   ],
-  "warp_events": [
-    {
-      "x": 37,
-      "y": 5,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE121_SAFARI_ZONE_ENTRANCE",
-      "dest_warp_id": "2"
-    }
-  ],
+  "warp_events": [],
   "coord_events": [
     {
       "type": "trigger",
       "x": 25,
       "y": 5,
       "elevation": 3,
-      "var": "VAR_ROUTE121_STATE",
+      "var": "VAR_GARBAGEVAR",
       "var_value": "0",
       "script": "Route121_EventScript_AquaGruntsMoveOut"
     },
@@ -435,7 +427,7 @@
       "x": 25,
       "y": 6,
       "elevation": 3,
-      "var": "VAR_ROUTE121_STATE",
+      "var": "VAR_GARBAGEVAR",
       "var_value": "0",
       "script": "Route121_EventScript_AquaGruntsMoveOut"
     },
@@ -444,7 +436,7 @@
       "x": 25,
       "y": 7,
       "elevation": 3,
-      "var": "VAR_ROUTE121_STATE",
+      "var": "VAR_GARBAGEVAR",
       "var_value": "0",
       "script": "Route121_EventScript_AquaGruntsMoveOut"
     },
@@ -453,7 +445,7 @@
       "x": 25,
       "y": 8,
       "elevation": 3,
-      "var": "VAR_ROUTE121_STATE",
+      "var": "VAR_GARBAGEVAR",
       "var_value": "0",
       "script": "Route121_EventScript_AquaGruntsMoveOut"
     }

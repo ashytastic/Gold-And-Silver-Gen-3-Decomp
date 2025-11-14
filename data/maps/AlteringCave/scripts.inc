@@ -3,6 +3,6 @@ AlteringCave_MapScripts::
 	.byte 0
 
 AlteringCave_OnTransition:
-	setflag FLAG_LANDMARK_ALTERING_CAVE
+	setflag FLAG_GARBAGEFLAG
 	end
 

@@ -327,6 +327,56 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
             .palette = gBattleEnvironmentPalette_Rayquaza,
         },
     },
+    [BATTLE_ENVIRONMENT_WILL] =
+        {
+            .background =
+            {
+                .tileset = gBattleEnvironmentTiles_Stadium,
+                .tilemap = gBattleEnvironmentTilemap_Stadium,
+                .entryTileset = gBattleEnvironmentAnimTiles_Building,
+                .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
+                .palette = gBattleEnvironmentPalette_StadiumWill,
+            },
+        },
+
+
+    [BATTLE_ENVIRONMENT_KOGA] =
+        {
+            .background =
+            {
+                .tileset = gBattleEnvironmentTiles_Stadium,
+                .tilemap = gBattleEnvironmentTilemap_Stadium,
+                .entryTileset = gBattleEnvironmentAnimTiles_Building,
+                .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
+                .palette = gBattleEnvironmentPalette_StadiumKoga,
+            },
+        },
+
+
+    [BATTLE_ENVIRONMENT_BRUNO] =
+        {
+            .background =
+            {
+                .tileset = gBattleEnvironmentTiles_Stadium,
+                .tilemap = gBattleEnvironmentTilemap_Stadium,
+                .entryTileset = gBattleEnvironmentAnimTiles_Building,
+                .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
+                .palette = gBattleEnvironmentPalette_StadiumBruno,
+            },
+        },
+
+
+    [BATTLE_ENVIRONMENT_KAREN] =
+        {
+            .background =
+            {
+                .tileset = gBattleEnvironmentTiles_Stadium,
+                .tilemap = gBattleEnvironmentTilemap_Stadium,
+                .entryTileset = gBattleEnvironmentAnimTiles_Building,
+                .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
+                .palette = gBattleEnvironmentPalette_StadiumKaren,
+            },
+        },
 
     [BATTLE_ENVIRONMENT_SOARING] =
     {
@@ -430,5 +480,9 @@ static const struct {
     {MAP_BATTLE_SCENE_PHOEBE,   BATTLE_ENVIRONMENT_PHOEBE},
     {MAP_BATTLE_SCENE_GLACIA,   BATTLE_ENVIRONMENT_GLACIA},
     {MAP_BATTLE_SCENE_DRAKE,    BATTLE_ENVIRONMENT_DRAKE},
-    {MAP_BATTLE_SCENE_FRONTIER, BATTLE_ENVIRONMENT_FRONTIER}
+    {MAP_BATTLE_SCENE_FRONTIER, BATTLE_ENVIRONMENT_FRONTIER},
+    {MAP_BATTLE_SCENE_WILL,    BATTLE_ENVIRONMENT_WILL},
+    {MAP_BATTLE_SCENE_KOGA,    BATTLE_ENVIRONMENT_KOGA},
+    {MAP_BATTLE_SCENE_BRUNO,    BATTLE_ENVIRONMENT_BRUNO},
+    {MAP_BATTLE_SCENE_KAREN,    BATTLE_ENVIRONMENT_KAREN}
 };

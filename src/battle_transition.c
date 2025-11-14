@@ -1335,6 +1335,7 @@ static void Task_Magma(u8 taskId)
     while (sMagma_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
 }
 
+
 static void Task_Regice(u8 taskId)
 {
     while (sRegice_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
@@ -1409,6 +1410,7 @@ static bool8 Magma_Init(struct Task *task)
     task->tState++;
     return FALSE;
 }
+
 
 static bool8 Regi_Init(struct Task *task)
 {

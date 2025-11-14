@@ -474,3 +474,90 @@ Text_MonUsedRockClimb:
 Text_CantRockClimb:
     .string "The cliff is steep.\n"
     .string "A Pokémon may be able to climb it.$"
+
+@HnS
+EventScript_Whirlpool::
+	lockall
+	goto_if_unset FLAG_GARBAGEFLAG, EventScript_CantWhirlpool
+	@checkpartymove MOVE_WHIRLPOOL @checkpartymove doesn't work for the 8th hm i guess.
+	@goto_if_eq FLAG_GARBAGEFLAG, FALSE, EventScript_CantWhirlpool
+	playse SE_M_WATERFALL
+	goto_if_eq FLAG_GARBAGEFLAG, DIR_NORTH, EventScript_WhirlpoolGoNorth
+	goto_if_eq FLAG_GARBAGEFLAG, DIR_SOUTH, EventScript_WhirlpoolGoSouth
+	goto_if_eq FLAG_GARBAGEFLAG, DIR_EAST, EventScript_WhirlpoolGoEast
+	goto_if_eq FLAG_GARBAGEFLAG, DIR_WEST, EventScript_WhirlpoolGoWest
+	releaseall
+	end
+
+EventScript_WhirlpoolGoNorth::
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_WhirlpoolNorth
+	waitmovement 0
+	releaseall
+	end
+
+EventScript_WhirlpoolGoSouth::
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_WhirlpoolSouth
+	waitmovement 0
+	releaseall
+	end
+
+EventScript_WhirlpoolGoEast::
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_WhirlpoolEast
+	waitmovement 0
+	releaseall
+	end
+
+EventScript_WhirlpoolGoWest::
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_WhirlpoolWest
+	waitmovement 0
+	releaseall
+	end
+
+EventScript_CantWhirlpool::
+	msgbox Text_CantWhirlpool, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+Movement_WhirlpoolNorth:
+	slide_up
+	slide_up
+	slide_up
+	step_end
+
+Movement_WhirlpoolSouth:
+	slide_down
+	slide_down
+	slide_down
+	step_end
+
+Movement_WhirlpoolEast:
+	slide_right
+	slide_right
+	slide_right
+	step_end
+
+Movement_WhirlpoolWest:
+	slide_left
+	slide_left
+	slide_left
+	step_end
+
+Text_CantWhirlpool:
+	.string "The water is swirling and spinning\n"
+	.string "around with a mighty roar.$"
+
+Common_Text_PartyIsFull: @bender sez please move location of this command
+	.string "Whoa, wait. You can't carry any\n"
+	.string "more Pokémon.$"
+
+Text_MonUsedWhirlpool:
+	.string "{STR_VAR_1} used Whirlpool.$"
+
+SetTimeEncounters::
+	callnative SetTimeBasedEncounters
+	return
+
+EventScript_RockSmashHeartscale::
+	giveitem ITEM_HEART_SCALE
+	return

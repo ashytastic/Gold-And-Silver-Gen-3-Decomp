@@ -280,6 +280,10 @@ extern const u16 gBattleEnvironmentPalette_StadiumPhoebe[];
 extern const u16 gBattleEnvironmentPalette_StadiumGlacia[];
 extern const u16 gBattleEnvironmentPalette_StadiumDrake[];
 extern const u16 gBattleEnvironmentPalette_StadiumWallace[];
+extern const u16 gBattleEnvironmentPalette_StadiumWill[];
+extern const u16 gBattleEnvironmentPalette_StadiumKoga[];
+extern const u16 gBattleEnvironmentPalette_StadiumBruno[];
+extern const u16 gBattleEnvironmentPalette_StadiumKaren[];
 
 // Pokédex
 extern const u32 gPokedexInterface_Gfx[];
@@ -3400,5 +3404,39 @@ extern const u32 gBattleIcons_Gfx1[];
 extern const u32 gBattleIcons_Gfx2[];
 extern const u16 gBattleIcons_Pal1[];
 extern const u16 gBattleIcons_Pal2[];
+
+//HnS johto items
+
+extern const u32 gItemIcon_ClearBell[];
+extern const u16 gItemIcon_Palette_ClearBell[];
+
+extern const u32 gItemIcon_LostItem[];
+extern const u16 gItemIcon_Palette_LostItem[];
+
+extern const u32 gItemIcon_MachinePart[];
+extern const u16 gItemIcon_Palette_MachinePart[];
+
+extern const u32 gItemIcon_MysteryEgg[];
+extern const u16 gItemIcon_Palette_MysteryEgg[];
+
+extern const u32 gItemIcon_Pass[];
+extern const u16 gItemIcon_Palette_Pass[];
+
+extern const u32 gItemIcon_RainbowWing[];
+extern const u16 gItemIcon_Palette_RainbowWing[];
+
+extern const u32 gItemIcon_RedScale[];
+extern const u16 gItemIcon_Palette_RedScale[];
+
+extern const u32 gItemIcon_SecretPotion[];
+extern const u16 gItemIcon_Palette_SecretPotion[];
+
+extern const u32 gItemIcon_SilverWing[];
+extern const u16 gItemIcon_Palette_SilverWing[];
+
+extern const u32 gItemIcon_TidalBell[];
+extern const u16 gItemIcon_Palette_TidalBell[];
+
+extern const u32 gItemIcon_Radio[];
 
 #endif //GUARD_GRAPHICS_H

@@ -511,5 +511,11 @@ u8 GetSidewaysStairsCollision(struct ObjectEvent *objectEvent, u8 dir, u8 curren
 bool8 MovementAction_EmoteX_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteDoubleExclamationMark_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 PlayerIsUnderWaterfall(struct ObjectEvent *objectEvent);
+void MovementType_TowerBeam(struct Sprite *);
+u8 MovementType_TowerBeam_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementType_TowerBeam_Step1(struct ObjectEvent *, struct Sprite *);
+u8 MovementType_TowerBeam_Step2(struct ObjectEvent *, struct Sprite *);
+u8 MovementType_TowerBeam_Step3(struct ObjectEvent *, struct Sprite *);
+u8 MovementType_TowerBeam_Step4(struct ObjectEvent *, struct Sprite *);
 
 #endif //GUARD_EVENT_OBJECT_MOVEMENT_H

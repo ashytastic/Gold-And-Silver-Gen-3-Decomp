@@ -100,7 +100,7 @@ const struct FrontierBrain gFrontierBrainInfo[NUM_FRONTIER_FACILITIES] =
 {
     [FRONTIER_FACILITY_TOWER] =
     {
-        .trainerId = TRAINER_ANABEL,
+        .trainerId = TRAINER_TUCKER,
         .objEventGfx = OBJ_EVENT_GFX_ANABEL,
         .isFemale = TRUE,
         .lostTexts = {
@@ -162,7 +162,7 @@ const struct FrontierBrain gFrontierBrainInfo[NUM_FRONTIER_FACILITIES] =
     },
     [FRONTIER_FACILITY_ARENA] =
     {
-        .trainerId = TRAINER_GRETA,
+        .trainerId = TRAINER_TUCKER,
         .objEventGfx = OBJ_EVENT_GFX_GRETA,
         .isFemale = TRUE,
         .lostTexts = {

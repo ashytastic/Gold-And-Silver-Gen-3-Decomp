@@ -2427,5 +2427,57 @@ extern const u8 gText_Rename[]; // change nickname from summary screen
 extern const u8 gText_CannotSendMonToBoxHM[];
 extern const u8 gText_CannotSendMonToBoxActive[];
 extern const u8 gText_CannotSendMonToBoxPartner[];
+extern const u8 gText_Sunday[];
+extern const u8 gText_Monday[];
+extern const u8 gText_Tuesday[];
+extern const u8 gText_Wednesday[];
+extern const u8 gText_Thursday[];
+extern const u8 gText_Friday[];
+extern const u8 gText_Saturday[];
 
+extern const u8 gText_LoveBall[];
+extern const u8 gText_Lure[];
+extern const u8 gText_FriendBall[];
+extern const u8 gText_Moon[];
+extern const u8 gText_Heavy[];
+extern const u8 gText_Fast[];
+extern const u8 gText_LevelBall[];
+
+extern const u8 gText_Abra[];
+extern const u8 gText_Clefairy[];
+extern const u8 gText_Munchlax[];
+extern const u8 gText_Dratini[];
+extern const u8 gText_Porygon[];
+
+extern const u8 gText_Pal[];
+extern const u8 gText_Underling[];
+
+extern const u8 gText_Training[];
+extern const u8 gText_Cheating[];
+extern const u8 gText_Strategy[];
+
+extern const u8 gText_WeakPerson[];
+extern const u8 gText_ToughPerson[];
+extern const u8 gText_Anybody[];
+
+extern const u8 gText_Love2[];
+extern const u8 gText_Violence[];
+extern const u8 gText_Knowledge[];
+
+extern const u8 gText_Tough3[];
+extern const u8 gText_Weak[];
+extern const u8 gText_Both[];
+
+extern const u8 gText_BlueStone[];
+extern const u8 gText_GreenStone[];
+extern const u8 gText_RedStone[];
+extern const u8 gText_RegirockDollAndPrice[];
+extern const u8 gText_RegiceDollAndPrice[];
+extern const u8 gText_RegisteelDollAndPrice[];
+extern const u8 gText_Vermilion[];
+extern const u8 gText_Olivine[];
+extern const u8 gText_Floor0[];
+extern const u8 gText_RegirockDollAndPrice[];
+extern const u8 gText_RegiceDollAndPrice[];
+extern const u8 gText_RegisteelDollAndPrice[];
 #endif // GUARD_STRINGS_H

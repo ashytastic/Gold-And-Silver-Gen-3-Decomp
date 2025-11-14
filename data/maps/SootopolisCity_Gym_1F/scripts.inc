@@ -84,7 +84,7 @@ SootopolisCity_Gym_1F_EventScript_Juan::
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, SootopolisCity_Gym_1F_EventScript_JuanRematch
 	goto_if_unset FLAG_RECEIVED_TM_WATER_PULSE, SootopolisCity_Gym_1F_EventScript_GiveWaterPulse2
-	goto_if_unset FLAG_BADGE06_GET, SootopolisCity_Gym_1F_EventScript_GoGetFortreeBadge
+	goto_if_unset FLAG_GARBAGEFLAG, SootopolisCity_Gym_1F_EventScript_GoGetFortreeBadge
 	msgbox SootopolisCity_Gym_1F_Text_JuanPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -94,13 +94,13 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox SootopolisCity_Gym_1F_Text_ExplainRainBadgeTakeThis, MSGBOX_DEFAULT
-	setflag FLAG_DEFEATED_SOOTOPOLIS_GYM
-	setflag FLAG_BADGE08_GET
-	setflag FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS
-	setflag FLAG_HIDE_SOOTOPOLIS_CITY_STEVEN
-	setflag FLAG_HIDE_SOOTOPOLIS_CITY_WALLACE
-	setvar VAR_SOOTOPOLIS_CITY_STATE, 6
-	clearflag FLAG_HIDE_SOOTOPOLIS_CITY_MAN_1
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
+	setvar VAR_GARBAGEVAR, 6
+	clearflag FLAG_GARBAGEFLAG
 	setvar VAR_0x8008, 8
 	call Common_EventScript_SetGymTrainers
 	call SootopolisCity_Gym_1F_EventScript_GiveWaterPulse
@@ -143,7 +143,7 @@ SootopolisCity_Gym_1F_EventScript_JuanRematch::
 SootopolisCity_Gym_1F_EventScript_GymGuide::
 	lock
 	faceplayer
-	goto_if_set FLAG_DEFEATED_SOOTOPOLIS_GYM, SootopolisCity_Gym_1F_EventScript_GymGuidePostVictory
+	goto_if_set FLAG_GARBAGEFLAG, SootopolisCity_Gym_1F_EventScript_GymGuidePostVictory
 	msgbox SootopolisCity_Gym_1F_Text_GymGuideAdvice, MSGBOX_DEFAULT
 	release
 	end
@@ -155,13 +155,13 @@ SootopolisCity_Gym_1F_EventScript_GymGuidePostVictory::
 
 SootopolisCity_Gym_1F_EventScript_LeftGymStatue::
 	lockall
-	goto_if_set FLAG_BADGE08_GET, SootopolisCity_Gym_1F_EventScript_GymStatueCertified
+	goto_if_set FLAG_GARBAGEFLAG, SootopolisCity_Gym_1F_EventScript_GymStatueCertified
 	goto SootopolisCity_Gym_1F_EventScript_GymStatue
 	end
 
 SootopolisCity_Gym_1F_EventScript_RightGymStatue::
 	lockall
-	goto_if_set FLAG_BADGE08_GET, SootopolisCity_Gym_1F_EventScript_GymStatueCertified
+	goto_if_set FLAG_GARBAGEFLAG, SootopolisCity_Gym_1F_EventScript_GymStatueCertified
 	goto SootopolisCity_Gym_1F_EventScript_GymStatue
 	end
 

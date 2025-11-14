@@ -123,6 +123,21 @@
 #define MULTI_FALLARBOR_TENT_RULES         112
 #define MULTI_TAG_MATCH_TYPE               113
 #define MULTI_BERRY_PLOT                   114
+#define MULTI_DAYS_OF_WEEK                 115
+#define MULTI_KURT_BALLS                   116
+#define MULTI_PRIZE_MONS                   117
+#define MULTI_7FLOORS                      118
+#define MULTI_GOLDSILVER                   119
+#define MULTI_ELDERQUIIZ1                  120
+#define MULTI_ELDERQUIIZ2                  121
+#define MULTI_ELDERQUIIZ3                  122
+#define MULTI_ELDERQUIIZ4                  123
+#define MULTI_ELDERQUIIZ5                  124
+#define MULTI_OLIVINE_HARBOR               125
+#define MULTI_VERMILION_HARBOR             126
+#define MULTI_HOENN_STARTERS               127
+#define MULTI_5FLOORS                     128
+#define MULTI_GAME_CORNER_DOLLS2           129
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

@@ -9,6 +9,7 @@
 #include "constants/flags.h"
 #include "constants/map_scripts.h"
 #include "field_message_box.h"
+#include "rtc.h"
 
 #define RAM_SCRIPT_MAGIC 51
 
@@ -637,3 +638,16 @@ void Script_RequestWriteVar_Internal(u32 varId)
         return;
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
 }
+
+void SetTimeBasedEncounters(void)
+{
+	RtcCalcLocalTime();
+    if ((gLocalTime.hours >= 6 && gLocalTime.hours <= 19))
+    {
+		VarSet(VAR_TIME_BASED_ENCOUNTER, 3); // Modern Spawns, Day
+	}
+	else if ((gLocalTime.hours >= 6 && gLocalTime.hours <= 19))
+	{
+		VarSet(VAR_TIME_BASED_ENCOUNTER, 1); // Day
+	}
+} 

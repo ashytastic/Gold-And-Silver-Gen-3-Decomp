@@ -4,7 +4,7 @@ ShoalCave_LowTideEntranceRoom_MapScripts::
 
 ShoalCave_LowTideEntranceRoom_OnTransition:
 	special UpdateShoalTideFlag
-	goto_if_set FLAG_SYS_SHOAL_TIDE, ShoalCave_LowTideEntranceRoom_EventScript_SetHighTide
+	goto_if_set FLAG_GARBAGEFLAG, ShoalCave_LowTideEntranceRoom_EventScript_SetHighTide
 	goto ShoalCave_LowTideEntranceRoom_EventScript_SetLowTide
 
 ShoalCave_LowTideEntranceRoom_EventScript_SetHighTide::
@@ -19,7 +19,7 @@ ShoalCave_LowTideEntranceRoom_EventScript_ShellBellExpert::
 	lock
 	faceplayer
 	dotimebasedevents
-	call_if_set FLAG_SYS_SHOAL_ITEM, ShoalCave_LowTideEntranceRoom_EventScript_ResetShoalItems
+	call_if_set FLAG_GARBAGEFLAG, ShoalCave_LowTideEntranceRoom_EventScript_ResetShoalItems
 	checkitem ITEM_SHOAL_SALT, 4
 	goto_if_eq VAR_RESULT, FALSE, ShoalCave_LowTideEntranceRoom_EventScript_NotEnoughShoalSaltOrShells
 	checkitem ITEM_SHOAL_SHELL, 4
@@ -79,13 +79,13 @@ ShoalCave_LowTideEntranceRoom_EventScript_DeclineShellBell::
 	end
 
 ShoalCave_LowTideEntranceRoom_EventScript_ResetShoalItems::
-	clearflag FLAG_RECEIVED_SHOAL_SALT_1
-	clearflag FLAG_RECEIVED_SHOAL_SALT_2
-	clearflag FLAG_RECEIVED_SHOAL_SALT_3
-	clearflag FLAG_RECEIVED_SHOAL_SALT_4
-	clearflag FLAG_RECEIVED_SHOAL_SHELL_1
-	clearflag FLAG_RECEIVED_SHOAL_SHELL_2
-	clearflag FLAG_RECEIVED_SHOAL_SHELL_3
-	clearflag FLAG_RECEIVED_SHOAL_SHELL_4
-	clearflag FLAG_SYS_SHOAL_ITEM
+	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_GARBAGEFLAG
 	return

@@ -3,7 +3,7 @@ Route126_MapScripts::
 	.byte 0
 
 Route126_OnTransition:
-	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+	call_if_set FLAG_GARBAGEFLAG, Common_EventScript_SetAbnormalWeather
 	end
 
 Route126_EventScript_Barry::
@@ -32,7 +32,7 @@ Route126_EventScript_Leonardo::
 	end
 
 Route126_EventScript_Isobel::
-	trainerbattle_single TRAINER_ISOBEL, Route126_Text_IsobelIntro, Route126_Text_IsobelDefeat
+	trainerbattle_single TRAINER_NONE, Route126_Text_IsobelIntro, Route126_Text_IsobelDefeat
 	msgbox Route126_Text_IsobelPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -53,7 +53,6 @@ Route126_EventScript_RegisterPablo::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route126_Text_PabloRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_PABLO_1
 	release
 	end
 

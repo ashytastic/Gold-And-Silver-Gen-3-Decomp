@@ -13,7 +13,6 @@ MtPyre_6F_EventScript_RegisterValerie::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox MtPyre_6F_Text_ValerieRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_VALERIE_1
 	release
 	end
 
@@ -23,7 +22,7 @@ MtPyre_6F_EventScript_RematchValerie::
 	end
 
 MtPyre_6F_EventScript_Cedric::
-	trainerbattle_single TRAINER_CEDRIC, MtPyre_6F_Text_CedricIntro, MtPyre_6F_Text_CedricDefeat
+	trainerbattle_single TRAINER_NONE, MtPyre_6F_Text_CedricIntro, MtPyre_6F_Text_CedricDefeat
 	msgbox MtPyre_6F_Text_CedricPostBattle, MSGBOX_AUTOCLOSE
 	end
 

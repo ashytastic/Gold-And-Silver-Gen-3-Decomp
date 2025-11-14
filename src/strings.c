@@ -1307,3 +1307,54 @@ const u8 gText_Rename[] = _("RENAME");
 const u8 gText_CannotSendMonToBoxHM[] = _("Cannot send that mon to the box,\nbecause it knows a HM move.{PAUSE_UNTIL_PRESS}");
 const u8 gText_CannotSendMonToBoxActive[] = _("Cannot send an active battler\nto the box.{PAUSE_UNTIL_PRESS}");
 const u8 gText_CannotSendMonToBoxPartner[] = _("Cannot send a mon that doesn't,\nbelong to you to the box.{PAUSE_UNTIL_PRESS}");
+const u8 gText_Vermilion[] = _("Vermilion");
+const u8 gText_Olivine[] = _("Olivine");
+//HnS texts
+const u8 gText_Sunday[] = _("SUNDAY");
+const u8 gText_Monday[] = _("MONDAY");
+const u8 gText_Tuesday[] = _("TUESDAY");
+const u8 gText_Wednesday[] = _("WEDNESDAY");
+const u8 gText_Thursday[] = _("THURSDAY");
+const u8 gText_Friday[] = _("FRIDAY");
+const u8 gText_Saturday[] = _("SATURDAY");
+
+const u8 gText_LoveBall[] =     _("LOVE    / PECHA  / (FRY/PSY)");
+const u8 gText_Lure[] =         _("LURE    / RAWST  / (WTR/DRG)");
+const u8 gText_FriendBall[] =   _("FRIEND / CHERI  / (BUG/GRS)");
+const u8 gText_Heavy[] =        _("HEAVY   / ORAN   / (RCK/GND/STL)");
+const u8 gText_Moon[] =         _("MOON    / CHESTO / (DRK/GST/PSN)");
+const u8 gText_Fast[] =         _("FAST    / ASPEAR / (ELC/FIG/FIR)");
+const u8 gText_LevelBall[] =    _("LEVEL  / PERSIM / (NRM/FLY/ICE)");
+
+const u8 gText_Abra[] = _("ABRA{CLEAR_TO 0x40}120 COINS");
+const u8 gText_Clefairy[] = _("CLEFAIRY{CLEAR_TO 0x40}500 COINS");
+const u8 gText_Munchlax[] = _("MUNCHLAX{CLEAR_TO 0x40}2,800 COINS");
+const u8 gText_Dratini[] = _("DRATINI{CLEAR_TO 0x40}5,500 COINS");
+const u8 gText_Porygon[] = _("PORYGON{CLEAR_TO 0x40}6,500 COINS");
+
+const u8 gText_Pal[] = _("Pal");
+const u8 gText_Underling[] = _("Underling");
+
+const u8 gText_Strategy[] = _("Strategy");
+const u8 gText_Training[] = _("Training");
+const u8 gText_Cheating[] = _("Cheating");
+
+const u8 gText_WeakPerson[] = _("Weak person");
+const u8 gText_ToughPerson[] = _("Tough person");
+const u8 gText_Anybody[] = _("Anybody");
+
+const u8 gText_Love2[] = _("Love");
+const u8 gText_Violence[] = _("Violence");
+const u8 gText_Knowledge[] = _("Knowledge");
+
+const u8 gText_Tough3[] = _("Tough");
+const u8 gText_Weak[] = _("Weak");
+const u8 gText_Both[] = _("Both");
+
+const u8 gText_BlueStone[] = _("BLUE STONE");
+const u8 gText_GreenStone[] = _("GREEN STONE");
+const u8 gText_RedStone[] = _("RED STONE");
+const u8 gText_Floor0[] = _("Floor 0");
+const u8 gText_RegirockDollAndPrice[] = _("REGIROCK DOLL   9,000 C.");
+const u8 gText_RegiceDollAndPrice[] = _("REGICE DOLL       9,000 C.");
+const u8 gText_RegisteelDollAndPrice[] = _("REGISTEEL DOLL 9,000 C.");
