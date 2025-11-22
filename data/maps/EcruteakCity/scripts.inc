@@ -47,7 +47,7 @@ EcruteakCity_EventScript_Trigger::
 	clearflag FLAG_HIDE_LUGIA
 	clearflag FLAG_HIDE_HO_OH
 
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_VISITED_ECRUTEAK_CITY
 	setflag FLAG_HIDE_ROUTE42_EUSINE
 
 	setflag FLAG_HIDE_TIN_TOWER_KIMONO_GIRLS

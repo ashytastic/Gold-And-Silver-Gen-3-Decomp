@@ -1,6 +1,3 @@
-.set LOCALID_AZALEA_TOWN_KURT_GS, 18
-.set LOCALID_AZALEA_TOWN_SILVER, 6
-
 AzaleaTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, AzaleaTown_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, AzaleaTown_OnFrame
@@ -20,7 +17,7 @@ AzaleaTown_MapScript_Hide_Silver:
 	end
 
 AzaleaTown_EventScript_Trigger:: @flagheap
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_VISITED_AZALEA_TOWN
 	setflag FLAG_HIDE_AZALEA_TOWN_SLOWPOKE
 	setflag FLAG_HIDE_AZALEA_TOWN_SILVER
 	setflag FLAG_HIDE_KURT_2

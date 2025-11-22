@@ -7,7 +7,7 @@ SaffronCity_OnFrame::
 	.2byte 0
 
 SaffronCity_EventScript_CityEnter::
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_VISITED_SAFFRON_CITY
 	end
 
 SaffronCity_EventScript_BaobaCall::

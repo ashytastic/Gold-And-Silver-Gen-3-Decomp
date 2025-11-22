@@ -7,7 +7,7 @@ CinnabarIsland_MapScripts::
 	.byte 0
 	
 CinnabarIsland_OnTransition:
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_VISITED_CINNABAR_ISLAND
 	callnative SetTimeBasedEncounters
 	end
 

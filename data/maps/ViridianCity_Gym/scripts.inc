@@ -14,7 +14,7 @@ ViridianCity_Gym_EventScript_Blue::
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox ViridianCity_Gym_Text_LeaderBlue_After, MSGBOX_DEFAULT
 	giveitem ITEM_TM_BULK_UP
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_BADGE16_GET
 	setflag FLAG_DEFEATED_VIRIDIAN_GYM
 	addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 16
@@ -114,7 +114,7 @@ ViridianCity_Gym_Text_Guide_Win:
 
 ViridianCity_Gym_EventScript_GymStatue::
 	lockall
-	goto_if_set FLAG_GARBAGEFLAG, ViridianCity_Gym_EventScript_GymStatuePostVictory
+	goto_if_set FLAG_BADGE16_GET, ViridianCity_Gym_EventScript_GymStatuePostVictory
 	msgbox ViridianCity_Gym_Text_GymStatue
 	releaseall
 	end

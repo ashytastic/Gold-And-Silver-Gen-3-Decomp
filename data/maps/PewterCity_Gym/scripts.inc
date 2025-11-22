@@ -19,7 +19,7 @@ PewterCity_Gym_EventScript_Brock::
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox PewterCity_Gym_Text_Brock_FightDone, MSGBOX_DEFAULT
 	giveitem ITEM_TM_EARTHQUAKE
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_BADGE09_GET
 	setflag FLAG_DEFEATED_PEWTER_GYM
 	addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 9
@@ -109,7 +109,7 @@ PewterCity_Gym_EventScript_GymGuyAfter::
 
 PewterCity_Gym_EventScript_GymStatue::
 	lockall
-	goto_if_set FLAG_GARBAGEFLAG, PewterCity_Gym_EventScript_GymStatuePostVictory
+	goto_if_set FLAG_BADGE09_GET, PewterCity_Gym_EventScript_GymStatuePostVictory
 	msgbox PewterCity_Gym_Text_GymStatue
 	releaseall
 	end

@@ -5,7 +5,7 @@ GoldenrodCity_MapScripts::
 
 GoldenrodCity_EventScript_Trigger:: @flagheap
 	call_if_unset FLAG_SHOWN_ELM_TOGEPI, GoldenrodCity_Elm_Togepi_Call
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_VISITED_GOLDENROD_CITY
 	setflag FLAG_HIDE_GOLDENROD_ROCKETS
 	setflag FLAG_HIDE_GOLDENROD_BILL
 	setflag FLAG_HIDE_GOLDENROD_UNDERGROUND_KIMONO
@@ -22,7 +22,7 @@ GoldenrodCity_EventScript_Trigger:: @flagheap
 	clearflag FLAG_RECEIVED_BIKE
 	clearflag FLAG_RECEIVED_SQUIRTBOTTLE
 	clearflag FLAG_GOT_EEVEE
-	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_SYS_PC_BILL
 	clearflag FLAG_RETURNED_MACHINE_PART
 	clearflag FLAG_UNLOCKED_GOLDENROD_UNDERGROUND_DOOR
 	clearflag FLAG_GOLDENROD_MACHOKE_1

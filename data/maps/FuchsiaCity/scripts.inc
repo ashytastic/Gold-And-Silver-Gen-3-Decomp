@@ -7,7 +7,7 @@ FuchsiaCity_OnFrame::
 	.2byte 0
 
 FuchsiaCity_EventScript_CityEnter::
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_VISITED_FUCHSIA_CITY
 	end
 
 FuchsiaCity_EventScript_BaobaCall::

@@ -13,7 +13,7 @@ CeladonCity_Gym_EventScript_Erika::
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox CeladonCity_Gym_Text_ErikaExplainTM, MSGBOX_DEFAULT
 	giveitem ITEM_TM_GIGA_DRAIN
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_BADGE12_GET
 	setflag FLAG_DEFEATED_CELADON_GYM
 	addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 12
@@ -161,7 +161,7 @@ CeladonCity_Gym_Text_TwinsJoAndZoe2After:
 
 CeladonCity_Gym_EventScript_GymStatue::
 	lockall
-	goto_if_set FLAG_GARBAGEFLAG, CeladonCity_Gym_EventScript_GymStatuePostVictory
+	goto_if_set FLAG_BADGE12_GET, CeladonCity_Gym_EventScript_GymStatuePostVictory
 	msgbox CeladonCity_Gym_Text_GymStatue
 	releaseall
 	end

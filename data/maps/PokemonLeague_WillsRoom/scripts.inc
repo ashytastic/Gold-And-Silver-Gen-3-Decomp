@@ -19,6 +19,7 @@ EliteFourRoom_CreateDoor::
 
 PokemonLeague_WillsRoom_OnResume::
 	setvar VAR_0x8004, 0
+	@special DoPokemonLeagueLightingEffect
 	end
 
 EliteFourRoom_OnFrame::
@@ -54,7 +55,7 @@ PokemonLeague_WillsRoom_EventScript_Will::
 	lock 
 	faceplayer
 	goto_if_ge VAR_LEAGUE_STATE, 2, PokemonLeague_WillsRoom_EventScript_WillDefeated
-	goto_if_set FLAG_GARBAGEFLAG, PokemonLeague_WillsRoom_EventScript_WillRematch
+	goto_if_set FLAG_IS_CHAMPION, PokemonLeague_WillsRoom_EventScript_WillRematch
 	msgbox PokemonLeague_WillsRoom_Text_Before, MSGBOX_DEFAULT
 	setflag FLAG_TEMP_3
 	setflag FLAG_TEMP_5

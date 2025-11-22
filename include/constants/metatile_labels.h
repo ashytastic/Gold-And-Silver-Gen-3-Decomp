@@ -264,6 +264,16 @@
 #define METATILE_InsideShip_IntactDoor_Bottom_Locked    0x233
 #define METATILE_InsideShip_IntactDoor_Bottom_Unlocked  0x22B
 
+// gTileset_Johto_General
+#define METATILE_Johto_General_CalmWater       0x12B
+#define METATILE_Johto_General_Door            0x03D
+#define METATILE_Johto_General_Door_Gym        0x15B
+#define METATILE_Johto_General_Door_Sliding    0x062
+#define METATILE_Johto_General_Fall_Gra        0x009
+#define METATILE_Johto_General_Fall_Gras       0x011
+#define METATILE_Johto_General_Fall_TallGrass  0x083
+#define METATILE_Johto_General_Grass           0x008
+
 // gTileset_Lavaridge
 #define METATILE_Lavaridge_AshGrass             0x207
 #define METATILE_Lavaridge_CaveEntrance_Bottom  0x25E
@@ -837,13 +847,5 @@
 #define METATILE_VermilionGym_Floor                              0x281
 #define METATILE_Viridian_2_Viridian                             0x299
 #define METATILE_route34_11_Saffron                              0x35C
-
-// Other
-#define METATILE_RSMossdeepGym_RedArrow_Down   0x205
-#define METATILE_RSMossdeepGym_RedArrow_Left   0x20C
-#define METATILE_RSMossdeepGym_RedArrow_Right  0x204
-#define METATILE_RSMossdeepGym_RedArrow_Up     0x20D
-#define METATILE_RSMossdeepGym_Switch_Down     0x239
-#define METATILE_RSMossdeepGym_Switch_Up       0x238
 
 #endif // GUARD_METATILE_LABELS_H

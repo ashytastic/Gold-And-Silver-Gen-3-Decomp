@@ -64,13 +64,13 @@ MagmaHideout_3F_1R_Entei_EnteiBattle1::
 	delay 40
 	waitmoncry
 	setwildbattle SPECIES_ENTEI, 40
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	setflag FLAG_SYS_NO_CATCHING
 	setflag FLAG_SYS_SET_BATTLE_BGM
 	setvar VAR_TEMP_F, MUS_RG_VS_WILD
 	call_if_set FLAG_GARBAGEFLAG, MagmaHideout_3F_1R_Entei_EnteiBattle1_Stats
 	dowildbattle
-	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, MagmaHideout_3F_1R_EnteiBattle1_Won
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, MagmaHideout_3F_1R_Entei_Ran
@@ -80,7 +80,7 @@ MagmaHideout_3F_1R_Entei_EnteiBattle1::
 
 MagmaHideout_3F_1R_Entei_EnteiBattle1_Stats::
 	setvar VAR_0x8000, 300 @HP
-	@special SetHpStat
+	special SetHpStat
 	return
 
 MagmaHideout_3F_1R_EnteiBattle1_Won::
@@ -89,7 +89,7 @@ MagmaHideout_3F_1R_EnteiBattle1_Won::
 	msgbox MagmaHideout_3F_1R_EnteiBattle1_Text, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_ENTEI_BATTLE_1
-	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	clearflag FLAG_SYS_NO_CATCHING
 	callnative UpdateFollowingPokemon
 	goto Common_EventScript_RemoveStaticPokemon
@@ -123,13 +123,13 @@ MagmaHideout_3F_1R_Entei_EnteiBattle2::
 	delay 40
 	waitmoncry
 	setwildbattle SPECIES_ENTEI, 50
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	setflag FLAG_SYS_NO_CATCHING
 	setflag FLAG_SYS_SET_BATTLE_BGM
 	setvar VAR_TEMP_F, MUS_RG_VS_LEGEND
-	call_if_set FLAG_GARBAGEFLAG, MagmaHideout_3F_1R_Entei_EnteiBattle2_Stats
+	call_if_set FLAG_DIFFICULTY_HARD, MagmaHideout_3F_1R_Entei_EnteiBattle2_Stats
 	dowildbattle
-	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, MagmaHideout_3F_1R_EnteiBattle2_Won
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, MagmaHideout_3F_1R_EnteiBattle2_Won
@@ -153,7 +153,7 @@ MagmaHideout_3F_1R_EnteiBattle2_Won::
 	msgbox MagmaHideout_3F_1R_EnteiBattle2_Text, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_ENTEI_BATTLE_2
-	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	clearflag FLAG_SYS_NO_CATCHING
 	callnative UpdateFollowingPokemon
 	goto Common_EventScript_RemoveStaticPokemon
@@ -187,13 +187,13 @@ MagmaHideout_3F_1R_Entei_EnteiBattle3::
 	delay 40
 	waitmoncry
 	setwildbattle SPECIES_ENTEI, 60
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	setflag FLAG_SYS_NO_CATCHING
 	setflag FLAG_SYS_SET_BATTLE_BGM
 	setvar VAR_TEMP_F, MUS_C_VS_LEGEND_BEAST
 	call_if_set FLAG_GARBAGEFLAG, MagmaHideout_3F_1R_Entei_EnteiBattle3_Stats
 	dowildbattle
-	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, MagmaHideout_3F_1R_EnteiBattle3_Won
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, MagmaHideout_3F_1R_EnteiBattle3_Won
@@ -217,7 +217,7 @@ MagmaHideout_3F_1R_EnteiBattle3_Won::
 	msgbox MagmaHideout_3F_1R_EnteiBattle3_Text, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_ENTEI_BATTLE_3
-	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	clearflag FLAG_SYS_NO_CATCHING
 	callnative UpdateFollowingPokemon
 	goto Common_EventScript_RemoveStaticPokemon
@@ -277,7 +277,7 @@ MagmaHideout_3F_1R_Entei_EnteiFinalBattle::
 	call_if_set FLAG_GARBAGEFLAG, MagmaHideout_3F_1R_Entei_EnteiBattle4_Stats
 	special BattleSetup_StartLegendaryBattle
 	waitstate
-	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	calculatemonstats
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, MagmaHideout_3F_1R_EnteiFinalBattle_Won
@@ -302,14 +302,14 @@ MagmaHideout_3F_1R_EnteiBattleFinal_Text:
 
 MagmaHideout_3F_1R_EnteiFinalBattle_Won::
 	setflag FLAG_DEFEATED_ENTEI
-	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	clearflag FLAG_SYS_NO_CATCHING
 	callnative UpdateFollowingPokemon
 	goto Common_EventScript_RemoveStaticPokemon
 	end
 
 MagmaHideout_3F_1R_Entei_Ran::
-	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	clearflag FLAG_SYS_NO_CATCHING
 	releaseall
 	end

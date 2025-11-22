@@ -18,7 +18,7 @@ CianwoodCity_OnFrame::
 	.2byte 0
 
 CianwoodCity_EventScript_CityEnter::
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_VISITED_CIANWOOD_CITY
 	callnative SetTimeBasedEncounters
 	goto_if_ge VAR_OLIVINE_CITY_STATE, 5, OlivineCity_MapScript_ClearWeather
 	end
@@ -70,7 +70,7 @@ CianwoodCity_EventScript_ChucksWife::
 	checkitem ITEM_HM_FLY
 	goto_if_eq VAR_RESULT, TRUE, CianwoodCity_EventScript_ChucksWifeAlreadyHasFly
 	msgbox CianwoodCity_Text_ChucksWifeEasierToFly, MSGBOX_DEFAULT
-	goto_if_set FLAG_GARBAGEFLAG, CianwoodCity_EventScript_ChucksWifeGiveFly
+	goto_if_set FLAG_BADGE05_GET, CianwoodCity_EventScript_ChucksWifeGiveFly
 	msgbox CianwoodCity_Text_ChucksWifeBeatChuck, MSGBOX_DEFAULT
 	closemessage
 	release

@@ -9,9 +9,9 @@ BlackthornCity_MapScripts::
 	.byte 0
 
 BlackthornCity_OnLoad::
-	goto_if_unset FLAG_GARBAGEFLAG, BlackThornCity_EventScript_MoveGymBoy
-	goto_if_unset FLAG_GARBAGEFLAG, BlackThornCity_EventScript_MoveGymBoy
-	goto_if_unset FLAG_GARBAGEFLAG, BlackThornCity_EventScript_MoveGymBoy
+	goto_if_unset FLAG_BADGE05_GET, BlackThornCity_EventScript_MoveGymBoy
+	goto_if_unset FLAG_BADGE06_GET, BlackThornCity_EventScript_MoveGymBoy
+	goto_if_unset FLAG_BADGE07_GET, BlackThornCity_EventScript_MoveGymBoy
 	end
 
 BlackThornCity_EventScript_MoveGymBoy::
@@ -23,7 +23,7 @@ BlackthornCity_OnFrame::
 	.2byte 0
 
 BlackthornCity_EventScript_CityEnter:: 
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_VISITED_BLACKTHORN_CITY
 	callnative SetTimeBasedEncounters
 	end
 
@@ -79,9 +79,9 @@ BlackThornCity_Trigger_Sage::
 BlackthornCity_EventScript_GymBoy::
 	lock
 	faceplayer
-	goto_if_unset FLAG_GARBAGEFLAG, BlackThornCity_EventScript_GymBoyNotReady
-	goto_if_unset FLAG_GARBAGEFLAG, BlackThornCity_EventScript_GymBoyNotReady
-	goto_if_unset FLAG_GARBAGEFLAG, BlackThornCity_EventScript_GymBoyNotReady
+	goto_if_unset FLAG_BADGE05_GET, BlackThornCity_EventScript_GymBoyNotReady
+	goto_if_unset FLAG_BADGE06_GET, BlackThornCity_EventScript_GymBoyNotReady
+	goto_if_unset FLAG_BADGE07_GET, BlackThornCity_EventScript_GymBoyNotReady
 	goto_if_eq VAR_BLACKTHORN_CITY_STATE, 1, BlackThornCity_EventScript_GymBoyBefore
 	msgbox BlackthornCity_Text_ClairIsBeaten, MSGBOX_DEFAULT
 	closemessage
@@ -257,4 +257,3 @@ BlackthornCity_Text_MoveDeletersHouseSign:
 
 BlackthornCity_Text_DragonDenSign:
 	.string "DRAGON'S DEN AHEAD$"
-

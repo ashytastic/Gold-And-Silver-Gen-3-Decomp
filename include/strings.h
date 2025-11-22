@@ -2480,4 +2480,15 @@ extern const u8 gText_Floor0[];
 extern const u8 gText_RegirockDollAndPrice[];
 extern const u8 gText_RegiceDollAndPrice[];
 extern const u8 gText_RegisteelDollAndPrice[];
+
+extern const u8 gText_OptionMenuSave[];   //tx_optionsPlus
+extern const u8 gText_FollowerEnable[];   //tx_optionsPlus
+extern const u8 gText_AutorunEnable[];   //tx_optionsPlus
+extern const u8 gText_OptionMatchCalls[];   //tx_optionsPlus
+extern const u8 gText_OptionStyle[];    //tx_optionsPlus
+extern const u8 gText_OptionDifficulty[];    //tx_optionsPlus
+extern const u8 gText_Easy[];
+extern const u8 gText_Hard[];
+extern const u8 gText_Modern[];
+extern const u8 gText_Classic[];
 #endif // GUARD_STRINGS_H

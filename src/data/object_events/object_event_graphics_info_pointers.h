@@ -303,6 +303,13 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfOak;
 extern const struct ObjectEventGraphicsInfo  gObjectEventGraphicsInfo_Eusine;
 extern const struct ObjectEventGraphicsInfo  gObjectEventGraphicsInfo_NurseChansey;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LegendaryShadow;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SlowpokeNoTail;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Juggler;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CooltrainerM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ScientistF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Biker;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Captain;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ScientistM;
 
 // Begin pokemon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
@@ -369,6 +376,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_GENTLEMAN] =                &gObjectEventGraphicsInfo_Gentleman,
     [OBJ_EVENT_GFX_SAILOR] =                   &gObjectEventGraphicsInfo_Sailor,
     [OBJ_EVENT_GFX_FISHERMAN] =                &gObjectEventGraphicsInfo_Fisherman,
+    [OBJ_EVENT_GFX_FISHER] =                &gObjectEventGraphicsInfo_Fisherman,
     [OBJ_EVENT_GFX_RUNNING_TRIATHLETE_M] =     &gObjectEventGraphicsInfo_RunningTriathleteM,
     [OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F] =     &gObjectEventGraphicsInfo_RunningTriathleteF,
     [OBJ_EVENT_GFX_TUBER_F] =                  &gObjectEventGraphicsInfo_TuberF,
@@ -622,6 +630,23 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_BIG_SNORLAX] =         &gObjectEventGraphicsInfo_BigSnorlaxDoll,
     [OBJ_EVENT_GFX_RED_NORMAL] =         &gObjectEventGraphicsInfo_Red,
     [OBJ_EVENT_GFX_LEGENDARY_SHADOW] =         &gObjectEventGraphicsInfo_LegendaryShadow,
+    [OBJ_EVENT_GFX_SLOWPOKE_NO_TAIL] =                  &gObjectEventGraphicsInfo_SlowpokeNoTail,
+    [OBJ_EVENT_GFX_OLD_MAN_1] =                 &gObjectEventGraphicsInfo_OldMan,
+    [OBJ_EVENT_GFX_BOY] =                    &gObjectEventGraphicsInfo_Boy1,
+    [OBJ_EVENT_GFX_BATTLE_GIRL] =     &gObjectEventGraphicsInfo_BattleGirl,
+    [OBJ_EVENT_GFX_JUGGLER] =                &gObjectEventGraphicsInfo_Juggler,
+    [OBJ_EVENT_GFX_COOLTRAINER_M] =                    &gObjectEventGraphicsInfo_CooltrainerM,
+    [OBJ_EVENT_GFX_SCIENTIST_F] =              &gObjectEventGraphicsInfo_ScientistF,
+    [OBJ_EVENT_GFX_BALDING_MAN] =              &gObjectEventGraphicsInfo_BaldingMan,
+    [OBJ_EVENT_GFX_BIKER] =     &gObjectEventGraphicsInfo_Biker,
+    [OBJ_EVENT_GFX_CAPTAIN] =                   &gObjectEventGraphicsInfo_Captain,
+    [OBJ_EVENT_GFX_CLERK] =                   &gObjectEventGraphicsInfo_MartEmployee,
+    [OBJ_EVENT_GFX_ENGINEER] =                  &gObjectEventGraphicsInfo_Engineer,
+    [OBJ_EVENT_GFX_GBA_KID] =              &gObjectEventGraphicsInfo_GameboyKid,
+    [OBJ_EVENT_GFX_SCIENTIST_M] =              &gObjectEventGraphicsInfo_ScientistM,
+    [OBJ_EVENT_GFX_SWIMMER_M_WATER] =                &gObjectEventGraphicsInfo_SwimmerM,
+    [OBJ_EVENT_GFX_SWIMMER_F_WATER] =                &gObjectEventGraphicsInfo_SwimmerF,
+    [OBJ_EVENT_GFX_TUBER_M_WATER] =                &gObjectEventGraphicsInfo_TuberM,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

@@ -16,7 +16,7 @@ IndigoPlateau_PokemonCenter_OnFrame::
 	.2byte 0
 
 IndigoPlateau_PokemonCenter_Enter::
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_VISITED_INDIGO_PLATEAU
 	setvar VAR_LEAGUE_STATE, 1
 	end
 
@@ -55,13 +55,13 @@ IndigoPlateau_Text_CooltrainerM:
 IndigoPlateau_EventScript_Silver::
 	lock
 	faceplayer 
-	goto_if_set FLAG_GARBAGEFLAG, IndigoPlateau_EventScript_SilverBeat
+	goto_if_set FLAG_DAILY_BEAT_SILVER, IndigoPlateau_EventScript_SilverBeat
 	msgbox IndigoPlateau_Text_RivalEntrance1, MSGBOX_DEFAULT
 	call_if_eq VAR_STARTER_MON, 0, IndigoPlateau_Silver_Battle_Cyndaquil
 	call_if_eq VAR_STARTER_MON, 1, IndigoPlateau_Silver_Battle_Totodile
 	call_if_eq VAR_STARTER_MON, 2, IndigoPlateau_Silver_Battle_Chikorita
 	msgbox IndigoPlateau_Text_RivalAfter, MSGBOX_DEFAULT
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_DAILY_BEAT_SILVER
 	release
 	end
 

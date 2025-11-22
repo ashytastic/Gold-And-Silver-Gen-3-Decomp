@@ -12,7 +12,7 @@ CherryGroveCity_OnTransition::
 
 CherryGroveCity_EventScript_TriggerGent_Top::
 	lock
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_VISITED_CHERRYGROVE_CITY
 	setflag FLAG_HIDE_CHERRYGROVE_GUIDE_GENT_HOUSE
 	playse SE_PIN
 	applymovement LOCALID_GUIDE_GENT, Common_Movement_ExclamationMark
@@ -33,7 +33,7 @@ CherryGroveCity_EventScript_TriggerGent_Top::
 
 CherryGroveCity_EventScript_TriggerGent_Mid::
 	lock
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_VISITED_CHERRYGROVE_CITY
 	setflag FLAG_HIDE_CHERRYGROVE_GUIDE_GENT_HOUSE
 	playse SE_PIN
 	applymovement LOCALID_GUIDE_GENT, Common_Movement_ExclamationMark
@@ -53,7 +53,7 @@ CherryGroveCity_EventScript_TriggerGent_Mid::
 
 CherryGroveCity_EventScript_TriggerGent_Bottom::
 	lock
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_VISITED_CHERRYGROVE_CITY
 	setflag FLAG_HIDE_CHERRYGROVE_GUIDE_GENT_HOUSE
 	playse SE_PIN
 	applymovement LOCALID_GUIDE_GENT, Common_Movement_ExclamationMark
@@ -160,7 +160,7 @@ CherryGroveCity_EventScript_Lass::
 CherryGroveCity_EventScript_Boy::
 	lock
 	faceplayer
-	goto_if_set FLAG_GARBAGEFLAG, CherryGroveCity_EventScript_Boy2
+	goto_if_set FLAG_SYS_POKEDEX_GET, CherryGroveCity_EventScript_Boy2
 	msgbox CherrygroveCity_Text_YoungsterNoPokedex, MSGBOX_DEFAULT
 	closemessage
 	release

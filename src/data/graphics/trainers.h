@@ -216,9 +216,11 @@ const u16 gTrainerPalette_Wally[] = INCBIN_U16("graphics/trainers/palettes/wally
 
 const u32 gTrainerFrontPic_Brendan[] = INCBIN_U32("graphics/trainers/front_pics/brendan.4bpp.smol");
 const u16 gTrainerPalette_Brendan[] = INCBIN_U16("graphics/trainers/palettes/brendan.gbapal");
+const u16 gTrainerPalette_Brendan_Back[] = INCBIN_U16("graphics/trainers/palettes/brendan_back.gbapal");
 
 const u32 gTrainerFrontPic_May[] = INCBIN_U32("graphics/trainers/front_pics/may.4bpp.smol");
 const u16 gTrainerPalette_May[] = INCBIN_U16("graphics/trainers/palettes/may.gbapal");
+const u16 gTrainerPalette_May_Back[] = INCBIN_U16("graphics/trainers/palettes/may_back.gbapal");
 
 const u32 gTrainerFrontPic_BugCatcher[] = INCBIN_U32("graphics/trainers/front_pics/bug_catcher.4bpp.smol");
 const u16 gTrainerPalette_BugCatcher[] = INCBIN_U16("graphics/trainers/front_pics/bug_catcher.gbapal");
@@ -345,8 +347,6 @@ const u16 gTrainerPalette_Sage[] = INCBIN_U16("graphics/trainers/front_pics/sage
 const u32 gTrainerFrontPic_Juggler[] = INCBIN_U32("graphics/trainers/front_pics/juggler.4bpp.smol");
 const u16 gTrainerPalette_Juggler[] = INCBIN_U16("graphics/trainers/front_pics/juggler.gbapal");
 const u16 gTrainerPalette_Wally_Back[] = INCBIN_U16("graphics/trainers/palettes/wally_back.gbapal");
-const u16 gTrainerPalette_Brendan_Back[] = INCBIN_U16("graphics/trainers/palettes/brendan_back.gbapal");
-const u16 gTrainerPalette_May_Back[] = INCBIN_U16("graphics/trainers/palettes/may_back.gbapal");
 const u32 gTrainerFrontPic_Archer[] = INCBIN_U32("graphics/trainers/front_pics/archer.4bpp.smol");
 const u16 gTrainerPalette_Archer[] = INCBIN_U16("graphics/trainers/front_pics/archer.gbapal");
 const u32 gTrainerFrontPic_LeaderBrock[] = INCBIN_U32("graphics/trainers/front_pics/brock.4bpp.smol");
@@ -363,6 +363,8 @@ const u32 gTrainerFrontPic_LeaderSabrina[] = INCBIN_U32("graphics/trainers/front
 const u16 gTrainerPalette_LeaderSabrina[] = INCBIN_U16("graphics/trainers/front_pics/sabrina.gbapal");
 const u32 gTrainerFrontPic_Giovanni[] = INCBIN_U32("graphics/trainers/front_pics/giovanni.4bpp.smol");
 const u16 gTrainerPalette_Giovanni[] = INCBIN_U16("graphics/trainers/front_pics/giovanni.gbapal");
+const u32 gTrainerFrontPic_Silver[] = INCBIN_U32("graphics/trainers/front_pics/silver.4bpp.smol");
+const u16 gTrainerPalette_Silver[] = INCBIN_U16("graphics/trainers/front_pics/silver.gbapal");
 
 const u8 gTrainerBackPic_Brendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan.4bpp");
 const u8 gTrainerBackPic_May[] = INCBIN_U8("graphics/trainers/back_pics/may.4bpp");
@@ -524,6 +526,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_LEADER_JANINE, gTrainerFrontPic_LeaderJanine, gTrainerPalette_LeaderJanine),
     TRAINER_SPRITE(TRAINER_PIC_LEADER_SABRINA, gTrainerFrontPic_LeaderSabrina, gTrainerPalette_LeaderSabrina),
     TRAINER_SPRITE(TRAINER_PIC_GIOVANNI, gTrainerFrontPic_Giovanni, gTrainerPalette_Giovanni),
+    TRAINER_SPRITE(TRAINER_PIC_SILVER, gTrainerFrontPic_Silver, gTrainerPalette_Silver),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =
@@ -591,8 +594,8 @@ static const union AnimCmd *const sBackAnims_Kanto[] =
 
 const struct TrainerBacksprite gTrainerBacksprites[] =
 {
-    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_BRENDAN, 4, gTrainerBackPic_Brendan, gTrainerPalette_Brendan, sBackAnims_Hoenn),
-    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_MAY, 4, gTrainerBackPic_May, gTrainerPalette_May, sBackAnims_Hoenn),
+    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_BRENDAN, 4, gTrainerBackPic_Brendan, gTrainerPalette_Brendan_Back, sBackAnims_Hoenn),
+    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_MAY, 4, gTrainerBackPic_May, gTrainerPalette_May_Back, sBackAnims_Hoenn),
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_RED, 5, gTrainerBackPic_Red, gTrainerBackPicPalette_Red, sBackAnims_Kanto),
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_LEAF, 5, gTrainerBackPic_Leaf, gTrainerBackPicPalette_Leaf, sBackAnims_Kanto),
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN, 4, gTrainerBackPic_RubySapphireBrendan, gTrainerPalette_RubySapphireBrendan, sBackAnims_Hoenn),

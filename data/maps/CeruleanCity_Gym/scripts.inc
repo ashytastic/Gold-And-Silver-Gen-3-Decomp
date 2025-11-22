@@ -122,7 +122,7 @@ CeruleanCity_Gym_Movement_GruntLeave:
 
 CeruleanCity_Gym_EventScript_Statue::
 	lockall
-	goto_if_set FLAG_GARBAGEFLAG, CeruleanCity_Gym_EventScript_GymStatuePostVictory
+	goto_if_set FLAG_BADGE10_GET, CeruleanCity_Gym_EventScript_GymStatuePostVictory
 	msgbox CeruleanCity_Gym_Text_GymStatue
 	releaseall
 	end
@@ -189,7 +189,7 @@ CeruleanCity_Gym_EventScript_Misty::
 	message CeruleanGym_Text_ReceivedBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_BADGE10_GET
 	setflag FLAG_DEFEATED_CERULEAN_GYM
 	addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 10
