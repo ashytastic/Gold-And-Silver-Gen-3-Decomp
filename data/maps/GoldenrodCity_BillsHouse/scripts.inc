@@ -12,7 +12,7 @@ GoldenrodCity_BillsHouse_EventScript_Sister::
 GoldenrodCity_BillsHouse_EventScript_Mom::
 	lock
 	faceplayer
-	goto_if_set FLAG_GARBAGEFLAG, GoldenrodCity_BillsHouse_EventScript_Mom2
+	goto_if_set FLAG_SYS_PC_BILL, GoldenrodCity_BillsHouse_EventScript_Mom2
 	msgbox BillHouse_Text_MomBeforeEcruteak, MSGBOX_DEFAULT
 	closemessage
 	release

@@ -10,7 +10,7 @@ PokemonLeague_HallOfFame_OnFrame::
 
 PokemonLeague_HallOfFame_EventScript_Cutscene::
 	lock
-	goto_if_set FLAG_GARBAGEFLAG, PokemonLeague_HallOfFame_EventScript_CutsceneKantoChamp
+	goto_if_set FLAG_IS_CHAMPION, PokemonLeague_HallOfFame_EventScript_CutsceneKantoChamp
 	applymovement LOCALID_HALLOFFAME_LANCE, PokemonLeague_HallOfFame_Movement_LanceEnter
 	applymovement OBJ_EVENT_ID_PLAYER, PokemonLeague_HallOfFame_Movement_PlayerEnter
 	waitmovement OBJ_EVENT_ID_PLAYER
@@ -56,7 +56,7 @@ PokemonLeague_HallOfFame_EventScript_CutsceneKantoChamp::
 
 PokemonLeague_HallOfFame_EventScript_SetFirstGameClearFlags::
 	clearflag FLAG_HIDE_LEAGUE_BLACKBELT
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_IS_CHAMPION
 	setflag FLAG_HIDE_BATTLEFRONTIER_ENGINEER
 	setvar VAR_SHUCKIE, 2
 	setvar VAR_LEAGUE_STATE, 1
@@ -136,12 +136,12 @@ PokemonLeague_HallOfFame_LanceText:
     .string "last came here.\p"
     .string "This is where we honor the LEAGUE\n"
     .string "CHAMPIONS for all eternity.\p"
-    .string "Their courageous POKéMON are also\n"
+    .string "Their courageous Pokémon are also\n"
     .string "inducted.\p"
     .string "Here today, we witnessed the rise\n"
     .string "of a new LEAGUE CHAMPION--a\p"
     .string "trainer who feels compassion for,\n"
-    .string "and trust toward, all POKéMON.\p"
+    .string "and trust toward, all Pokémon.\p"
     .string "A trainer who succeeded through\n"
     .string "perseverance and determination.\p"
     .string "The new LEAGUE CHAMPION who has\n"
@@ -155,12 +155,12 @@ PokemonLeague_HallOfFame_Rematch_LanceText:
     .string "the CHAMPION of JOHTO.\p"
     .string "And now, here we are again, in this\n"
     .string "sacred place where we honor the very\p"
-    .string "best trainers and their POKéMON.\p"
+    .string "best trainers and their Pokémon.\p"
     .string "Today, you've proven yourself not\n"
     .string "just in JOHTO, but in KANTO as well,\l"
     .string "besting even my strongest team.\p"
     .string "You've shown remarkable compassion\n"
-    .string "and trust in your POKéMON,\l"
+    .string "and trust in your Pokémon,\l"
     .string "a bond that has carried you to\l"
     .string "victory time and again.\p"
     .string "Your journey, marked by\n"

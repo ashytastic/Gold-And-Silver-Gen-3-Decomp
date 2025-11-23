@@ -4,7 +4,7 @@ CeruleanCave3_MapScripts::
 	.byte 0
 
 CeruleanCave3_OnResume:
-	call_if_set FLAG_GARBAGEFLAG, CeruleanCave3_EventScript_TryRemoveMewtwo
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, CeruleanCave3_EventScript_TryRemoveMewtwo
 	end
 
 CeruleanCave3_EventScript_TryRemoveMewtwo::
@@ -34,11 +34,11 @@ CeruleanCave3_EventScript_Mewtwo::
 	delay 40
 	waitmoncry
 	setwildbattle SPECIES_MEWTWO, 70
-	setflag FLAG_GARBAGEFLAG
-	call_if_set FLAG_GARBAGEFLAG, CeruleanCave3_EventScript_Mewtwo_Hard_Stats
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	call_if_set FLAG_DIFFICULTY_HARD, CeruleanCave3_EventScript_Mewtwo_Hard_Stats
 	special BattleSetup_StartLegendaryBattle
 	waitstate
-	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	calculatemonstats
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CeruleanCave3_EventScript_DefeatedMewtwo
@@ -51,6 +51,8 @@ CeruleanCave3_EventScript_Mewtwo::
 CeruleanCave3_EventScript_Mewtwo_Hard_Stats::
 	setvar VAR_0x8000, 500 @HP
 	setvar VAR_0x8003, 500 @SPD
+	special SetHpStat
+	special SetSpdStat
 	return
 
 CeruleanCave3_EventScript_DefeatedMewtwo::

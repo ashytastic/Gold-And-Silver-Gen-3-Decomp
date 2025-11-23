@@ -6,7 +6,7 @@ CeruleanCity_MapScripts::
 	.byte 0
 
 CeruleanCity_EventScript_CityEnter::
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_VISITED_CERULEAN_CITY
 	end
 
 CeruleanCity_EventScript_CooltrainerM1::

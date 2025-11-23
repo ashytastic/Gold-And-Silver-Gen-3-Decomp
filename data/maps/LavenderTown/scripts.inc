@@ -3,7 +3,7 @@ LavenderTown_MapScripts::
 	.byte 0
 
 LavenderTown_EventScript_CityEnter::
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_VISITED_LAVENDER_TOWN
 	end
 
 LavenderTown_EventScript_PokefanM::

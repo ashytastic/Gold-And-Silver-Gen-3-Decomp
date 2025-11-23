@@ -223,7 +223,7 @@ VermilionCity_Gym_EventScript_GymGuyPostVictory::
 
 VermilionCity_Gym_EventScript_GymStatue::
 	lockall
-	goto_if_set FLAG_GARBAGEFLAG, VermilionCity_Gym_EventScript_GymStatuePostVictory
+	goto_if_set FLAG_BADGE11_GET, VermilionCity_Gym_EventScript_GymStatuePostVictory
 	msgbox VermilionCity_Gym_Text_GymStatue
 	releaseall
 	end
@@ -258,7 +258,7 @@ VermilionCity_Gym_EventScript_Surge::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox VermilionGym_Text_ThunderBadgeInfo, MSGBOX_DEFAULT
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_BADGE11_GET
 	setflag FLAG_DEFEATED_VERMILION_GYM
 	addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 11

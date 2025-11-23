@@ -83,7 +83,7 @@ NewBarkTown_PlayersHouse_1F_EventScript_MomsIntro::
 	setvar VAR_NEWBARK_TOWN_STATE, 2
 	setvar VAR_NEWBARKTOWN_LABSTATE, 0
 	setflag FLAG_HIDE_LAB_POLICEMAN
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_VISITED_NEWBARK_TOWN
 
 	@former flagheap location
 
@@ -96,7 +96,7 @@ NewBarkTown_PlayersHouse_1F_EventScript_GivePokeGear::
 	playfanfare MUS_OBTAIN_ITEM
 	message NewBarkTown_PlayersHouse_1F_Text_ObtainedPokeGear
 	waitfanfare
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_SYS_POKENAV_GET
 	setflag FLAG_RECEIVED_POKENAV
 	setflag FLAG_ADDED_MATCH_CALL_TO_POKENAV
 	setflag FLAG_REGISTER_RIVAL_POKENAV
@@ -114,7 +114,7 @@ NewBarkTown_PlayersHouse_1F_EventScript_GiveRunningShoes::
 	waitfanfare
 	closemessage
 	setflag FLAG_RECEIVED_RUNNING_SHOES
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_SYS_B_DASH
 	msgbox NewBarkTown_PlayersHouse_1F_Text_ExplainRunningShoes, MSGBOX_DEFAULT
 	closemessage
 	delay 30

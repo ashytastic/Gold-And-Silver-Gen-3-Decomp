@@ -5,7 +5,7 @@ CeladonCity_MapScripts::
 	.byte 0
 
 CeladonCity_EventScript_CityEnter::
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_VISITED_CELADON_CITY
 	end
 
 CeladonCity_EventScript_Erika::

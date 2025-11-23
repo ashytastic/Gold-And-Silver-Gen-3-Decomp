@@ -200,7 +200,7 @@ BlackthornGym_EventScript_Lola::
 BlackthornGym_EventScript_Clair::
 	lock
 	faceplayer
-	goto_if_set FLAG_GARBAGEFLAG, BlackthornGym_EventScript_ClairAfterLeague
+	goto_if_set FLAG_IS_CHAMPION, BlackthornGym_EventScript_ClairAfterLeague
 	goto_if_ge VAR_BLACKTHORN_CITY_STATE, 4, BlackthornGym_EventScript_Clair_Defeated
 	goto_if_eq VAR_BLACKTHORN_CITY_STATE, 2, BlackthornGym_EventScript_ClairDuringChallenge
 	msgbox BlackthornGym_Text_ClairIntroText, MSGBOX_DEFAULT

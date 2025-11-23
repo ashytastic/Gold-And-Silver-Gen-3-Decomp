@@ -483,6 +483,8 @@
 #define OBJ_EVENT_PAL_TAG_SHINY_GYARADOS          0x1139
 #define OBJ_EVENT_PAL_TAG_WHIRLPOOL               0x113A
 #define OBJ_EVENT_PAL_TAG_KIMONO               0x113B
+#define OBJ_EVENT_PAL_TAG_SLOWPOKE              0x113C
+#define OBJ_EVENT_PAL_TAG_SCIENTIST_F              0x113D
 
 
 #if OW_FOLLOWERS_POKEBALLS

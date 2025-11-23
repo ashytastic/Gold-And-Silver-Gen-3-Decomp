@@ -63,7 +63,7 @@ FuchsiaCity_Gym_EventScript_Janine::
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox FuchsiaCity_Gym_Text_Janine_ToxicSpeech, MSGBOX_DEFAULT
 	giveitem ITEM_TM_TOXIC
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_BADGE14_GET
 	setflag FLAG_DEFEATED_FUCHSIA_GYM
 	addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 14

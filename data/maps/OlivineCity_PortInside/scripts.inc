@@ -18,7 +18,7 @@ OlivineCity_PortInside_EventScript_Oak::
 	applymovement2 LOCALID_OLIVINEPORT_OAK, OlivineCity_PortInside_Movement_OakFixDex
 	waitmovement 0
 	delay 30
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_SYS_NATIONAL_DEX
 	special EnableNationalPokedex
 	playfanfare MUS_OBTAIN_ITEM
 	message OlivineCity_PortInside_Text_Nationaldex2

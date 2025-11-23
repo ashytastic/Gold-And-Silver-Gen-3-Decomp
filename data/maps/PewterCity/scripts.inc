@@ -3,7 +3,7 @@ PewterCity_MapScripts::
 	.byte 0
 
 PewterCity_EventScript_CityEnter::
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_VISITED_PEWTER_CITY
 	end
 
 PewterCity_EventScript_CooltrainerF::

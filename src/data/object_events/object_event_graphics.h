@@ -443,6 +443,12 @@ const u32 gObjectEventPic_NurseChansey[] = INCBIN_U32("graphics/object_events/pi
 const u32 gObjectEventPic_TrainFront[] = INCBIN_U32("graphics/object_events/pics/misc/train_front.4bpp");
 const u32 gObjectEventPic_TrainMid[] = INCBIN_U32("graphics/object_events/pics/misc/train_mid.4bpp");
 const u32 gObjectEventPic_TrainBack[] = INCBIN_U32("graphics/object_events/pics/misc/train_back.4bpp");
+const u32 gObjectEventPic_SlowpokeNoTail[] = INCBIN_U32("graphics/object_events/pics/pokemon/slowpoke_no_tail.4bpp");
+const u32 gObjectEventPic_Juggler[] = INCBIN_U32("graphics/object_events/pics/people/juggler.4bpp");
+const u32 gObjectEventPic_ScientistF[] = INCBIN_U32("graphics/object_events/pics/people/scientist_f.4bpp");
+const u32 gObjectEventPic_CooltrainerM[] = INCBIN_U32("graphics/object_events/pics/people/cooltrainer_m.4bpp");
+const u32 gObjectEventPic_Biker[] = INCBIN_U32("graphics/object_events/pics/people/biker.4bpp");
+const u32 gObjectEventPic_Captain[] = INCBIN_U32("graphics/object_events/pics/people/captain.4bpp");
 
 const u32 gObjectEventPic_VigorothMover[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/vigoroth_mover.4bpp");
 const u32 gObjectEventPic_SudowoodoTree[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/sudowoodo_tree.4bpp");

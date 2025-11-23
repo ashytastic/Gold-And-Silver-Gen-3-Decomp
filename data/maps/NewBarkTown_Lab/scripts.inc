@@ -1,7 +1,3 @@
-.set LOCALID_ELM, 2
-.set LOCALID_AIDE1, 1
-.set LOCALID_AIDE2, 3
-.set LOCALID_COP, 7
 .set PLAYER_STARTER_SPECIES,  VAR_TEMP_2
 
 NewBarkTown_Lab_MapScripts::
@@ -85,7 +81,7 @@ NewBarkTown_Lab_EventScript_Elm::
 	goto_if_ge VAR_NEWBARKTOWN_LABSTATE, 6, NewBarkTown_Lab_EventScript_ElmState5
 	goto_if_eq VAR_NEWBARKTOWN_LABSTATE, 2, CopNewBarkTown_Lab_EventScript_ElmState2
 	goto_if_eq VAR_NEWBARKTOWN_LABSTATE, 3, CopNewBarkTown_Lab_EventScript_ElmState2
-	goto_if_set FLAG_GARBAGEFLAG, NewBarkTown_Lab_EventScript_MrPokemon
+	goto_if_set FLAG_SYS_POKEMON_GET, NewBarkTown_Lab_EventScript_MrPokemon
 	goto_if_eq VAR_NEWBARKTOWN_LABSTATE, 1, NewBarkTown_Lab_EventScript_ElmChoosePokemon
 	end
 
@@ -161,7 +157,7 @@ NewBarkTown_Lab_EventScript_ShouldntTouch::
 
 NewBarkTown_Lab_EventScript_ChikoritaBall::
 	lock
-	goto_if_set FLAG_GARBAGEFLAG, NewBarkTown_Lab_EventScript_ShouldntTouch
+	goto_if_set FLAG_SYS_POKEMON_GET, NewBarkTown_Lab_EventScript_ShouldntTouch
 	goto_if_eq VAR_NEWBARKTOWN_LABSTATE, 1, NewBarkTown_Lab_EventScript_ChikoritaBall_Choice
 	msgbox NewBarkTown_Lab_Text_ShouldntTouch, MSGBOX_DEFAULT
 	release
@@ -180,7 +176,7 @@ NewBarkTown_Lab_EventScript_ChikoritaBall_Choice::
 
 NewBarkTown_Lab_EventScript_CyndaquilBall::
 	lock
-	goto_if_set FLAG_GARBAGEFLAG, NewBarkTown_Lab_EventScript_ShouldntTouch
+	goto_if_set FLAG_SYS_POKEMON_GET, NewBarkTown_Lab_EventScript_ShouldntTouch
 	goto_if_eq VAR_NEWBARKTOWN_LABSTATE, 1, NewBarkTown_Lab_EventScript_CyndaquilBall_Choice
 	msgbox NewBarkTown_Lab_Text_ShouldntTouch, MSGBOX_DEFAULT
 	closemessage
@@ -199,7 +195,7 @@ NewBarkTown_Lab_EventScript_CyndaquilBall_Choice::
 
 NewBarkTown_Lab_EventScript_TotodileBall::
 	lock
-	goto_if_set FLAG_GARBAGEFLAG, NewBarkTown_Lab_EventScript_ShouldntTouch
+	goto_if_set FLAG_SYS_POKEMON_GET, NewBarkTown_Lab_EventScript_ShouldntTouch
 	goto_if_eq VAR_NEWBARKTOWN_LABSTATE, 1, NewBarkTown_Lab_EventScript_TotodileBall_Choice
 	msgbox NewBarkTown_Lab_Text_ShouldntTouch, MSGBOX_DEFAULT
 	release
@@ -226,7 +222,7 @@ NewBarkTown_Lab_EventScript_DeclinedStarter::
 NewBarkTown_Lab_EventScript_ChoseStarter::
 	hidemonpic
 	removeobject VAR_LAST_TALKED
-	setflag FLAG_GARBAGEFLAG
+	setflag FLAG_SYS_POKEMON_GET
 	msgbox NewBarkTown_Lab_Text_ChoseStarter, MSGBOX_DEFAULT
 	givemon PLAYER_STARTER_SPECIES, 5
 	playfanfare MUS_OBTAIN_ITEM
@@ -279,7 +275,7 @@ CopNewBarkTown_Lab_EventScript_ElmState2::
 
 NewBarkTown_Lab_EventScript_HealingMachine1::
 	lock
-	goto_if_set FLAG_GARBAGEFLAG, NewBarkTown_Lab_EventScript_HealingMachine2
+	goto_if_set FLAG_SYS_POKEMON_GET, NewBarkTown_Lab_EventScript_HealingMachine2
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_SeriousLookingMachine, MSGBOX_SIGN
 	closemessage
 	release

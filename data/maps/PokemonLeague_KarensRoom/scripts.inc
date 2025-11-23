@@ -6,13 +6,14 @@ PokemonLeague_KarensRoom_MapScripts::
 
 PokemonLeague_KarensRoom_OnResume::
 	setvar VAR_0x8004, 3
+	@special DoPokemonLeagueLightingEffect
 	end
 
 PokemonLeague_KarensRoom_EventScript_Karen::
 	lock 
 	faceplayer
 	goto_if_ge VAR_LEAGUE_STATE, 5, PokemonLeague_KarensRoom_EventScript_KarenDefeated
-	goto_if_set FLAG_GARBAGEFLAG, PokemonLeague_KarensRoom_EventScript_KarenRematch
+	goto_if_set FLAG_IS_CHAMPION, PokemonLeague_KarensRoom_EventScript_KarenRematch
 	msgbox PokemonLeague_KarensRoom_Text_Before, MSGBOX_DEFAULT
 	setflag FLAG_TEMP_3
 	setflag FLAG_TEMP_5

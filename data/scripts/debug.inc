@@ -9,59 +9,16 @@ Debug_ShowFieldMessageStringVar4::
 	goto Debug_MessageEnd
 
 Debug_CheatStart::
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	clearflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setvar FLAG_GARBAGEFLAG, 2
-	setvar FLAG_GARBAGEFLAG, 3
-	givemon SPECIES_TREECKO, 20, ITEM_NONE
-	givemon SPECIES_TORCHIC, 20, ITEM_NONE
-	givemon SPECIES_MUDKIP, 20, ITEM_NONE
-	setflag FLAG_GARBAGEFLAG
+	givemon SPECIES_MEGANIUM, 100, ITEM_NONE
+	givemon SPECIES_TYPHLOSION, 100, ITEM_NONE
+	givemon SPECIES_FERALIGATR, 100, ITEM_NONE
+	givemon SPECIES_UMBREON, 100, ITEM_NONE
+	givemon SPECIES_JOLTEON, 100, ITEM_NONE
+	givemon SPECIES_GLACEON, 100, ITEM_NONE
+	setflag FLAG_HIDE_INDIGO_PLATEAU_SILVER
 	special SetUnlockedPokedexFlags
-	setflag FLAG_GARBAGEFLAG
-	setvar FLAG_GARBAGEFLAG, 2
-	setflag FLAG_GARBAGEFLAG
 	special EnableNationalPokedex
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setvar FLAG_GARBAGEFLAG, 4 @ 4: Received Running Shoes
-	setvar FLAG_GARBAGEFLAG, 7 @ 7: Told to go meet rival
-	setvar FLAG_GARBAGEFLAG, 2 @ 2: Met Rival's Mom (and is corresponding gender)
-	setvar FLAG_GARBAGEFLAG, 2 @ 2: Met Rival's Mom (and is corresponding gender)
-	setvar FLAG_GARBAGEFLAG, 4 @ 4: Received Pokedex
-	setflag FLAG_GARBAGEFLAG
 	additem ITEM_ACRO_BIKE
-	setvar FLAG_GARBAGEFLAG, 1
-	setvar FLAG_GARBAGEFLAG, 2
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	setflag FLAG_GARBAGEFLAG
-	clearflag FLAG_GARBAGEFLAG
-	clearflag FLAG_GARBAGEFLAG
 	release
 	end
 
