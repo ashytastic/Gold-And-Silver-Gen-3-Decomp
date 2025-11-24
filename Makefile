@@ -175,6 +175,7 @@ JSONPROC     := $(TOOLS_DIR)/jsonproc/jsonproc$(EXE)
 TRAINERPROC  := $(TOOLS_DIR)/trainerproc/trainerproc$(EXE)
 PATCHELF     := $(TOOLS_DIR)/patchelf/patchelf$(EXE)
 SCRIPT       := $(TOOLS_DIR)/poryscript/poryscript$(EXE)
+
 ifeq ($(shell uname),Darwin)
     ROMTEST ?= $(shell command -v mgba-rom-test-mac 2>/dev/null || echo $(TOOLS_DIR)/mgba/mgba-rom-test-mac)
     ROMTESTHYDRA := $(shell command -v mgba-rom-test-hydra 2>/dev/null || echo $(TOOLS_DIR)/mgba-rom-test-hydra/mgba-rom-test-hydra)
@@ -378,7 +379,7 @@ generated: $(AUTO_GEN_TARGETS)
 %.fastSmol: %      ; $(SMOL) -w $< $@ false false false
 %.smol:     %      ; $(SMOL) -w $< $@
 %.rl:       %      ; $(GFX) $< $@
-data/%.inc: data/%.pory; $(SCRIPT) -i $< -o $@ -fc tools/poryscript/font_config.json -cc tools/porysc
+data/%.inc: data/%.pory; $(SCRIPT) -i $< -o $@ -fc tools/poryscript/font_config.json -cc tools/poryscript/command_config.json
 
 clean-generated:
 	@rm -f $(AUTO_GEN_TARGETS)

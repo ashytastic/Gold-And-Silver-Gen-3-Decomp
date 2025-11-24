@@ -703,9 +703,9 @@
 #define FLAG_HIDE_CINNABAR_BLAINE  0x28F 
 #define FLAG_HIDE_DOJO_BLAINE  0x290 
 #define FLAG_HIDE_DOJO_BLUE  0x291 
-#define FLAG_STARTER_BALL_1  0x293 // Unused Flag
-#define FLAG_STARTER_BALL_2  0x294 // Unused Flag
-#define FLAG_STARTER_BALL_3  0x295 // Unused Flag
+#define FLAG_WATER_STARTER 0x293 // Unused Flag
+#define FLAG_GRASS_STARTER 0x294 // Unused Flag
+#define FLAG_FIRE_STARTER  0x295 // Unused Flag
 #define FLAG_UNUSED_0x296  0x296 // Unused Flag
 #define FLAG_UNUSED_0x297  0x297 // Unused Flag
 #define FLAG_UNUSED_0x298  0x298 // Unused Flag
