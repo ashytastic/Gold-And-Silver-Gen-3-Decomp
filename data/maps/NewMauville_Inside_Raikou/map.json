@@ -2,7 +2,7 @@
   "id": "MAP_NEW_MAUVILLE_INSIDE_RAIKOU",
   "name": "NewMauville_Inside_Raikou",
   "layout": "LAYOUT_NEW_MAUVILLE_INSIDE_RAIKOU",
-  "music": "MUS_DP_MT_CORONET",
+  "music": "MUS_NONE",
   "region_map_section": "MAPSEC_SS_AQUA",
   "requires_flash": true,
   "weather": "WEATHER_SHADE",
@@ -12,7 +12,7 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(RAIKOU)",
@@ -372,7 +372,5 @@
       "script": "NewMauville_Inside_Raikou_EntranceTrigger"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }
